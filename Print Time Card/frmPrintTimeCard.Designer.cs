@@ -51,9 +51,9 @@
             this.txtIn2 = new System.Windows.Forms.TextBox();
             this.txtIn3 = new System.Windows.Forms.TextBox();
             this.txtIn4 = new System.Windows.Forms.TextBox();
-            this.txIn5 = new System.Windows.Forms.TextBox();
-            this.txIn6 = new System.Windows.Forms.TextBox();
-            this.txIn7 = new System.Windows.Forms.TextBox();
+            this.txtIn5 = new System.Windows.Forms.TextBox();
+            this.txtIn6 = new System.Windows.Forms.TextBox();
+            this.txtIn7 = new System.Windows.Forms.TextBox();
             this.txtOut1 = new System.Windows.Forms.TextBox();
             this.txtOut2 = new System.Windows.Forms.TextBox();
             this.txtOut3 = new System.Windows.Forms.TextBox();
@@ -269,9 +269,8 @@
             this.txtIn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIn1.Location = new System.Drawing.Point(293, 513);
             this.txtIn1.Name = "txtIn1";
-            this.txtIn1.Size = new System.Drawing.Size(142, 37);
+            this.txtIn1.Size = new System.Drawing.Size(443, 37);
             this.txtIn1.TabIndex = 19;
-            this.txtIn1.Visible = false;
             // 
             // txtIn2
             // 
@@ -279,9 +278,8 @@
             this.txtIn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIn2.Location = new System.Drawing.Point(292, 560);
             this.txtIn2.Name = "txtIn2";
-            this.txtIn2.Size = new System.Drawing.Size(142, 37);
+            this.txtIn2.Size = new System.Drawing.Size(443, 37);
             this.txtIn2.TabIndex = 20;
-            this.txtIn2.Visible = false;
             // 
             // txtIn3
             // 
@@ -289,9 +287,8 @@
             this.txtIn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIn3.Location = new System.Drawing.Point(292, 612);
             this.txtIn3.Name = "txtIn3";
-            this.txtIn3.Size = new System.Drawing.Size(142, 37);
+            this.txtIn3.Size = new System.Drawing.Size(443, 37);
             this.txtIn3.TabIndex = 21;
-            this.txtIn3.Visible = false;
             // 
             // txtIn4
             // 
@@ -299,39 +296,35 @@
             this.txtIn4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIn4.Location = new System.Drawing.Point(293, 661);
             this.txtIn4.Name = "txtIn4";
-            this.txtIn4.Size = new System.Drawing.Size(142, 37);
+            this.txtIn4.Size = new System.Drawing.Size(443, 37);
             this.txtIn4.TabIndex = 22;
-            this.txtIn4.Visible = false;
             // 
-            // txIn5
+            // txtIn5
             // 
-            this.txIn5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txIn5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txIn5.Location = new System.Drawing.Point(292, 711);
-            this.txIn5.Name = "txIn5";
-            this.txIn5.Size = new System.Drawing.Size(142, 37);
-            this.txIn5.TabIndex = 23;
-            this.txIn5.Visible = false;
+            this.txtIn5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIn5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIn5.Location = new System.Drawing.Point(292, 711);
+            this.txtIn5.Name = "txtIn5";
+            this.txtIn5.Size = new System.Drawing.Size(443, 37);
+            this.txtIn5.TabIndex = 23;
             // 
-            // txIn6
+            // txtIn6
             // 
-            this.txIn6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txIn6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txIn6.Location = new System.Drawing.Point(292, 760);
-            this.txIn6.Name = "txIn6";
-            this.txIn6.Size = new System.Drawing.Size(142, 37);
-            this.txIn6.TabIndex = 24;
-            this.txIn6.Visible = false;
+            this.txtIn6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIn6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIn6.Location = new System.Drawing.Point(292, 760);
+            this.txtIn6.Name = "txtIn6";
+            this.txtIn6.Size = new System.Drawing.Size(443, 37);
+            this.txtIn6.TabIndex = 24;
             // 
-            // txIn7
+            // txtIn7
             // 
-            this.txIn7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txIn7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txIn7.Location = new System.Drawing.Point(291, 809);
-            this.txIn7.Name = "txIn7";
-            this.txIn7.Size = new System.Drawing.Size(142, 37);
-            this.txIn7.TabIndex = 25;
-            this.txIn7.Visible = false;
+            this.txtIn7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIn7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIn7.Location = new System.Drawing.Point(291, 809);
+            this.txtIn7.Name = "txtIn7";
+            this.txtIn7.Size = new System.Drawing.Size(443, 37);
+            this.txtIn7.TabIndex = 25;
             // 
             // txtOut1
             // 
@@ -341,7 +334,6 @@
             this.txtOut1.Name = "txtOut1";
             this.txtOut1.Size = new System.Drawing.Size(142, 37);
             this.txtOut1.TabIndex = 26;
-            this.txtOut1.Visible = false;
             // 
             // txtOut2
             // 
@@ -351,7 +343,6 @@
             this.txtOut2.Name = "txtOut2";
             this.txtOut2.Size = new System.Drawing.Size(142, 37);
             this.txtOut2.TabIndex = 27;
-            this.txtOut2.Visible = false;
             // 
             // txtOut3
             // 
@@ -361,7 +352,6 @@
             this.txtOut3.Name = "txtOut3";
             this.txtOut3.Size = new System.Drawing.Size(142, 37);
             this.txtOut3.TabIndex = 28;
-            this.txtOut3.Visible = false;
             // 
             // txtOut4
             // 
@@ -371,7 +361,6 @@
             this.txtOut4.Name = "txtOut4";
             this.txtOut4.Size = new System.Drawing.Size(142, 37);
             this.txtOut4.TabIndex = 29;
-            this.txtOut4.Visible = false;
             // 
             // txtOut5
             // 
@@ -381,7 +370,6 @@
             this.txtOut5.Name = "txtOut5";
             this.txtOut5.Size = new System.Drawing.Size(142, 37);
             this.txtOut5.TabIndex = 30;
-            this.txtOut5.Visible = false;
             // 
             // txtOut6
             // 
@@ -391,7 +379,6 @@
             this.txtOut6.Name = "txtOut6";
             this.txtOut6.Size = new System.Drawing.Size(142, 37);
             this.txtOut6.TabIndex = 31;
-            this.txtOut6.Visible = false;
             // 
             // txtOut7
             // 
@@ -401,7 +388,6 @@
             this.txtOut7.Name = "txtOut7";
             this.txtOut7.Size = new System.Drawing.Size(142, 37);
             this.txtOut7.TabIndex = 32;
-            this.txtOut7.Visible = false;
             // 
             // txtWorked1
             // 
@@ -411,7 +397,6 @@
             this.txtWorked1.Name = "txtWorked1";
             this.txtWorked1.Size = new System.Drawing.Size(196, 37);
             this.txtWorked1.TabIndex = 33;
-            this.txtWorked1.Visible = false;
             // 
             // txtWorked2
             // 
@@ -421,7 +406,6 @@
             this.txtWorked2.Name = "txtWorked2";
             this.txtWorked2.Size = new System.Drawing.Size(196, 37);
             this.txtWorked2.TabIndex = 34;
-            this.txtWorked2.Visible = false;
             // 
             // txtWorked3
             // 
@@ -431,7 +415,6 @@
             this.txtWorked3.Name = "txtWorked3";
             this.txtWorked3.Size = new System.Drawing.Size(196, 37);
             this.txtWorked3.TabIndex = 35;
-            this.txtWorked3.Visible = false;
             // 
             // txtWorked4
             // 
@@ -441,7 +424,6 @@
             this.txtWorked4.Name = "txtWorked4";
             this.txtWorked4.Size = new System.Drawing.Size(196, 37);
             this.txtWorked4.TabIndex = 36;
-            this.txtWorked4.Visible = false;
             // 
             // txtWorked5
             // 
@@ -451,7 +433,6 @@
             this.txtWorked5.Name = "txtWorked5";
             this.txtWorked5.Size = new System.Drawing.Size(196, 37);
             this.txtWorked5.TabIndex = 37;
-            this.txtWorked5.Visible = false;
             // 
             // txtWorked6
             // 
@@ -461,7 +442,6 @@
             this.txtWorked6.Name = "txtWorked6";
             this.txtWorked6.Size = new System.Drawing.Size(196, 37);
             this.txtWorked6.TabIndex = 38;
-            this.txtWorked6.Visible = false;
             // 
             // txtWorked7
             // 
@@ -471,7 +451,6 @@
             this.txtWorked7.Name = "txtWorked7";
             this.txtWorked7.Size = new System.Drawing.Size(196, 37);
             this.txtWorked7.TabIndex = 39;
-            this.txtWorked7.Visible = false;
             // 
             // txtBonus1
             // 
@@ -481,7 +460,6 @@
             this.txtBonus1.Name = "txtBonus1";
             this.txtBonus1.Size = new System.Drawing.Size(196, 37);
             this.txtBonus1.TabIndex = 40;
-            this.txtBonus1.Visible = false;
             // 
             // txtBonus2
             // 
@@ -491,7 +469,6 @@
             this.txtBonus2.Name = "txtBonus2";
             this.txtBonus2.Size = new System.Drawing.Size(196, 37);
             this.txtBonus2.TabIndex = 41;
-            this.txtBonus2.Visible = false;
             // 
             // txtBonus3
             // 
@@ -501,7 +478,6 @@
             this.txtBonus3.Name = "txtBonus3";
             this.txtBonus3.Size = new System.Drawing.Size(196, 37);
             this.txtBonus3.TabIndex = 42;
-            this.txtBonus3.Visible = false;
             // 
             // txtBonus4
             // 
@@ -511,7 +487,6 @@
             this.txtBonus4.Name = "txtBonus4";
             this.txtBonus4.Size = new System.Drawing.Size(196, 37);
             this.txtBonus4.TabIndex = 43;
-            this.txtBonus4.Visible = false;
             // 
             // txtBonus5
             // 
@@ -521,7 +496,6 @@
             this.txtBonus5.Name = "txtBonus5";
             this.txtBonus5.Size = new System.Drawing.Size(196, 37);
             this.txtBonus5.TabIndex = 44;
-            this.txtBonus5.Visible = false;
             // 
             // txtBonus6
             // 
@@ -531,7 +505,6 @@
             this.txtBonus6.Name = "txtBonus6";
             this.txtBonus6.Size = new System.Drawing.Size(196, 37);
             this.txtBonus6.TabIndex = 45;
-            this.txtBonus6.Visible = false;
             // 
             // txtBonus7
             // 
@@ -541,7 +514,6 @@
             this.txtBonus7.Name = "txtBonus7";
             this.txtBonus7.Size = new System.Drawing.Size(196, 37);
             this.txtBonus7.TabIndex = 46;
-            this.txtBonus7.Visible = false;
             // 
             // txtOvertime1
             // 
@@ -551,7 +523,6 @@
             this.txtOvertime1.Name = "txtOvertime1";
             this.txtOvertime1.Size = new System.Drawing.Size(196, 37);
             this.txtOvertime1.TabIndex = 47;
-            this.txtOvertime1.Visible = false;
             // 
             // txtOvertime2
             // 
@@ -561,7 +532,6 @@
             this.txtOvertime2.Name = "txtOvertime2";
             this.txtOvertime2.Size = new System.Drawing.Size(196, 37);
             this.txtOvertime2.TabIndex = 48;
-            this.txtOvertime2.Visible = false;
             // 
             // txtOvertime3
             // 
@@ -571,7 +541,6 @@
             this.txtOvertime3.Name = "txtOvertime3";
             this.txtOvertime3.Size = new System.Drawing.Size(196, 37);
             this.txtOvertime3.TabIndex = 49;
-            this.txtOvertime3.Visible = false;
             // 
             // txtOvertime4
             // 
@@ -581,7 +550,6 @@
             this.txtOvertime4.Name = "txtOvertime4";
             this.txtOvertime4.Size = new System.Drawing.Size(196, 37);
             this.txtOvertime4.TabIndex = 50;
-            this.txtOvertime4.Visible = false;
             // 
             // txtOvertime5
             // 
@@ -591,7 +559,6 @@
             this.txtOvertime5.Name = "txtOvertime5";
             this.txtOvertime5.Size = new System.Drawing.Size(196, 37);
             this.txtOvertime5.TabIndex = 51;
-            this.txtOvertime5.Visible = false;
             // 
             // txtOvertime6
             // 
@@ -601,7 +568,6 @@
             this.txtOvertime6.Name = "txtOvertime6";
             this.txtOvertime6.Size = new System.Drawing.Size(196, 37);
             this.txtOvertime6.TabIndex = 52;
-            this.txtOvertime6.Visible = false;
             // 
             // txtOvertime7
             // 
@@ -611,7 +577,6 @@
             this.txtOvertime7.Name = "txtOvertime7";
             this.txtOvertime7.Size = new System.Drawing.Size(196, 37);
             this.txtOvertime7.TabIndex = 53;
-            this.txtOvertime7.Visible = false;
             // 
             // txtOther1
             // 
@@ -621,7 +586,6 @@
             this.txtOther1.Name = "txtOther1";
             this.txtOther1.Size = new System.Drawing.Size(196, 37);
             this.txtOther1.TabIndex = 54;
-            this.txtOther1.Visible = false;
             // 
             // txtOther2
             // 
@@ -631,7 +595,6 @@
             this.txtOther2.Name = "txtOther2";
             this.txtOther2.Size = new System.Drawing.Size(196, 37);
             this.txtOther2.TabIndex = 55;
-            this.txtOther2.Visible = false;
             // 
             // txtOther3
             // 
@@ -641,7 +604,6 @@
             this.txtOther3.Name = "txtOther3";
             this.txtOther3.Size = new System.Drawing.Size(196, 37);
             this.txtOther3.TabIndex = 56;
-            this.txtOther3.Visible = false;
             // 
             // txtOther4
             // 
@@ -651,7 +613,6 @@
             this.txtOther4.Name = "txtOther4";
             this.txtOther4.Size = new System.Drawing.Size(196, 37);
             this.txtOther4.TabIndex = 57;
-            this.txtOther4.Visible = false;
             // 
             // txtOther5
             // 
@@ -661,7 +622,6 @@
             this.txtOther5.Name = "txtOther5";
             this.txtOther5.Size = new System.Drawing.Size(196, 37);
             this.txtOther5.TabIndex = 58;
-            this.txtOther5.Visible = false;
             // 
             // txtOther6
             // 
@@ -671,7 +631,6 @@
             this.txtOther6.Name = "txtOther6";
             this.txtOther6.Size = new System.Drawing.Size(196, 37);
             this.txtOther6.TabIndex = 59;
-            this.txtOther6.Visible = false;
             // 
             // txtOther7
             // 
@@ -681,7 +640,6 @@
             this.txtOther7.Name = "txtOther7";
             this.txtOther7.Size = new System.Drawing.Size(196, 37);
             this.txtOther7.TabIndex = 60;
-            this.txtOther7.Visible = false;
             // 
             // txtTotalWorked
             // 
@@ -691,7 +649,6 @@
             this.txtTotalWorked.Name = "txtTotalWorked";
             this.txtTotalWorked.Size = new System.Drawing.Size(196, 37);
             this.txtTotalWorked.TabIndex = 61;
-            this.txtTotalWorked.Visible = false;
             // 
             // txtTotalBonus
             // 
@@ -701,7 +658,6 @@
             this.txtTotalBonus.Name = "txtTotalBonus";
             this.txtTotalBonus.Size = new System.Drawing.Size(196, 37);
             this.txtTotalBonus.TabIndex = 62;
-            this.txtTotalBonus.Visible = false;
             // 
             // txtTotalOvertime
             // 
@@ -711,7 +667,6 @@
             this.txtTotalOvertime.Name = "txtTotalOvertime";
             this.txtTotalOvertime.Size = new System.Drawing.Size(196, 37);
             this.txtTotalOvertime.TabIndex = 63;
-            this.txtTotalOvertime.Visible = false;
             // 
             // txtTotalOther
             // 
@@ -721,7 +676,6 @@
             this.txtTotalOther.Name = "txtTotalOther";
             this.txtTotalOther.Size = new System.Drawing.Size(196, 37);
             this.txtTotalOther.TabIndex = 64;
-            this.txtTotalOther.Visible = false;
             // 
             // cb24hr
             // 
@@ -780,9 +734,9 @@
             this.Controls.Add(this.txtOut3);
             this.Controls.Add(this.txtOut2);
             this.Controls.Add(this.txtOut1);
-            this.Controls.Add(this.txIn7);
-            this.Controls.Add(this.txIn6);
-            this.Controls.Add(this.txIn5);
+            this.Controls.Add(this.txtIn7);
+            this.Controls.Add(this.txtIn6);
+            this.Controls.Add(this.txtIn5);
             this.Controls.Add(this.txtIn4);
             this.Controls.Add(this.txtIn3);
             this.Controls.Add(this.txtIn2);
@@ -836,9 +790,9 @@
         private System.Windows.Forms.TextBox txtIn2;
         private System.Windows.Forms.TextBox txtIn3;
         private System.Windows.Forms.TextBox txtIn4;
-        private System.Windows.Forms.TextBox txIn5;
-        private System.Windows.Forms.TextBox txIn6;
-        private System.Windows.Forms.TextBox txIn7;
+        private System.Windows.Forms.TextBox txtIn5;
+        private System.Windows.Forms.TextBox txtIn6;
+        private System.Windows.Forms.TextBox txtIn7;
         private System.Windows.Forms.TextBox txtOut1;
         private System.Windows.Forms.TextBox txtOut2;
         private System.Windows.Forms.TextBox txtOut3;

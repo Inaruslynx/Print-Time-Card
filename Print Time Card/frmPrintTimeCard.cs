@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Globalization;
 using System.Windows.Forms;
 
 namespace Print_Time_Card
@@ -18,7 +17,7 @@ namespace Print_Time_Card
             InitializeComponent();
         }
 
-        public static int adjustDay(DayOfWeek day, DateTime time, bool past)
+        public int adjustDay(DayOfWeek day, DateTime time, bool past)
         {
             int numberOfDays = 0;
             if (past)
@@ -38,7 +37,7 @@ namespace Print_Time_Card
             return numberOfDays;
         }
 
-        public static DateTime adjustTime(DateTime time, int hour, int minute)
+        public DateTime adjustTime(DateTime time, int hour, int minute)
         {
             while (time.Hour != hour)
             {
@@ -67,23 +66,61 @@ namespace Print_Time_Card
             return time;
         }
 
+        // This is where I left off at. Still need to calculate time worked after updating text box.
+        public void hoursWorked(Control obj)
+        {
+            int number = obj.Name[-1];
+            Control ctlIn = this.Controls["txtIn" + number];
+            Control ctlOut = this.Controls["txtOut" + number];
+            if (DateTime.Parse(ctlIn.Text.ToString()).CompareTo(inTime[number - 1]) != 0)
+            {
+                try
+                {
+                    TimeSpan timeIn = TimeSpan.Parse(ctlIn.Text);
+                    TimeSpan timeOut = TimeSpan.Parse(ctlOut.Text);
+                    inTime[number - 1] = Sunday.AddDays(number - 1);
+                    inTime[number - 1].Add(timeIn);
+                    outTime[number - 1] = Sunday.AddDays(number - 1);
+                    outTime[number - 1].Add(timeOut);
+                }
+                catch (FormatException e)
+                {
+                    MessageBox.Show("There was a problem with the format of the entered time" + Environment.NewLine + e.Message + Environment.NewLine + e.HelpLink);
+                    throw;
+                }
+            }
+
+        }
+
+        public void enterTime(int indexChecked, string format, int hr1, int min1, int hr2, int min2)
+        {
+            Control ctnIn = this.Controls["txtIn" + (indexChecked + 1)] as Control;
+            Control ctnOut = this.Controls["txtOut" + (indexChecked + 1)] as Control;
+            inTime[indexChecked] = adjustTime(Sunday.AddDays(indexChecked), hr1, min1);
+            outTime[indexChecked] = adjustTime(Sunday.AddDays(indexChecked), hr2, min2);
+            ctnIn.Text = inTime[indexChecked].ToString(inTime[indexChecked].ToString(format));
+            ctnOut.Text = outTime[indexChecked].ToString(outTime[indexChecked].ToString(format));
+        }
+
         private void frmPrintTimeCard_Load(object sender, System.EventArgs e)
         {
             howManyDaysSinceSunday = adjustDay(DayOfWeek.Sunday, currentDay, true);
             daysUntilSaturday = adjustDay(DayOfWeek.Saturday, currentDay, false);
             Sunday = currentDay.AddDays(-howManyDaysSinceSunday);
+            Sunday = adjustTime(Sunday, 0, 0);
             txtFrom.Text = currentDay.AddDays(-howManyDaysSinceSunday).ToShortDateString();
             txtTo.Text = currentDay.AddDays(daysUntilSaturday).ToShortDateString();
+            foreach (var ctl in this.Controls)
+            {
+                if ((ctl as TextBox).Name.ToUpper().Contains("IN") || (ctl as TextBox).Name.ToUpper().Contains("OUT"))
+                {
+                    (ctl as TextBox).TextChanged +=
+                }
+            }
         }
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            var dtfi = CultureInfo.CurrentCulture.DateTimeFormat;
-            if (!cbDays.Checked && !cbNights.Checked)
-            {
-                MessageBox.Show("Please choose nights or days");
-                return;
-            }
             if (clbDays.CheckedItems.Count == 0)
             {
                 MessageBox.Show("Select days worked");
@@ -97,20 +134,62 @@ namespace Print_Time_Card
                     {
                         if (cb24hr.Checked)
                         {
-                            Control ctnIn = this.Controls["txtIn" + (indexChecked + 1)] as Control;
-                            Control ctnOut = this.Controls["txtOut" + (indexChecked + 1)] as Control;
-                            inTime[indexChecked] = adjustTime(Sunday.AddDays(indexChecked), 7, 30);
-                            outTime[indexChecked] = adjustTime(Sunday.AddDays(indexChecked), 20, 0);
-                            ctnIn.Text = inTime[indexChecked].ToString(inTime[indexChecked].ToString("H:mm"));
-                            ctnOut.Text = outTime[indexChecked].ToString(outTime[indexChecked].ToString("H:mm"));
-                            ctnIn.Visible = true;
-                            ctnOut.Visible = true;
+                            enterTime(indexChecked, "H:mm", 7, 30, 20, 0);
                         }
                         else
                         {
-
+                            enterTime(indexChecked, "h:mm tt", 7, 30, 20, 0);
                         }
                     }
+                    else
+                    {
+                        if (cb24hr.Checked)
+                        {
+                            enterTime(indexChecked, "H:mm", 8, 0, 20, 0);
+                        }
+                        else
+                        {
+                            enterTime(indexChecked, "h:mm tt", 8, 0, 20, 0);
+                        }
+                    }
+                }
+                else if (cbNights.Checked)
+                {
+                    if (cbEarly.Checked)
+                    {
+                        if (cb24hr.Checked)
+                        {
+                            enterTime(indexChecked, "H:mm", 19, 30, 8, 0);
+                        }
+                        else
+                        {
+                            enterTime(indexChecked, "h:mm tt", 19, 30, 8, 0);
+                        }
+                    }
+                    else
+                    {
+                        if (cb24hr.Checked)
+                        {
+                            enterTime(indexChecked, "H:mm", 20, 0, 8, 0);
+                        }
+                        else
+                        {
+                            enterTime(indexChecked, "h:mm tt", 20, 0, 8, 0);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please choose nights or days");
+                    return;
+                }
+            }
+            for (int i = 1; i < 8; i++)
+            {
+                Control cntIn = this.Controls["txtIn" + i] as Control;
+                if (cntIn.Text == "")
+                {
+                    cntIn.Text = "SDO";
                 }
             }
         }
