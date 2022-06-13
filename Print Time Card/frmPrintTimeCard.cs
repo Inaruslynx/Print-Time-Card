@@ -66,13 +66,17 @@ namespace Print_Time_Card
             return time;
         }
 
-        // This is where I left off at. Still need to calculate time worked after updating text box.
-        public void hoursWorked(Control obj)
+        // This is where I left off at.
+        // I need to automatically assign an event to all of the text boxes with input time
+        // I'm too tired to understand where I'm suppose to define the Event and then assign it.
+        // I'd guess define the event here and assign it at form load (which is what I've tried to do)
+        // But it isn't happy about a return, which I didn't think events needed?
+        public Action<object> HoursWorked(TextBox obj)
         {
             int number = obj.Name[-1];
             Control ctlIn = this.Controls["txtIn" + number];
             Control ctlOut = this.Controls["txtOut" + number];
-            if (DateTime.Parse(ctlIn.Text.ToString()).CompareTo(inTime[number - 1]) != 0)
+            if (DateTime.Parse(ctlIn.Text.ToString()).CompareTo(inTime[number - 1]) != 0 || ctlOut.Text.ToString().CompareTo(outTime[number - 1]) != 0)
             {
                 try
                 {
@@ -89,7 +93,9 @@ namespace Print_Time_Card
                     throw;
                 }
             }
-
+            TimeSpan difference = outTime[number - 1] - inTime[number - 1];
+            Control ctlWork = this.Controls["txtWorked" + number];
+            ctlWork.Text = difference.ToString();
         }
 
         public void enterTime(int indexChecked, string format, int hr1, int min1, int hr2, int min2)
@@ -110,11 +116,11 @@ namespace Print_Time_Card
             Sunday = adjustTime(Sunday, 0, 0);
             txtFrom.Text = currentDay.AddDays(-howManyDaysSinceSunday).ToShortDateString();
             txtTo.Text = currentDay.AddDays(daysUntilSaturday).ToShortDateString();
-            foreach (var ctl in this.Controls)
+            foreach (TextBox ctl in this.Controls)
             {
                 if ((ctl as TextBox).Name.ToUpper().Contains("IN") || (ctl as TextBox).Name.ToUpper().Contains("OUT"))
                 {
-                    (ctl as TextBox).TextChanged +=
+                    ctl.TextChanged += HoursWorked(ctl);
                 }
             }
         }
