@@ -66,11 +66,11 @@ namespace Print_Time_Card
             return time;
         }
 
-        // This is where I left off at.
-        // I need to automatically assign an event to all of the text boxes with input time
-        // I'm too tired to understand where I'm suppose to define the Event and then assign it.
-        // I'd guess define the event here and assign it at form load (which is what I've tried to do)
-        // But it isn't happy about a return, which I didn't think events needed?
+        // Steps for events:
+        // 1. Define the delegate
+        // 2. Define an event based on that delegate
+        // 3. Raise the event
+        
         public Action<object> HoursWorked(TextBox obj)
         {
             int number = obj.Name[-1];
@@ -118,9 +118,12 @@ namespace Print_Time_Card
             txtTo.Text = currentDay.AddDays(daysUntilSaturday).ToShortDateString();
             foreach (TextBox ctl in this.Controls)
             {
-                if ((ctl as TextBox).Name.ToUpper().Contains("IN") || (ctl as TextBox).Name.ToUpper().Contains("OUT"))
+                if (ctl != null)
                 {
-                    ctl.TextChanged += HoursWorked(ctl);
+                    if ((ctl as TextBox).Name.ToUpper().Contains("IN") || (ctl as TextBox).Name.ToUpper().Contains("OUT"))
+                        {
+                            ctl.TextChanged += HoursWorked(ctl);
+                        }
                 }
             }
         }
