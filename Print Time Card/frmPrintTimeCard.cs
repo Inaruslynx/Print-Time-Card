@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace Print_Time_Card
@@ -66,26 +67,57 @@ namespace Print_Time_Card
             return time;
         }
 
-        // Steps for events:
-        // 1. Define the delegate
-        // 2. Define an event based on that delegate
-        // 3. Raise the event
-        
-        public Action<object> HoursWorked(TextBox obj)
+        public TimeSpan ProcessTextboxToTime(TextBox obj)
         {
-            int number = obj.Name[-1];
-            Control ctlIn = this.Controls["txtIn" + number];
-            Control ctlOut = this.Controls["txtOut" + number];
-            if (DateTime.Parse(ctlIn.Text.ToString()).CompareTo(inTime[number - 1]) != 0 || ctlOut.Text.ToString().CompareTo(outTime[number - 1]) != 0)
+            TimeSpan convertedTime = TimeSpan.Parse(obj.Text.Remove(5).Trim());
+            if (obj.Text.Remove(0, 5).Trim().ToUpper() == "PM")
+            {
+                convertedTime += new TimeSpan(12, 0, 0);
+            }
+            return convertedTime;
+        }
+
+        public void textBox_WorkHours(object sender, EventArgs args)
+        {
+            TextBox ctl = sender as TextBox;
+            int number = 0;
+            TimeSpan convertedTimeIn, convertedTimeOut, originalTimeIn, originalTimeOut;
+            if (ctl.Name.ToUpper().Contains("IN"))
+            {
+                number = int.Parse(ctl.Name.Remove(0, 5));
+            }
+            else if (ctl.Name.ToUpper().Contains("OUT"))
+            {
+                number = int.Parse(ctl.Name.Remove(0, 6));
+            }
+            Control ctlIn = Controls["txtIn" + number];
+            Control ctlOut = Controls["txtOut" + number];
+            if (ctlIn.Text == "" || ctlOut.Text == "")
+            {
+                return;
+            }
+            try
+            {
+                convertedTimeIn = ProcessTextboxToTime((TextBox)ctlIn);
+                convertedTimeOut = ProcessTextboxToTime((TextBox)ctlOut);
+                originalTimeIn = inTime[(number - 1)] - Sunday.AddDays(number - 1);
+                originalTimeOut = outTime[(number - 1)] - Sunday.AddDays(number - 1);
+            }
+            catch
+            {
+                return;
+            }
+            if (convertedTimeIn.CompareTo(originalTimeIn) != 0 || convertedTimeOut.CompareTo(originalTimeOut) != 0)
             {
                 try
                 {
-                    TimeSpan timeIn = TimeSpan.Parse(ctlIn.Text);
-                    TimeSpan timeOut = TimeSpan.Parse(ctlOut.Text);
+                    // Not Working
+                    TimeSpan timeIn = ProcessTextboxToTime((TextBox)ctlIn);
+                    TimeSpan timeOut = ProcessTextboxToTime((TextBox)ctlOut);
                     inTime[number - 1] = Sunday.AddDays(number - 1);
-                    inTime[number - 1].Add(timeIn);
+                    inTime[number - 1] = inTime[number - 1].Add(timeIn);
                     outTime[number - 1] = Sunday.AddDays(number - 1);
-                    outTime[number - 1].Add(timeOut);
+                    outTime[number - 1] = outTime[number - 1].Add(timeOut);
                 }
                 catch (FormatException e)
                 {
@@ -94,21 +126,123 @@ namespace Print_Time_Card
                 }
             }
             TimeSpan difference = outTime[number - 1] - inTime[number - 1];
-            Control ctlWork = this.Controls["txtWorked" + number];
-            ctlWork.Text = difference.ToString();
+            Control ctlWork = Controls["txtWorked" + number];
+            ctlWork.Text = difference.TotalHours.ToString();
+        }
+        private void textBox_TotalWorkedHours(object sender, EventArgs e)
+        {
+            // get textboxes and find txtWorked
+            // get values in textboxes and add together
+            // Put total in txtTotalW
+            var txtWorked = new System.Collections.Generic.List<Control>();
+            float totalHoursWorked = 0;
+            foreach (Control control in Controls)
+            {
+                if (control != null && control is TextBox && control.Name.ToUpper().Contains("WORKED"))
+                {
+                    txtWorked.Add(control as TextBox);
+                }
+            }
+            foreach (Control hour in txtWorked)
+            {
+                if (hour.Text != "")
+                {
+                    totalHoursWorked += float.Parse(hour.Text, CultureInfo.InvariantCulture.NumberFormat);
+                }
+            }
+            txtTotalW.Text = totalHoursWorked.ToString();
+        }
+        private void textBox_BonusHours(object sender, EventArgs e)
+        {
+            // The sender is now the hours worked in a day. Not bonus hours
+            // Change the below for hours worked first then bonus hours
+            Control hoursWorked = (Control)sender;
+            if (hoursWorked.Text == "")
+            {
+                return;
+            }
+            int number = int.Parse(hoursWorked.Name.Remove(0, 9));
+            Control bonusHours = Controls["txtBonus" + number];
+            if (hoursWorked.Text != "")
+            {
+                double valueOfHoursWorked = Convert.ToDouble(hoursWorked.Text);
+                if (valueOfHoursWorked < 12.0)
+                {
+                    bonusHours.Text = valueOfHoursWorked.ToString();
+                }
+                else
+                {
+                    bonusHours.Text = "12.0";
+                }
+            }
+        }
+        private void textBox_TotalBonusHours(object sender, EventArgs e)
+        {
+            double totalBonusHours = 0;
+            for (int i = 1; i < 8; i++)
+            {
+                Control ctl = Controls["txtBonus" + i];
+                if (ctl.Text != "")
+                {
+                    totalBonusHours += Convert.ToDouble(ctl.Text);
+                }
+            }
+            txtTotalB.Text = totalBonusHours.ToString();
+
+        }
+
+        private void textBox_totalOvertime(object sender, EventArgs e)
+        {
+            if (txtTotalW.Text == "" || Convert.ToDouble(txtTotalW.Text) < 40)
+            {
+                return;
+            }
+            else
+            {
+                double totalOvertime = 0;
+                double totalWorkedHours = Convert.ToDouble(txtTotalW.Text);
+                if (totalWorkedHours > 40)
+                {
+                    totalOvertime = totalWorkedHours - 40;
+                }
+                txtTotalO.Text = totalOvertime.ToString();
+            }
+        }
+
+        private void textBox_Overtime(object sender, EventArgs e)
+        {
+            if (txtTotalO.Text == "") return;
+            double totalOvertime = Convert.ToDouble(txtTotalO.Text);
+            double remainingOvertime = totalOvertime;
+            for (int i = 7; i > 1; i--)
+            {
+                Control txtHoursWorked = Controls["txtWorked" + i];
+                if (txtHoursWorked.Text == "") continue;
+                double hoursWorked = Convert.ToDouble(txtHoursWorked.Text);
+                if (hoursWorked < remainingOvertime)
+                {
+                    Controls["txtOvertime" + i].Text = hoursWorked.ToString();
+                    remainingOvertime -= hoursWorked;
+                }
+                else
+                {
+                    Controls["txtOvertime" + i].Text = remainingOvertime.ToString();
+                    return;
+                }
+            }
         }
 
         public void enterTime(int indexChecked, string format, int hr1, int min1, int hr2, int min2)
         {
-            Control ctnIn = this.Controls["txtIn" + (indexChecked + 1)] as Control;
-            Control ctnOut = this.Controls["txtOut" + (indexChecked + 1)] as Control;
+            Control ctnIn = Controls["txtIn" + (indexChecked + 1)];
+            Control ctnOut = Controls["txtOut" + (indexChecked + 1)];
             inTime[indexChecked] = adjustTime(Sunday.AddDays(indexChecked), hr1, min1);
             outTime[indexChecked] = adjustTime(Sunday.AddDays(indexChecked), hr2, min2);
-            ctnIn.Text = inTime[indexChecked].ToString(inTime[indexChecked].ToString(format));
-            ctnOut.Text = outTime[indexChecked].ToString(outTime[indexChecked].ToString(format));
+            ctnIn.Text = inTime[indexChecked].ToString(format);
+            ctnOut.Text = outTime[indexChecked].ToString(format);
         }
 
-        private void frmPrintTimeCard_Load(object sender, System.EventArgs e)
+        private void frmPrintTimeCard_Load(object sender, EventArgs e)
         {
             howManyDaysSinceSunday = adjustDay(DayOfWeek.Sunday, currentDay, true);
             daysUntilSaturday = adjustDay(DayOfWeek.Saturday, currentDay, false);
@@ -116,17 +250,40 @@ namespace Print_Time_Card
             Sunday = adjustTime(Sunday, 0, 0);
             txtFrom.Text = currentDay.AddDays(-howManyDaysSinceSunday).ToShortDateString();
             txtTo.Text = currentDay.AddDays(daysUntilSaturday).ToShortDateString();
-            foreach (TextBox ctl in this.Controls)
+            var textBoxes = new System.Collections.Generic.List<Control>();
+            foreach (Control control in Controls)
             {
-                if (ctl != null)
+                if (control != null && control is TextBox)
                 {
-                    if ((ctl as TextBox).Name.ToUpper().Contains("IN") || (ctl as TextBox).Name.ToUpper().Contains("OUT"))
-                        {
-                            ctl.TextChanged += HoursWorked(ctl);
-                        }
+                    textBoxes.Add(control as TextBox);
                 }
             }
+            foreach (TextBox ctl in textBoxes)
+            {
+
+                if ((ctl).Name.ToUpper().Contains("IN") || (ctl).Name.ToUpper().Contains("OUT"))
+                {
+                    EventHandler eventHandler = new EventHandler(textBox_WorkHours);
+                    ctl.TextChanged += eventHandler;
+                }
+
+                if ((ctl).Name.ToUpper().Contains("WORKED"))
+                {
+                    EventHandler workedEventHandler = new EventHandler(textBox_TotalWorkedHours);
+                    ctl.TextChanged += workedEventHandler;
+                    EventHandler bonusEventHandler = new EventHandler(textBox_BonusHours);
+                    ctl.TextChanged += bonusEventHandler;
+                }
+
+                if ((ctl).Name.ToUpper().Contains("BONUS"))
+                {
+                    EventHandler eventHandler = new EventHandler(textBox_TotalBonusHours);
+                    ctl.TextChanged += eventHandler;
+                }
+
+            }
         }
+
 
         private void btnApply_Click(object sender, EventArgs e)
         {
@@ -195,7 +352,7 @@ namespace Print_Time_Card
             }
             for (int i = 1; i < 8; i++)
             {
-                Control cntIn = this.Controls["txtIn" + i] as Control;
+                Control cntIn = Controls["txtIn" + i];
                 if (cntIn.Text == "")
                 {
                     cntIn.Text = "SDO";

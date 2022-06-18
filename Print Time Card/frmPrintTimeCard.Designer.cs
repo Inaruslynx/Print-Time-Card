@@ -89,10 +89,10 @@
             this.txtOther5 = new System.Windows.Forms.TextBox();
             this.txtOther6 = new System.Windows.Forms.TextBox();
             this.txtOther7 = new System.Windows.Forms.TextBox();
-            this.txtTotalWorked = new System.Windows.Forms.TextBox();
-            this.txtTotalBonus = new System.Windows.Forms.TextBox();
-            this.txtTotalOvertime = new System.Windows.Forms.TextBox();
-            this.txtTotalOther = new System.Windows.Forms.TextBox();
+            this.txtTotalW = new System.Windows.Forms.TextBox();
+            this.txtTotalB = new System.Windows.Forms.TextBox();
+            this.txtTotalO = new System.Windows.Forms.TextBox();
+            this.txtTotalOth = new System.Windows.Forms.TextBox();
             this.cb24hr = new System.Windows.Forms.CheckBox();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -192,7 +192,7 @@
             // 
             // clbDays
             // 
-            this.clbDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clbDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clbDays.FormattingEnabled = true;
             this.clbDays.Items.AddRange(new object[] {
             "Sunday",
@@ -202,9 +202,9 @@
             "Thursday",
             "Friday",
             "Saturday"});
-            this.clbDays.Location = new System.Drawing.Point(24, 502);
+            this.clbDays.Location = new System.Drawing.Point(23, 511);
             this.clbDays.Name = "clbDays";
-            this.clbDays.Size = new System.Drawing.Size(243, 277);
+            this.clbDays.Size = new System.Drawing.Size(263, 340);
             this.clbDays.TabIndex = 11;
             // 
             // txtName
@@ -641,41 +641,43 @@
             this.txtOther7.Size = new System.Drawing.Size(196, 37);
             this.txtOther7.TabIndex = 60;
             // 
-            // txtTotalWorked
+            // txtTotalW
             // 
-            this.txtTotalWorked.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTotalWorked.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalWorked.Location = new System.Drawing.Point(900, 857);
-            this.txtTotalWorked.Name = "txtTotalWorked";
-            this.txtTotalWorked.Size = new System.Drawing.Size(196, 37);
-            this.txtTotalWorked.TabIndex = 61;
+            this.txtTotalW.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTotalW.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalW.Location = new System.Drawing.Point(900, 857);
+            this.txtTotalW.Name = "txtTotalW";
+            this.txtTotalW.Size = new System.Drawing.Size(196, 37);
+            this.txtTotalW.TabIndex = 61;
+            this.txtTotalW.TextChanged += new System.EventHandler(this.textBox_totalOvertime);
             // 
-            // txtTotalBonus
+            // txtTotalB
             // 
-            this.txtTotalBonus.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTotalBonus.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalBonus.Location = new System.Drawing.Point(1113, 857);
-            this.txtTotalBonus.Name = "txtTotalBonus";
-            this.txtTotalBonus.Size = new System.Drawing.Size(196, 37);
-            this.txtTotalBonus.TabIndex = 62;
+            this.txtTotalB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTotalB.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalB.Location = new System.Drawing.Point(1113, 857);
+            this.txtTotalB.Name = "txtTotalB";
+            this.txtTotalB.Size = new System.Drawing.Size(196, 37);
+            this.txtTotalB.TabIndex = 62;
             // 
-            // txtTotalOvertime
+            // txtTotalO
             // 
-            this.txtTotalOvertime.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTotalOvertime.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalOvertime.Location = new System.Drawing.Point(1327, 857);
-            this.txtTotalOvertime.Name = "txtTotalOvertime";
-            this.txtTotalOvertime.Size = new System.Drawing.Size(196, 37);
-            this.txtTotalOvertime.TabIndex = 63;
+            this.txtTotalO.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTotalO.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalO.Location = new System.Drawing.Point(1327, 857);
+            this.txtTotalO.Name = "txtTotalO";
+            this.txtTotalO.Size = new System.Drawing.Size(196, 37);
+            this.txtTotalO.TabIndex = 63;
+            this.txtTotalO.TextChanged += new System.EventHandler(this.textBox_Overtime);
             // 
-            // txtTotalOther
+            // txtTotalOth
             // 
-            this.txtTotalOther.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTotalOther.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalOther.Location = new System.Drawing.Point(1548, 857);
-            this.txtTotalOther.Name = "txtTotalOther";
-            this.txtTotalOther.Size = new System.Drawing.Size(196, 37);
-            this.txtTotalOther.TabIndex = 64;
+            this.txtTotalOth.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTotalOth.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalOth.Location = new System.Drawing.Point(1548, 857);
+            this.txtTotalOth.Name = "txtTotalOth";
+            this.txtTotalOth.Size = new System.Drawing.Size(196, 37);
+            this.txtTotalOth.TabIndex = 64;
             // 
             // cb24hr
             // 
@@ -695,10 +697,10 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1799, 1316);
             this.Controls.Add(this.cb24hr);
-            this.Controls.Add(this.txtTotalOther);
-            this.Controls.Add(this.txtTotalOvertime);
-            this.Controls.Add(this.txtTotalBonus);
-            this.Controls.Add(this.txtTotalWorked);
+            this.Controls.Add(this.txtTotalOth);
+            this.Controls.Add(this.txtTotalO);
+            this.Controls.Add(this.txtTotalB);
+            this.Controls.Add(this.txtTotalW);
             this.Controls.Add(this.txtOther7);
             this.Controls.Add(this.txtOther6);
             this.Controls.Add(this.txtOther5);
@@ -828,10 +830,10 @@
         private System.Windows.Forms.TextBox txtOther5;
         private System.Windows.Forms.TextBox txtOther6;
         private System.Windows.Forms.TextBox txtOther7;
-        private System.Windows.Forms.TextBox txtTotalWorked;
-        private System.Windows.Forms.TextBox txtTotalBonus;
-        private System.Windows.Forms.TextBox txtTotalOvertime;
-        private System.Windows.Forms.TextBox txtTotalOther;
+        private System.Windows.Forms.TextBox txtTotalW;
+        private System.Windows.Forms.TextBox txtTotalB;
+        private System.Windows.Forms.TextBox txtTotalO;
+        private System.Windows.Forms.TextBox txtTotalOth;
         private System.Windows.Forms.CheckBox cb24hr;
     }
 }
