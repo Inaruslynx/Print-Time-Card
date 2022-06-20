@@ -94,6 +94,15 @@
             this.txtTotalO = new System.Windows.Forms.TextBox();
             this.txtTotalOth = new System.Windows.Forms.TextBox();
             this.cb24hr = new System.Windows.Forms.CheckBox();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,6 +132,7 @@
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
             this.printToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.printToolStripMenuItem.Text = "&Print";
+            this.printToolStripMenuItem.Click += new System.EventHandler(this.printMenu_Click);
             // 
             // resetToolStripMenuItem
             // 
@@ -147,8 +157,9 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "&About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutMenu_Click);
             // 
             // cbDays
             // 
@@ -584,7 +595,7 @@
             this.txtOther1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOther1.Location = new System.Drawing.Point(1548, 514);
             this.txtOther1.Name = "txtOther1";
-            this.txtOther1.Size = new System.Drawing.Size(196, 37);
+            this.txtOther1.Size = new System.Drawing.Size(130, 37);
             this.txtOther1.TabIndex = 54;
             // 
             // txtOther2
@@ -593,7 +604,7 @@
             this.txtOther2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOther2.Location = new System.Drawing.Point(1548, 560);
             this.txtOther2.Name = "txtOther2";
-            this.txtOther2.Size = new System.Drawing.Size(196, 37);
+            this.txtOther2.Size = new System.Drawing.Size(130, 37);
             this.txtOther2.TabIndex = 55;
             // 
             // txtOther3
@@ -602,7 +613,7 @@
             this.txtOther3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOther3.Location = new System.Drawing.Point(1548, 612);
             this.txtOther3.Name = "txtOther3";
-            this.txtOther3.Size = new System.Drawing.Size(196, 37);
+            this.txtOther3.Size = new System.Drawing.Size(130, 37);
             this.txtOther3.TabIndex = 56;
             // 
             // txtOther4
@@ -611,7 +622,7 @@
             this.txtOther4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOther4.Location = new System.Drawing.Point(1548, 661);
             this.txtOther4.Name = "txtOther4";
-            this.txtOther4.Size = new System.Drawing.Size(196, 37);
+            this.txtOther4.Size = new System.Drawing.Size(130, 37);
             this.txtOther4.TabIndex = 57;
             // 
             // txtOther5
@@ -620,7 +631,7 @@
             this.txtOther5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOther5.Location = new System.Drawing.Point(1548, 711);
             this.txtOther5.Name = "txtOther5";
-            this.txtOther5.Size = new System.Drawing.Size(196, 37);
+            this.txtOther5.Size = new System.Drawing.Size(130, 37);
             this.txtOther5.TabIndex = 58;
             // 
             // txtOther6
@@ -629,7 +640,7 @@
             this.txtOther6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOther6.Location = new System.Drawing.Point(1548, 760);
             this.txtOther6.Name = "txtOther6";
-            this.txtOther6.Size = new System.Drawing.Size(196, 37);
+            this.txtOther6.Size = new System.Drawing.Size(130, 37);
             this.txtOther6.TabIndex = 59;
             // 
             // txtOther7
@@ -638,7 +649,7 @@
             this.txtOther7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOther7.Location = new System.Drawing.Point(1548, 809);
             this.txtOther7.Name = "txtOther7";
-            this.txtOther7.Size = new System.Drawing.Size(196, 37);
+            this.txtOther7.Size = new System.Drawing.Size(130, 37);
             this.txtOther7.TabIndex = 60;
             // 
             // txtTotalW
@@ -689,6 +700,83 @@
             this.cb24hr.Text = "24 &Hr Clock";
             this.cb24hr.UseVisualStyleBackColor = true;
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(1681, 514);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(69, 37);
+            this.textBox1.TabIndex = 66;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(1681, 560);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(69, 37);
+            this.textBox2.TabIndex = 67;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(1681, 612);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(69, 37);
+            this.textBox3.TabIndex = 68;
+            // 
+            // textBox4
+            // 
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(1681, 661);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(69, 37);
+            this.textBox4.TabIndex = 69;
+            // 
+            // textBox5
+            // 
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(1681, 711);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(69, 37);
+            this.textBox5.TabIndex = 70;
+            // 
+            // textBox6
+            // 
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(1681, 760);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(69, 37);
+            this.textBox6.TabIndex = 71;
+            // 
+            // textBox7
+            // 
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(1681, 809);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(69, 37);
+            this.textBox7.TabIndex = 72;
+            // 
             // frmPrintTimeCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -696,6 +784,13 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1799, 1316);
+            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.cb24hr);
             this.Controls.Add(this.txtTotalOth);
             this.Controls.Add(this.txtTotalO);
@@ -835,6 +930,15 @@
         private System.Windows.Forms.TextBox txtTotalO;
         private System.Windows.Forms.TextBox txtTotalOth;
         private System.Windows.Forms.CheckBox cb24hr;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox7;
     }
 }
 
