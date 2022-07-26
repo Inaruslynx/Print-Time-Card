@@ -36,11 +36,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abouToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cbDays = new System.Windows.Forms.CheckBox();
-            this.cbNights = new System.Windows.Forms.CheckBox();
             this.cbEarly = new System.Windows.Forms.CheckBox();
-            this.btnApply = new System.Windows.Forms.Button();
-            this.clbDays = new System.Windows.Forms.CheckedListBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtFrom = new System.Windows.Forms.TextBox();
             this.txtTo = new System.Windows.Forms.TextBox();
@@ -103,6 +99,24 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
+            this.cbDay1 = new System.Windows.Forms.CheckBox();
+            this.cbDay2 = new System.Windows.Forms.CheckBox();
+            this.cbDay3 = new System.Windows.Forms.CheckBox();
+            this.cbDay4 = new System.Windows.Forms.CheckBox();
+            this.cbDay5 = new System.Windows.Forms.CheckBox();
+            this.cbDay6 = new System.Windows.Forms.CheckBox();
+            this.cbDay7 = new System.Windows.Forms.CheckBox();
+            this.txtWorkDays = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbNight1 = new System.Windows.Forms.CheckBox();
+            this.cbNight2 = new System.Windows.Forms.CheckBox();
+            this.cbNight3 = new System.Windows.Forms.CheckBox();
+            this.cbNight4 = new System.Windows.Forms.CheckBox();
+            this.cbNight5 = new System.Windows.Forms.CheckBox();
+            this.cbNight6 = new System.Windows.Forms.CheckBox();
+            this.cbNight7 = new System.Windows.Forms.CheckBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,20 +144,21 @@
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.printToolStripMenuItem.Text = "&Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.printMenu_Click);
             // 
             // resetToolStripMenuItem
             // 
             this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-            this.resetToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.resetToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.resetToolStripMenuItem.Text = "&Reset";
+            this.resetToolStripMenuItem.Click += new System.EventHandler(this.resetToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             // 
             // abouToolStripMenuItem
@@ -157,66 +172,19 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "&About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutMenu_Click);
-            // 
-            // cbDays
-            // 
-            this.cbDays.AutoSize = true;
-            this.cbDays.Location = new System.Drawing.Point(1381, 1285);
-            this.cbDays.Name = "cbDays";
-            this.cbDays.Size = new System.Drawing.Size(50, 17);
-            this.cbDays.TabIndex = 7;
-            this.cbDays.Text = "&Days";
-            this.cbDays.UseVisualStyleBackColor = true;
-            // 
-            // cbNights
-            // 
-            this.cbNights.AutoSize = true;
-            this.cbNights.Location = new System.Drawing.Point(1437, 1285);
-            this.cbNights.Name = "cbNights";
-            this.cbNights.Size = new System.Drawing.Size(56, 17);
-            this.cbNights.TabIndex = 8;
-            this.cbNights.Text = "&Nights";
-            this.cbNights.UseVisualStyleBackColor = true;
             // 
             // cbEarly
             // 
             this.cbEarly.AutoSize = true;
-            this.cbEarly.Location = new System.Drawing.Point(1587, 1285);
+            this.cbEarly.Location = new System.Drawing.Point(107, 418);
             this.cbEarly.Name = "cbEarly";
             this.cbEarly.Size = new System.Drawing.Size(119, 17);
             this.cbEarly.TabIndex = 9;
             this.cbEarly.Text = "30 &Minute Meetings";
             this.cbEarly.UseVisualStyleBackColor = true;
-            // 
-            // btnApply
-            // 
-            this.btnApply.Location = new System.Drawing.Point(1712, 1281);
-            this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(75, 23);
-            this.btnApply.TabIndex = 10;
-            this.btnApply.Text = "&Apply";
-            this.btnApply.UseVisualStyleBackColor = true;
-            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
-            // 
-            // clbDays
-            // 
-            this.clbDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clbDays.FormattingEnabled = true;
-            this.clbDays.Items.AddRange(new object[] {
-            "Sunday",
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday"});
-            this.clbDays.Location = new System.Drawing.Point(23, 511);
-            this.clbDays.Name = "clbDays";
-            this.clbDays.Size = new System.Drawing.Size(263, 340);
-            this.clbDays.TabIndex = 11;
             // 
             // txtName
             // 
@@ -282,6 +250,7 @@
             this.txtIn1.Name = "txtIn1";
             this.txtIn1.Size = new System.Drawing.Size(443, 37);
             this.txtIn1.TabIndex = 19;
+            this.txtIn1.Text = "SDO";
             // 
             // txtIn2
             // 
@@ -291,6 +260,7 @@
             this.txtIn2.Name = "txtIn2";
             this.txtIn2.Size = new System.Drawing.Size(443, 37);
             this.txtIn2.TabIndex = 20;
+            this.txtIn2.Text = "SDO";
             // 
             // txtIn3
             // 
@@ -300,6 +270,7 @@
             this.txtIn3.Name = "txtIn3";
             this.txtIn3.Size = new System.Drawing.Size(443, 37);
             this.txtIn3.TabIndex = 21;
+            this.txtIn3.Text = "SDO";
             // 
             // txtIn4
             // 
@@ -309,6 +280,7 @@
             this.txtIn4.Name = "txtIn4";
             this.txtIn4.Size = new System.Drawing.Size(443, 37);
             this.txtIn4.TabIndex = 22;
+            this.txtIn4.Text = "SDO";
             // 
             // txtIn5
             // 
@@ -318,6 +290,7 @@
             this.txtIn5.Name = "txtIn5";
             this.txtIn5.Size = new System.Drawing.Size(443, 37);
             this.txtIn5.TabIndex = 23;
+            this.txtIn5.Text = "SDO";
             // 
             // txtIn6
             // 
@@ -327,6 +300,7 @@
             this.txtIn6.Name = "txtIn6";
             this.txtIn6.Size = new System.Drawing.Size(443, 37);
             this.txtIn6.TabIndex = 24;
+            this.txtIn6.Text = "SDO";
             // 
             // txtIn7
             // 
@@ -336,6 +310,7 @@
             this.txtIn7.Name = "txtIn7";
             this.txtIn7.Size = new System.Drawing.Size(443, 37);
             this.txtIn7.TabIndex = 25;
+            this.txtIn7.Text = "SDO";
             // 
             // txtOut1
             // 
@@ -693,7 +668,7 @@
             // cb24hr
             // 
             this.cb24hr.AutoSize = true;
-            this.cb24hr.Location = new System.Drawing.Point(1499, 1285);
+            this.cb24hr.Location = new System.Drawing.Point(10, 418);
             this.cb24hr.Name = "cb24hr";
             this.cb24hr.Size = new System.Drawing.Size(82, 17);
             this.cb24hr.TabIndex = 65;
@@ -777,13 +752,199 @@
             this.textBox7.Size = new System.Drawing.Size(69, 37);
             this.textBox7.TabIndex = 72;
             // 
+            // cbDay1
+            // 
+            this.cbDay1.AutoSize = true;
+            this.cbDay1.Location = new System.Drawing.Point(10, 531);
+            this.cbDay1.Name = "cbDay1";
+            this.cbDay1.Size = new System.Drawing.Size(15, 14);
+            this.cbDay1.TabIndex = 73;
+            this.cbDay1.UseVisualStyleBackColor = true;
+            // 
+            // cbDay2
+            // 
+            this.cbDay2.AutoSize = true;
+            this.cbDay2.Location = new System.Drawing.Point(10, 578);
+            this.cbDay2.Name = "cbDay2";
+            this.cbDay2.Size = new System.Drawing.Size(15, 14);
+            this.cbDay2.TabIndex = 75;
+            this.cbDay2.UseVisualStyleBackColor = true;
+            // 
+            // cbDay3
+            // 
+            this.cbDay3.AutoSize = true;
+            this.cbDay3.Location = new System.Drawing.Point(10, 626);
+            this.cbDay3.Name = "cbDay3";
+            this.cbDay3.Size = new System.Drawing.Size(15, 14);
+            this.cbDay3.TabIndex = 76;
+            this.cbDay3.UseVisualStyleBackColor = true;
+            // 
+            // cbDay4
+            // 
+            this.cbDay4.AutoSize = true;
+            this.cbDay4.Location = new System.Drawing.Point(10, 672);
+            this.cbDay4.Name = "cbDay4";
+            this.cbDay4.Size = new System.Drawing.Size(15, 14);
+            this.cbDay4.TabIndex = 77;
+            this.cbDay4.UseVisualStyleBackColor = true;
+            // 
+            // cbDay5
+            // 
+            this.cbDay5.AutoSize = true;
+            this.cbDay5.Location = new System.Drawing.Point(10, 720);
+            this.cbDay5.Name = "cbDay5";
+            this.cbDay5.Size = new System.Drawing.Size(15, 14);
+            this.cbDay5.TabIndex = 78;
+            this.cbDay5.UseVisualStyleBackColor = true;
+            // 
+            // cbDay6
+            // 
+            this.cbDay6.AutoSize = true;
+            this.cbDay6.Location = new System.Drawing.Point(10, 762);
+            this.cbDay6.Name = "cbDay6";
+            this.cbDay6.Size = new System.Drawing.Size(15, 14);
+            this.cbDay6.TabIndex = 79;
+            this.cbDay6.UseVisualStyleBackColor = true;
+            // 
+            // cbDay7
+            // 
+            this.cbDay7.AutoSize = true;
+            this.cbDay7.Location = new System.Drawing.Point(10, 809);
+            this.cbDay7.Name = "cbDay7";
+            this.cbDay7.Size = new System.Drawing.Size(15, 14);
+            this.cbDay7.TabIndex = 80;
+            this.cbDay7.UseVisualStyleBackColor = true;
+            // 
+            // txtWorkDays
+            // 
+            this.txtWorkDays.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtWorkDays.Enabled = false;
+            this.txtWorkDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWorkDays.Location = new System.Drawing.Point(60, 516);
+            this.txtWorkDays.Multiline = true;
+            this.txtWorkDays.Name = "txtWorkDays";
+            this.txtWorkDays.ReadOnly = true;
+            this.txtWorkDays.Size = new System.Drawing.Size(221, 329);
+            this.txtWorkDays.TabIndex = 81;
+            this.txtWorkDays.TabStop = false;
+            this.txtWorkDays.Text = "Sunday\r\nMonday\r\nTuesday\r\nWednesday\r\nThursday\r\nFriday\r\nSaturday";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 486);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(26, 13);
+            this.label1.TabIndex = 82;
+            this.label1.Text = "Day";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(39, 486);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.TabIndex = 83;
+            this.label2.Text = "Night";
+            // 
+            // cbNight1
+            // 
+            this.cbNight1.AutoSize = true;
+            this.cbNight1.Location = new System.Drawing.Point(38, 531);
+            this.cbNight1.Name = "cbNight1";
+            this.cbNight1.Size = new System.Drawing.Size(15, 14);
+            this.cbNight1.TabIndex = 84;
+            this.cbNight1.UseVisualStyleBackColor = true;
+            // 
+            // cbNight2
+            // 
+            this.cbNight2.AutoSize = true;
+            this.cbNight2.Location = new System.Drawing.Point(39, 578);
+            this.cbNight2.Name = "cbNight2";
+            this.cbNight2.Size = new System.Drawing.Size(15, 14);
+            this.cbNight2.TabIndex = 85;
+            this.cbNight2.UseVisualStyleBackColor = true;
+            // 
+            // cbNight3
+            // 
+            this.cbNight3.AutoSize = true;
+            this.cbNight3.Location = new System.Drawing.Point(37, 626);
+            this.cbNight3.Name = "cbNight3";
+            this.cbNight3.Size = new System.Drawing.Size(15, 14);
+            this.cbNight3.TabIndex = 86;
+            this.cbNight3.UseVisualStyleBackColor = true;
+            // 
+            // cbNight4
+            // 
+            this.cbNight4.AutoSize = true;
+            this.cbNight4.Location = new System.Drawing.Point(37, 672);
+            this.cbNight4.Name = "cbNight4";
+            this.cbNight4.Size = new System.Drawing.Size(15, 14);
+            this.cbNight4.TabIndex = 87;
+            this.cbNight4.UseVisualStyleBackColor = true;
+            // 
+            // cbNight5
+            // 
+            this.cbNight5.AutoSize = true;
+            this.cbNight5.Location = new System.Drawing.Point(38, 720);
+            this.cbNight5.Name = "cbNight5";
+            this.cbNight5.Size = new System.Drawing.Size(15, 14);
+            this.cbNight5.TabIndex = 88;
+            this.cbNight5.UseVisualStyleBackColor = true;
+            // 
+            // cbNight6
+            // 
+            this.cbNight6.AutoSize = true;
+            this.cbNight6.Location = new System.Drawing.Point(38, 762);
+            this.cbNight6.Name = "cbNight6";
+            this.cbNight6.Size = new System.Drawing.Size(15, 14);
+            this.cbNight6.TabIndex = 89;
+            this.cbNight6.UseVisualStyleBackColor = true;
+            // 
+            // cbNight7
+            // 
+            this.cbNight7.AutoSize = true;
+            this.cbNight7.Location = new System.Drawing.Point(38, 809);
+            this.cbNight7.Name = "cbNight7";
+            this.cbNight7.Size = new System.Drawing.Size(15, 14);
+            this.cbNight7.TabIndex = 90;
+            this.cbNight7.UseVisualStyleBackColor = true;
+            // 
+            // textBox9
+            // 
+            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox9.Enabled = false;
+            this.textBox9.Location = new System.Drawing.Point(0, 478);
+            this.textBox9.Multiline = true;
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(285, 388);
+            this.textBox9.TabIndex = 91;
+            this.textBox9.TabStop = false;
+            // 
             // frmPrintTimeCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1799, 1316);
+            this.ClientSize = new System.Drawing.Size(1799, 927);
+            this.Controls.Add(this.cbNight7);
+            this.Controls.Add(this.cbNight6);
+            this.Controls.Add(this.cbNight5);
+            this.Controls.Add(this.cbNight4);
+            this.Controls.Add(this.cbNight3);
+            this.Controls.Add(this.cbNight2);
+            this.Controls.Add(this.cbNight1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtWorkDays);
+            this.Controls.Add(this.cbDay7);
+            this.Controls.Add(this.cbDay6);
+            this.Controls.Add(this.cbDay5);
+            this.Controls.Add(this.cbDay4);
+            this.Controls.Add(this.cbDay3);
+            this.Controls.Add(this.cbDay2);
+            this.Controls.Add(this.cbDay1);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
@@ -844,12 +1005,9 @@
             this.Controls.Add(this.txtTo);
             this.Controls.Add(this.txtFrom);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.clbDays);
-            this.Controls.Add(this.btnApply);
             this.Controls.Add(this.cbEarly);
-            this.Controls.Add(this.cbNights);
-            this.Controls.Add(this.cbDays);
             this.Controls.Add(this.menuStrip);
+            this.Controls.Add(this.textBox9);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip;
             this.MaximizeBox = false;
@@ -872,11 +1030,7 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abouToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.CheckBox cbDays;
-        private System.Windows.Forms.CheckBox cbNights;
         private System.Windows.Forms.CheckBox cbEarly;
-        private System.Windows.Forms.Button btnApply;
-        private System.Windows.Forms.CheckedListBox clbDays;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtFrom;
         private System.Windows.Forms.TextBox txtTo;
@@ -939,6 +1093,24 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.CheckBox cbDay1;
+        private System.Windows.Forms.CheckBox cbDay2;
+        private System.Windows.Forms.CheckBox cbDay3;
+        private System.Windows.Forms.CheckBox cbDay4;
+        private System.Windows.Forms.CheckBox cbDay5;
+        private System.Windows.Forms.CheckBox cbDay6;
+        private System.Windows.Forms.CheckBox cbDay7;
+        private System.Windows.Forms.TextBox txtWorkDays;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox cbNight1;
+        private System.Windows.Forms.CheckBox cbNight2;
+        private System.Windows.Forms.CheckBox cbNight3;
+        private System.Windows.Forms.CheckBox cbNight4;
+        private System.Windows.Forms.CheckBox cbNight5;
+        private System.Windows.Forms.CheckBox cbNight6;
+        private System.Windows.Forms.CheckBox cbNight7;
+        private System.Windows.Forms.TextBox textBox9;
     }
 }
 
