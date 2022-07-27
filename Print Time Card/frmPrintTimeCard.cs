@@ -310,19 +310,29 @@ namespace Print_Time_Card
 
         private void textBox_totalOvertime(object sender, EventArgs e)
         {
-            if (txtTotalW.Text == "" || Convert.ToDouble(txtTotalW.Text) < 40)
+            try
             {
-                return;
-            }
-            else
-            {
-                double totalOvertime = 0;
                 double totalWorkedHours = Convert.ToDouble(txtTotalW.Text);
                 if (totalWorkedHours > 40)
                 {
-                    totalOvertime = totalWorkedHours - 40;
+                    double totalOvertime = totalWorkedHours - 40;
+                    txtTotalO.Text = totalOvertime.ToString();
                 }
-                txtTotalO.Text = totalOvertime.ToString();
+                else
+                {
+                    txtTotalO.Text = "";
+                }
+            }
+            finally
+            {
+                if (txtTotalO.Text == "")
+                {
+                    for (int i = 1; i < 8; i++)
+                    {
+                        Control ctl = Controls["txtOvertime" + i];
+                        ctl.Text = "";
+                    }
+                }
             }
         }
 
@@ -446,6 +456,7 @@ namespace Print_Time_Card
                 {
                     EventHandler eventHandler = new EventHandler(textBox_WorkHours);
                     ctl.TextChanged += eventHandler;
+                    ctl.TabStop = false;
                 }
 
                 if ((ctl).Name.ToUpper().Contains("TXTWORKED"))
@@ -454,12 +465,14 @@ namespace Print_Time_Card
                     ctl.TextChanged += workedEventHandler;
                     EventHandler bonusEventHandler = new EventHandler(textBox_BonusHours);
                     ctl.TextChanged += bonusEventHandler;
+                    ctl.TabStop = false;
                 }
 
                 if ((ctl).Name.ToUpper().Contains("TXTBONUS"))
                 {
                     EventHandler eventHandler = new EventHandler(textBox_TotalBonusHours);
                     ctl.TextChanged += eventHandler;
+                    ctl.TabStop = false;
                 }
 
                 if ((ctl).Name.ToUpper().Contains("TXTOTHER"))

@@ -128,7 +128,7 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(1799, 24);
-            this.menuStrip.TabIndex = 6;
+            this.menuStrip.TabIndex = 22;
             this.menuStrip.Text = "menuStrip";
             // 
             // mainToolStripMenuItem
@@ -144,21 +144,21 @@
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.printToolStripMenuItem.Text = "&Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.printMenu_Click);
             // 
             // resetToolStripMenuItem
             // 
             this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-            this.resetToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resetToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.resetToolStripMenuItem.Text = "&Reset";
             this.resetToolStripMenuItem.Click += new System.EventHandler(this.resetToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             // 
             // abouToolStripMenuItem
@@ -182,7 +182,7 @@
             this.cbEarly.Location = new System.Drawing.Point(107, 418);
             this.cbEarly.Name = "cbEarly";
             this.cbEarly.Size = new System.Drawing.Size(119, 17);
-            this.cbEarly.TabIndex = 9;
+            this.cbEarly.TabIndex = 4;
             this.cbEarly.Text = "30 &Minute Meetings";
             this.cbEarly.UseVisualStyleBackColor = true;
             // 
@@ -193,7 +193,7 @@
             this.txtName.Location = new System.Drawing.Point(404, 248);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(1353, 37);
-            this.txtName.TabIndex = 12;
+            this.txtName.TabIndex = 0;
             // 
             // txtFrom
             // 
@@ -203,6 +203,7 @@
             this.txtFrom.Name = "txtFrom";
             this.txtFrom.Size = new System.Drawing.Size(576, 37);
             this.txtFrom.TabIndex = 13;
+            this.txtFrom.TabStop = false;
             // 
             // txtTo
             // 
@@ -212,6 +213,7 @@
             this.txtTo.Name = "txtTo";
             this.txtTo.Size = new System.Drawing.Size(648, 37);
             this.txtTo.TabIndex = 14;
+            this.txtTo.TabStop = false;
             // 
             // txtDept
             // 
@@ -221,6 +223,7 @@
             this.txtDept.Name = "txtDept";
             this.txtDept.Size = new System.Drawing.Size(422, 37);
             this.txtDept.TabIndex = 15;
+            this.txtDept.TabStop = false;
             this.txtDept.Text = "Hot Mill";
             // 
             // txtCrew
@@ -230,7 +233,7 @@
             this.txtCrew.Location = new System.Drawing.Point(761, 323);
             this.txtCrew.Name = "txtCrew";
             this.txtCrew.Size = new System.Drawing.Size(292, 37);
-            this.txtCrew.TabIndex = 16;
+            this.txtCrew.TabIndex = 1;
             // 
             // txtNumber
             // 
@@ -239,7 +242,7 @@
             this.txtNumber.Location = new System.Drawing.Point(1380, 323);
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Size = new System.Drawing.Size(377, 37);
-            this.txtNumber.TabIndex = 17;
+            this.txtNumber.TabIndex = 2;
             this.txtNumber.Text = "220";
             // 
             // txtIn1
@@ -509,6 +512,7 @@
             this.txtOvertime1.Name = "txtOvertime1";
             this.txtOvertime1.Size = new System.Drawing.Size(196, 37);
             this.txtOvertime1.TabIndex = 47;
+            this.txtOvertime1.TabStop = false;
             // 
             // txtOvertime2
             // 
@@ -518,6 +522,7 @@
             this.txtOvertime2.Name = "txtOvertime2";
             this.txtOvertime2.Size = new System.Drawing.Size(196, 37);
             this.txtOvertime2.TabIndex = 48;
+            this.txtOvertime2.TabStop = false;
             // 
             // txtOvertime3
             // 
@@ -527,6 +532,7 @@
             this.txtOvertime3.Name = "txtOvertime3";
             this.txtOvertime3.Size = new System.Drawing.Size(196, 37);
             this.txtOvertime3.TabIndex = 49;
+            this.txtOvertime3.TabStop = false;
             // 
             // txtOvertime4
             // 
@@ -536,6 +542,7 @@
             this.txtOvertime4.Name = "txtOvertime4";
             this.txtOvertime4.Size = new System.Drawing.Size(196, 37);
             this.txtOvertime4.TabIndex = 50;
+            this.txtOvertime4.TabStop = false;
             // 
             // txtOvertime5
             // 
@@ -545,6 +552,7 @@
             this.txtOvertime5.Name = "txtOvertime5";
             this.txtOvertime5.Size = new System.Drawing.Size(196, 37);
             this.txtOvertime5.TabIndex = 51;
+            this.txtOvertime5.TabStop = false;
             // 
             // txtOvertime6
             // 
@@ -554,6 +562,7 @@
             this.txtOvertime6.Name = "txtOvertime6";
             this.txtOvertime6.Size = new System.Drawing.Size(196, 37);
             this.txtOvertime6.TabIndex = 52;
+            this.txtOvertime6.TabStop = false;
             // 
             // txtOvertime7
             // 
@@ -563,6 +572,7 @@
             this.txtOvertime7.Name = "txtOvertime7";
             this.txtOvertime7.Size = new System.Drawing.Size(196, 37);
             this.txtOvertime7.TabIndex = 53;
+            this.txtOvertime7.TabStop = false;
             // 
             // txtOther1
             // 
@@ -580,7 +590,7 @@
             this.txtOther2.Location = new System.Drawing.Point(1548, 560);
             this.txtOther2.Name = "txtOther2";
             this.txtOther2.Size = new System.Drawing.Size(130, 37);
-            this.txtOther2.TabIndex = 55;
+            this.txtOther2.TabIndex = 56;
             // 
             // txtOther3
             // 
@@ -589,7 +599,7 @@
             this.txtOther3.Location = new System.Drawing.Point(1548, 612);
             this.txtOther3.Name = "txtOther3";
             this.txtOther3.Size = new System.Drawing.Size(130, 37);
-            this.txtOther3.TabIndex = 56;
+            this.txtOther3.TabIndex = 58;
             // 
             // txtOther4
             // 
@@ -598,7 +608,7 @@
             this.txtOther4.Location = new System.Drawing.Point(1548, 661);
             this.txtOther4.Name = "txtOther4";
             this.txtOther4.Size = new System.Drawing.Size(130, 37);
-            this.txtOther4.TabIndex = 57;
+            this.txtOther4.TabIndex = 60;
             // 
             // txtOther5
             // 
@@ -607,7 +617,7 @@
             this.txtOther5.Location = new System.Drawing.Point(1548, 711);
             this.txtOther5.Name = "txtOther5";
             this.txtOther5.Size = new System.Drawing.Size(130, 37);
-            this.txtOther5.TabIndex = 58;
+            this.txtOther5.TabIndex = 62;
             // 
             // txtOther6
             // 
@@ -616,7 +626,7 @@
             this.txtOther6.Location = new System.Drawing.Point(1548, 760);
             this.txtOther6.Name = "txtOther6";
             this.txtOther6.Size = new System.Drawing.Size(130, 37);
-            this.txtOther6.TabIndex = 59;
+            this.txtOther6.TabIndex = 64;
             // 
             // txtOther7
             // 
@@ -625,7 +635,7 @@
             this.txtOther7.Location = new System.Drawing.Point(1548, 809);
             this.txtOther7.Name = "txtOther7";
             this.txtOther7.Size = new System.Drawing.Size(130, 37);
-            this.txtOther7.TabIndex = 60;
+            this.txtOther7.TabIndex = 66;
             // 
             // txtTotalW
             // 
@@ -635,6 +645,7 @@
             this.txtTotalW.Name = "txtTotalW";
             this.txtTotalW.Size = new System.Drawing.Size(196, 37);
             this.txtTotalW.TabIndex = 61;
+            this.txtTotalW.TabStop = false;
             this.txtTotalW.TextChanged += new System.EventHandler(this.textBox_totalOvertime);
             // 
             // txtTotalB
@@ -645,6 +656,7 @@
             this.txtTotalB.Name = "txtTotalB";
             this.txtTotalB.Size = new System.Drawing.Size(196, 37);
             this.txtTotalB.TabIndex = 62;
+            this.txtTotalB.TabStop = false;
             // 
             // txtTotalO
             // 
@@ -654,6 +666,7 @@
             this.txtTotalO.Name = "txtTotalO";
             this.txtTotalO.Size = new System.Drawing.Size(196, 37);
             this.txtTotalO.TabIndex = 63;
+            this.txtTotalO.TabStop = false;
             this.txtTotalO.TextChanged += new System.EventHandler(this.textBox_Overtime);
             // 
             // txtTotalOth
@@ -664,6 +677,7 @@
             this.txtTotalOth.Name = "txtTotalOth";
             this.txtTotalOth.Size = new System.Drawing.Size(196, 37);
             this.txtTotalOth.TabIndex = 64;
+            this.txtTotalOth.TabStop = false;
             // 
             // cb24hr
             // 
@@ -671,7 +685,7 @@
             this.cb24hr.Location = new System.Drawing.Point(10, 418);
             this.cb24hr.Name = "cb24hr";
             this.cb24hr.Size = new System.Drawing.Size(82, 17);
-            this.cb24hr.TabIndex = 65;
+            this.cb24hr.TabIndex = 3;
             this.cb24hr.Text = "24 &Hr Clock";
             this.cb24hr.UseVisualStyleBackColor = true;
             // 
@@ -696,7 +710,7 @@
             this.textBox1.Location = new System.Drawing.Point(1681, 514);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(69, 37);
-            this.textBox1.TabIndex = 66;
+            this.textBox1.TabIndex = 55;
             // 
             // textBox2
             // 
@@ -705,7 +719,7 @@
             this.textBox2.Location = new System.Drawing.Point(1681, 560);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(69, 37);
-            this.textBox2.TabIndex = 67;
+            this.textBox2.TabIndex = 57;
             // 
             // textBox3
             // 
@@ -714,7 +728,7 @@
             this.textBox3.Location = new System.Drawing.Point(1681, 612);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(69, 37);
-            this.textBox3.TabIndex = 68;
+            this.textBox3.TabIndex = 59;
             // 
             // textBox4
             // 
@@ -723,7 +737,7 @@
             this.textBox4.Location = new System.Drawing.Point(1681, 661);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(69, 37);
-            this.textBox4.TabIndex = 69;
+            this.textBox4.TabIndex = 61;
             // 
             // textBox5
             // 
@@ -732,7 +746,7 @@
             this.textBox5.Location = new System.Drawing.Point(1681, 711);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(69, 37);
-            this.textBox5.TabIndex = 70;
+            this.textBox5.TabIndex = 63;
             // 
             // textBox6
             // 
@@ -741,7 +755,7 @@
             this.textBox6.Location = new System.Drawing.Point(1681, 760);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(69, 37);
-            this.textBox6.TabIndex = 71;
+            this.textBox6.TabIndex = 65;
             // 
             // textBox7
             // 
@@ -750,7 +764,7 @@
             this.textBox7.Location = new System.Drawing.Point(1681, 809);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(69, 37);
-            this.textBox7.TabIndex = 72;
+            this.textBox7.TabIndex = 67;
             // 
             // cbDay1
             // 
@@ -758,7 +772,7 @@
             this.cbDay1.Location = new System.Drawing.Point(10, 531);
             this.cbDay1.Name = "cbDay1";
             this.cbDay1.Size = new System.Drawing.Size(15, 14);
-            this.cbDay1.TabIndex = 73;
+            this.cbDay1.TabIndex = 8;
             this.cbDay1.UseVisualStyleBackColor = true;
             // 
             // cbDay2
@@ -767,7 +781,7 @@
             this.cbDay2.Location = new System.Drawing.Point(10, 578);
             this.cbDay2.Name = "cbDay2";
             this.cbDay2.Size = new System.Drawing.Size(15, 14);
-            this.cbDay2.TabIndex = 75;
+            this.cbDay2.TabIndex = 10;
             this.cbDay2.UseVisualStyleBackColor = true;
             // 
             // cbDay3
@@ -776,7 +790,7 @@
             this.cbDay3.Location = new System.Drawing.Point(10, 626);
             this.cbDay3.Name = "cbDay3";
             this.cbDay3.Size = new System.Drawing.Size(15, 14);
-            this.cbDay3.TabIndex = 76;
+            this.cbDay3.TabIndex = 12;
             this.cbDay3.UseVisualStyleBackColor = true;
             // 
             // cbDay4
@@ -785,7 +799,7 @@
             this.cbDay4.Location = new System.Drawing.Point(10, 672);
             this.cbDay4.Name = "cbDay4";
             this.cbDay4.Size = new System.Drawing.Size(15, 14);
-            this.cbDay4.TabIndex = 77;
+            this.cbDay4.TabIndex = 14;
             this.cbDay4.UseVisualStyleBackColor = true;
             // 
             // cbDay5
@@ -794,7 +808,7 @@
             this.cbDay5.Location = new System.Drawing.Point(10, 720);
             this.cbDay5.Name = "cbDay5";
             this.cbDay5.Size = new System.Drawing.Size(15, 14);
-            this.cbDay5.TabIndex = 78;
+            this.cbDay5.TabIndex = 16;
             this.cbDay5.UseVisualStyleBackColor = true;
             // 
             // cbDay6
@@ -803,7 +817,7 @@
             this.cbDay6.Location = new System.Drawing.Point(10, 762);
             this.cbDay6.Name = "cbDay6";
             this.cbDay6.Size = new System.Drawing.Size(15, 14);
-            this.cbDay6.TabIndex = 79;
+            this.cbDay6.TabIndex = 18;
             this.cbDay6.UseVisualStyleBackColor = true;
             // 
             // cbDay7
@@ -812,7 +826,7 @@
             this.cbDay7.Location = new System.Drawing.Point(10, 809);
             this.cbDay7.Name = "cbDay7";
             this.cbDay7.Size = new System.Drawing.Size(15, 14);
-            this.cbDay7.TabIndex = 80;
+            this.cbDay7.TabIndex = 20;
             this.cbDay7.UseVisualStyleBackColor = true;
             // 
             // txtWorkDays
@@ -835,7 +849,7 @@
             this.label1.Location = new System.Drawing.Point(7, 486);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(26, 13);
-            this.label1.TabIndex = 82;
+            this.label1.TabIndex = 6;
             this.label1.Text = "Day";
             // 
             // label2
@@ -844,7 +858,7 @@
             this.label2.Location = new System.Drawing.Point(39, 486);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
-            this.label2.TabIndex = 83;
+            this.label2.TabIndex = 7;
             this.label2.Text = "Night";
             // 
             // cbNight1
@@ -853,7 +867,7 @@
             this.cbNight1.Location = new System.Drawing.Point(38, 531);
             this.cbNight1.Name = "cbNight1";
             this.cbNight1.Size = new System.Drawing.Size(15, 14);
-            this.cbNight1.TabIndex = 84;
+            this.cbNight1.TabIndex = 9;
             this.cbNight1.UseVisualStyleBackColor = true;
             // 
             // cbNight2
@@ -862,7 +876,7 @@
             this.cbNight2.Location = new System.Drawing.Point(39, 578);
             this.cbNight2.Name = "cbNight2";
             this.cbNight2.Size = new System.Drawing.Size(15, 14);
-            this.cbNight2.TabIndex = 85;
+            this.cbNight2.TabIndex = 11;
             this.cbNight2.UseVisualStyleBackColor = true;
             // 
             // cbNight3
@@ -871,7 +885,7 @@
             this.cbNight3.Location = new System.Drawing.Point(37, 626);
             this.cbNight3.Name = "cbNight3";
             this.cbNight3.Size = new System.Drawing.Size(15, 14);
-            this.cbNight3.TabIndex = 86;
+            this.cbNight3.TabIndex = 13;
             this.cbNight3.UseVisualStyleBackColor = true;
             // 
             // cbNight4
@@ -880,7 +894,7 @@
             this.cbNight4.Location = new System.Drawing.Point(37, 672);
             this.cbNight4.Name = "cbNight4";
             this.cbNight4.Size = new System.Drawing.Size(15, 14);
-            this.cbNight4.TabIndex = 87;
+            this.cbNight4.TabIndex = 15;
             this.cbNight4.UseVisualStyleBackColor = true;
             // 
             // cbNight5
@@ -889,7 +903,7 @@
             this.cbNight5.Location = new System.Drawing.Point(38, 720);
             this.cbNight5.Name = "cbNight5";
             this.cbNight5.Size = new System.Drawing.Size(15, 14);
-            this.cbNight5.TabIndex = 88;
+            this.cbNight5.TabIndex = 17;
             this.cbNight5.UseVisualStyleBackColor = true;
             // 
             // cbNight6
@@ -898,7 +912,7 @@
             this.cbNight6.Location = new System.Drawing.Point(38, 762);
             this.cbNight6.Name = "cbNight6";
             this.cbNight6.Size = new System.Drawing.Size(15, 14);
-            this.cbNight6.TabIndex = 89;
+            this.cbNight6.TabIndex = 19;
             this.cbNight6.UseVisualStyleBackColor = true;
             // 
             // cbNight7
@@ -907,7 +921,7 @@
             this.cbNight7.Location = new System.Drawing.Point(38, 809);
             this.cbNight7.Name = "cbNight7";
             this.cbNight7.Size = new System.Drawing.Size(15, 14);
-            this.cbNight7.TabIndex = 90;
+            this.cbNight7.TabIndex = 21;
             this.cbNight7.UseVisualStyleBackColor = true;
             // 
             // textBox9
@@ -918,7 +932,7 @@
             this.textBox9.Multiline = true;
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(285, 388);
-            this.textBox9.TabIndex = 91;
+            this.textBox9.TabIndex = 5;
             this.textBox9.TabStop = false;
             // 
             // frmPrintTimeCard
