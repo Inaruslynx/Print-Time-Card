@@ -408,7 +408,7 @@ namespace Print_Time_Card
                 if (Controls[i].GetType() == this.Controls["txtIn1"].GetType() && !Controls[i].Name.ToUpper().Contains("WORKDAYS"))
                 {
                     TextBox theText = (TextBox)Controls[i];
-                    graphics.DrawString(theText.Text, printFont, Brushes.Black, theText.Bounds.Left * scalex, theText.Bounds.Top * scaley, new StringFormat());
+                    graphics.DrawString(theText.Text, printFont, Brushes.Black, (theText.Bounds.Left * scalex) - 15, (theText.Bounds.Top * scaley) - 15, new StringFormat());
                 }
             }
         }
