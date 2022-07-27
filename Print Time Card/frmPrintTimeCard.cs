@@ -541,6 +541,11 @@ namespace Print_Time_Card
             MessageBox.Show("Please verify the following settings for printer:\nPaper Size: 4.25 x 6.0 in\nOrientation: Landscape\nResolution: 300 dpi\n\nPlease make sure time cards are loaded appropriately");
         }
 
+        private void exitMenu_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void frmPrintTimeCard_Load(object sender, EventArgs e)
         {
             howManyDaysSinceSunday = adjustDay(DayOfWeek.Sunday, currentDay, true);

@@ -159,8 +159,9 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitMenu_Click);
             // 
             // abouToolStripMenuItem
             // 
@@ -1032,11 +1033,12 @@
             this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.textBox9);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
             this.MaximizeBox = false;
             this.Name = "frmPrintTimeCard";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "Print Time Card";
+            this.Text = "Time Card";
             this.Load += new System.EventHandler(this.frmPrintTimeCard_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
