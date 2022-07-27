@@ -310,7 +310,8 @@ namespace Print_Time_Card
 
         private void textBox_totalOvertime(object sender, EventArgs e)
         {
-            try
+
+            if (!(txtTotalW.Text == ""))
             {
                 double totalWorkedHours = Convert.ToDouble(txtTotalW.Text);
                 if (totalWorkedHours > 40)
@@ -322,18 +323,17 @@ namespace Print_Time_Card
                 {
                     txtTotalO.Text = "";
                 }
+
             }
-            finally
+            if (txtTotalO.Text == "")
             {
-                if (txtTotalO.Text == "")
+                for (int i = 1; i < 8; i++)
                 {
-                    for (int i = 1; i < 8; i++)
-                    {
-                        Control ctl = Controls["txtOvertime" + i];
-                        ctl.Text = "";
-                    }
+                    Control ctl = Controls["txtOvertime" + i];
+                    ctl.Text = "";
                 }
             }
+
         }
 
         private void textBox_Overtime(object sender, EventArgs e)
@@ -359,50 +359,9 @@ namespace Print_Time_Card
             }
         }
 
-        private void printMenu_Click(object sender, EventArgs e)
-        {
-            printPreviewDialog1.Document = this.printDocument1;
-            printPreviewDialog1.ShowDialog();
-        }
-
-        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-            DrawAll(e.Graphics);
-        }
-
         private void DrawAll(Graphics graphics)
         {
-            // I need to print on a width of 6.25" and height of 4"
-            float Hard_Margin_X = printDocument1.DefaultPageSettings.HardMarginX;
-            float Hard_Margin_Y = printDocument1.DefaultPageSettings.HardMarginY;
-            float Page_Height = printDocument1.DefaultPageSettings.Bounds.Height;
-            float Page_Width = printDocument1.DefaultPageSettings.Bounds.Width;
-            float Top_Margin = printDocument1.DefaultPageSettings.Margins.Top;
-            float Left_Margin = printDocument1.DefaultPageSettings.Margins.Left;
-            float Right_Margin = printDocument1.DefaultPageSettings.Margins.Right;
-            float Bottom_Margin = printDocument1.DefaultPageSettings.Margins.Bottom;
-
-            if (Top_Margin < Hard_Margin_Y)
-            {
-                Top_Margin = Hard_Margin_Y;
-            }
-            if (Left_Margin < Hard_Margin_X)
-            {
-                Left_Margin = Hard_Margin_X;
-            }
-            if (Right_Margin < Hard_Margin_X)
-            {
-                Right_Margin = Hard_Margin_X;
-            }
-            if (Bottom_Margin < Hard_Margin_Y)
-            {
-                Bottom_Margin = Hard_Margin_Y;
-            }
-
-            Page_Height -= (Top_Margin + Bottom_Margin);
-            Page_Width -= (Right_Margin + Left_Margin);
-            Page_Height *= (DeviceDpi / 100f);
-            Page_Width *= (DeviceDpi / 100f);
+            // I need to print on a width of 6" and height of 4.25"
 
             RectangleF srcRect = new Rectangle(0, 0, this.BackgroundImage.Width, this.BackgroundImage.Height);
             int nWidth = 600;
@@ -419,75 +378,6 @@ namespace Print_Time_Card
                 {
                     TextBox theText = (TextBox)Controls[i];
                     graphics.DrawString(theText.Text, printFont, Brushes.Black, (theText.Bounds.Left * scalex) - 15, (theText.Bounds.Top * scaley) - 15, new StringFormat());
-                }
-            }
-        }
-
-        private void aboutMenu_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Instructions:\n1. Fill out name and employee number.\n2. Check day or night on days worked.\n3. If you came in early every day for 30 minute meeting select 30 minute Meetings\n\nThis app was created by Joshua Edwards.");
-        }
-
-        private void frmPrintTimeCard_Load(object sender, EventArgs e)
-        {
-            howManyDaysSinceSunday = adjustDay(DayOfWeek.Sunday, currentDay, true);
-            daysUntilSaturday = adjustDay(DayOfWeek.Saturday, currentDay, false);
-            Sunday = currentDay.AddDays(-howManyDaysSinceSunday);
-            Sunday = adjustTime(Sunday, 0, 0);
-            txtFrom.Text = currentDay.AddDays(-howManyDaysSinceSunday).ToShortDateString();
-            txtTo.Text = currentDay.AddDays(daysUntilSaturday).ToShortDateString();
-            var textBoxes = new System.Collections.Generic.List<Control>();
-            var checkBoxes = new System.Collections.Generic.List<Control>();
-            foreach (Control control in Controls)
-            {
-                if (control != null && control is TextBox)
-                {
-                    textBoxes.Add(control as TextBox);
-                }
-                else if (control != null && control is CheckBox)
-                {
-                    checkBoxes.Add(control as CheckBox);
-                }
-            }
-            foreach (TextBox ctl in textBoxes)
-            {
-
-                if ((ctl).Name.ToUpper().Contains("TXTIN") || (ctl).Name.ToUpper().Contains("TXTOUT"))
-                {
-                    EventHandler eventHandler = new EventHandler(textBox_WorkHours);
-                    ctl.TextChanged += eventHandler;
-                    ctl.TabStop = false;
-                }
-
-                if ((ctl).Name.ToUpper().Contains("TXTWORKED"))
-                {
-                    EventHandler workedEventHandler = new EventHandler(textBox_TotalWorkedHours);
-                    ctl.TextChanged += workedEventHandler;
-                    EventHandler bonusEventHandler = new EventHandler(textBox_BonusHours);
-                    ctl.TextChanged += bonusEventHandler;
-                    ctl.TabStop = false;
-                }
-
-                if ((ctl).Name.ToUpper().Contains("TXTBONUS"))
-                {
-                    EventHandler eventHandler = new EventHandler(textBox_TotalBonusHours);
-                    ctl.TextChanged += eventHandler;
-                    ctl.TabStop = false;
-                }
-
-                if ((ctl).Name.ToUpper().Contains("TXTOTHER"))
-                {
-                    EventHandler eventHandler = new EventHandler(textBox_TotalOtherHours);
-                    ctl.TextChanged += eventHandler;
-                }
-
-            }
-            foreach (CheckBox ctl in checkBoxes)
-            {
-                if ((ctl).Name.ToUpper().Contains("CBDAY") || (ctl).Name.ToUpper().Contains("CBNIGHT"))
-                {
-                    EventHandler eventHandler = new EventHandler(checkBox_ChangeCheck);
-                    ctl.Click += eventHandler;
                 }
             }
         }
@@ -611,7 +501,7 @@ namespace Print_Time_Card
                 TextBox last = (TextBox)Controls["textBox" + i];
                 day.Checked = false;
                 night.Checked = false;
-                In.Text = "";
+                In.Text = "SDO";
                 Out.Text = "";
                 worked.Text = "";
                 bonus.Text = "";
@@ -628,6 +518,91 @@ namespace Print_Time_Card
             txtTotalOth.Text = "";
             cb24hr.Checked = false;
             cbEarly.Checked = false;
+        }
+
+        private void printMenu_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog1.Document = this.printDocument1;
+            printPreviewDialog1.ShowDialog();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            DrawAll(e.Graphics);
+        }
+
+        private void aboutMenu_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Instructions:\n1. Fill out name, crew, and employee number. (tab to change box and space to select checkboxes)\n2. Check day or night on days worked.\n3. If you came in early every day for 30 minute meeting select 30 Minute Meetings\n\nThis app was created by Joshua Edwards.");
+        }
+
+        private void printSettingsMenu_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Please verify the following settings for printer:\nPaper Size: 4.25 x 6.0 in\nOrientation: Landscape\nResolution: 300 dpi\n\nPlease make sure time cards are loaded appropriately");
+        }
+
+        private void frmPrintTimeCard_Load(object sender, EventArgs e)
+        {
+            howManyDaysSinceSunday = adjustDay(DayOfWeek.Sunday, currentDay, true);
+            daysUntilSaturday = adjustDay(DayOfWeek.Saturday, currentDay, false);
+            Sunday = currentDay.AddDays(-howManyDaysSinceSunday);
+            Sunday = adjustTime(Sunday, 0, 0);
+            txtFrom.Text = currentDay.AddDays(-howManyDaysSinceSunday).ToShortDateString();
+            txtTo.Text = currentDay.AddDays(daysUntilSaturday).ToShortDateString();
+            var textBoxes = new System.Collections.Generic.List<Control>();
+            var checkBoxes = new System.Collections.Generic.List<Control>();
+            foreach (Control control in Controls)
+            {
+                if (control != null && control is TextBox)
+                {
+                    textBoxes.Add(control as TextBox);
+                }
+                else if (control != null && control is CheckBox)
+                {
+                    checkBoxes.Add(control as CheckBox);
+                }
+            }
+            foreach (TextBox ctl in textBoxes)
+            {
+
+                if ((ctl).Name.ToUpper().Contains("TXTIN") || (ctl).Name.ToUpper().Contains("TXTOUT"))
+                {
+                    EventHandler eventHandler = new EventHandler(textBox_WorkHours);
+                    ctl.TextChanged += eventHandler;
+                    ctl.TabStop = false;
+                }
+
+                if ((ctl).Name.ToUpper().Contains("TXTWORKED"))
+                {
+                    EventHandler workedEventHandler = new EventHandler(textBox_TotalWorkedHours);
+                    ctl.TextChanged += workedEventHandler;
+                    EventHandler bonusEventHandler = new EventHandler(textBox_BonusHours);
+                    ctl.TextChanged += bonusEventHandler;
+                    ctl.TabStop = false;
+                }
+
+                if ((ctl).Name.ToUpper().Contains("TXTBONUS"))
+                {
+                    EventHandler eventHandler = new EventHandler(textBox_TotalBonusHours);
+                    ctl.TextChanged += eventHandler;
+                    ctl.TabStop = false;
+                }
+
+                if ((ctl).Name.ToUpper().Contains("TXTOTHER"))
+                {
+                    EventHandler eventHandler = new EventHandler(textBox_TotalOtherHours);
+                    ctl.TextChanged += eventHandler;
+                }
+
+            }
+            foreach (CheckBox ctl in checkBoxes)
+            {
+                if ((ctl).Name.ToUpper().Contains("CBDAY") || (ctl).Name.ToUpper().Contains("CBNIGHT"))
+                {
+                    EventHandler eventHandler = new EventHandler(checkBox_ChangeCheck);
+                    ctl.Click += eventHandler;
+                }
+            }
         }
     }
 }

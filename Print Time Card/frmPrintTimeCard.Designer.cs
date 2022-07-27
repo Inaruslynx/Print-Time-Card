@@ -117,6 +117,7 @@
             this.cbNight6 = new System.Windows.Forms.CheckBox();
             this.cbNight7 = new System.Windows.Forms.CheckBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
+            this.printSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -164,7 +165,8 @@
             // abouToolStripMenuItem
             // 
             this.abouToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
+            this.aboutToolStripMenuItem,
+            this.printSettingsToolStripMenuItem});
             this.abouToolStripMenuItem.Name = "abouToolStripMenuItem";
             this.abouToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.abouToolStripMenuItem.Text = "&Help";
@@ -935,6 +937,13 @@
             this.textBox9.TabIndex = 5;
             this.textBox9.TabStop = false;
             // 
+            // printSettingsToolStripMenuItem
+            // 
+            this.printSettingsToolStripMenuItem.Name = "printSettingsToolStripMenuItem";
+            this.printSettingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.printSettingsToolStripMenuItem.Text = "&Print Settings";
+            this.printSettingsToolStripMenuItem.Click += new System.EventHandler(this.printSettingsMenu_Click);
+            // 
             // frmPrintTimeCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1125,6 +1134,7 @@
         private System.Windows.Forms.CheckBox cbNight6;
         private System.Windows.Forms.CheckBox cbNight7;
         private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.ToolStripMenuItem printSettingsToolStripMenuItem;
     }
 }
 
