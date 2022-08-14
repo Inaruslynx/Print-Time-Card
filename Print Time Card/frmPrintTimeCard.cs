@@ -11,8 +11,6 @@ namespace Print_Time_Card
         DateTime[] outTime = new DateTime[7];
         DateTime currentDay = DateTime.Today;
         DateTime Sunday;
-        int howManyDaysSinceSunday = 0;
-        int daysUntilSaturday = 0;
 
         public frmPrintTimeCard()
         {
@@ -548,6 +546,8 @@ namespace Print_Time_Card
 
         private void frmPrintTimeCard_Load(object sender, EventArgs e)
         {
+            int howManyDaysSinceSunday = 0;
+            int daysUntilSaturday = 0;
             howManyDaysSinceSunday = adjustDay(DayOfWeek.Sunday, currentDay, true);
             daysUntilSaturday = adjustDay(DayOfWeek.Saturday, currentDay, false);
             Sunday = currentDay.AddDays(-howManyDaysSinceSunday);
@@ -608,6 +608,34 @@ namespace Print_Time_Card
                     ctl.Click += eventHandler;
                 }
             }
+        }
+
+        private void changeWeek(int days)
+        {
+            Sunday = Sunday.AddDays(days);
+            for (int i = 0; i < 7; i++)
+            {
+                if (inTime[i] != new DateTime())
+                {
+                    inTime[i] = inTime[i].AddDays(days);
+                }
+                if (outTime[i] != new DateTime())
+                {
+                    outTime[i] = outTime[i].AddDays(days);
+                }
+            }
+            txtFrom.Text = Sunday.ToShortDateString();
+            txtTo.Text = Sunday.AddDays(6).ToShortDateString();
+        }
+
+        private void btnPrevWeek_Click(object sender, EventArgs e)
+        {
+            changeWeek(-7);
+        }
+
+        private void btnNextWeek_Click(object sender, EventArgs e)
+        {
+            changeWeek(7);
         }
     }
 }

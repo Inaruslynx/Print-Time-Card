@@ -36,6 +36,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abouToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cbEarly = new System.Windows.Forms.CheckBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtFrom = new System.Windows.Forms.TextBox();
@@ -117,7 +118,8 @@
             this.cbNight6 = new System.Windows.Forms.CheckBox();
             this.cbNight7 = new System.Windows.Forms.CheckBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
-            this.printSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnPrevWeek = new System.Windows.Forms.Button();
+            this.btnNextWeek = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -159,7 +161,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitMenu_Click);
             // 
@@ -175,9 +177,16 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.aboutToolStripMenuItem.Text = "&About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutMenu_Click);
+            // 
+            // printSettingsToolStripMenuItem
+            // 
+            this.printSettingsToolStripMenuItem.Name = "printSettingsToolStripMenuItem";
+            this.printSettingsToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.printSettingsToolStripMenuItem.Text = "&Print Settings";
+            this.printSettingsToolStripMenuItem.Click += new System.EventHandler(this.printSettingsMenu_Click);
             // 
             // cbEarly
             // 
@@ -938,12 +947,25 @@
             this.textBox9.TabIndex = 5;
             this.textBox9.TabStop = false;
             // 
-            // printSettingsToolStripMenuItem
+            // btnPrevWeek
             // 
-            this.printSettingsToolStripMenuItem.Name = "printSettingsToolStripMenuItem";
-            this.printSettingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.printSettingsToolStripMenuItem.Text = "&Print Settings";
-            this.printSettingsToolStripMenuItem.Click += new System.EventHandler(this.printSettingsMenu_Click);
+            this.btnPrevWeek.Location = new System.Drawing.Point(37, 133);
+            this.btnPrevWeek.Name = "btnPrevWeek";
+            this.btnPrevWeek.Size = new System.Drawing.Size(155, 36);
+            this.btnPrevWeek.TabIndex = 82;
+            this.btnPrevWeek.Text = "&Previous Week";
+            this.btnPrevWeek.UseVisualStyleBackColor = true;
+            this.btnPrevWeek.Click += new System.EventHandler(this.btnPrevWeek_Click);
+            // 
+            // btnNextWeek
+            // 
+            this.btnNextWeek.Location = new System.Drawing.Point(1595, 133);
+            this.btnNextWeek.Name = "btnNextWeek";
+            this.btnNextWeek.Size = new System.Drawing.Size(155, 36);
+            this.btnNextWeek.TabIndex = 83;
+            this.btnNextWeek.Text = "&Next Week";
+            this.btnNextWeek.UseVisualStyleBackColor = true;
+            this.btnNextWeek.Click += new System.EventHandler(this.btnNextWeek_Click);
             // 
             // frmPrintTimeCard
             // 
@@ -952,6 +974,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1799, 927);
+            this.Controls.Add(this.btnNextWeek);
+            this.Controls.Add(this.btnPrevWeek);
             this.Controls.Add(this.cbNight7);
             this.Controls.Add(this.cbNight6);
             this.Controls.Add(this.cbNight5);
@@ -1137,6 +1161,8 @@
         private System.Windows.Forms.CheckBox cbNight7;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.ToolStripMenuItem printSettingsToolStripMenuItem;
+        private System.Windows.Forms.Button btnPrevWeek;
+        private System.Windows.Forms.Button btnNextWeek;
     }
 }
 
