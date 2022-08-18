@@ -90,14 +90,22 @@ namespace Print_Time_Card
                 // expected text for time: hh:mm pm/am but it could be h:mm pm/am
                 // also the user could be in the middle of changing the time so
                 // it could be h:m pm/am so need to return if not valid
+                string entry = obj.Text.ToUpper().Trim();
+                bool morning = entry.Contains("AM");
+                bool afternoon = entry.Contains("PM");
                 TimeSpan convertedTime;
-                if (obj.Text == "SDO" || !TimeSpan.TryParse(obj.Text.Remove(5).Trim(), out convertedTime))
+                if (morning)
+                {
+                    if (!TimeSpan.TryParse(entry.Remove(entry.Length - 2), out convertedTime)) return;
+                }
+                else if (afternoon)
+                {
+                    if (!TimeSpan.TryParse(entry.Remove(entry.Length - 2), out convertedTime)) return;
+                    convertedTime += new TimeSpan(12, 0, 0);
+                }
+                else
                 {
                     return;
-                }
-                if (obj.Text.Remove(0, 5).Trim().ToUpper() == "PM")
-                {
-                    convertedTime += new TimeSpan(12, 0, 0);
                 }
                 // I need to first determine if difference will be earlier or later than previous time
                 // then I need to add or substract the difference in time to inTime or outTime
@@ -139,7 +147,7 @@ namespace Print_Time_Card
             }
             else if (convertedTime < timeInDay)
             {
-                inTime[number - 1] -= convertedTime - timeInDay;
+                inTime[number - 1] -= timeInDay - convertedTime;
             }
         }
 
