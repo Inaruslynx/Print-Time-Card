@@ -88,11 +88,13 @@ namespace Print_Time_Card
             if (cb24hr.Checked == false)
             {
                 // expected text for time: hh:mm pm/am but it could be h:mm pm/am
-                if (obj.Text == "SDO")
+                // also the user could be in the middle of changing the time so
+                // it could be h:m pm/am so need to return if not valid
+                TimeSpan convertedTime;
+                if (obj.Text == "SDO" || !TimeSpan.TryParse(obj.Text.Remove(5).Trim(), out convertedTime))
                 {
                     return;
                 }
-                TimeSpan convertedTime = TimeSpan.Parse(obj.Text.Remove(5).Trim());
                 if (obj.Text.Remove(0, 5).Trim().ToUpper() == "PM")
                 {
                     convertedTime += new TimeSpan(12, 0, 0);
@@ -111,11 +113,11 @@ namespace Print_Time_Card
             }
             else
             {
-                if (obj.Text == "SDO")
+                TimeSpan convertedTime;
+                if (obj.Text == "SDO" || !TimeSpan.TryParse(obj.Text, out convertedTime))
                 {
                     return;
                 }
-                TimeSpan convertedTime = TimeSpan.Parse(obj.Text);
                 if (In)
                 {
                     adjInTime(number, convertedTime);
