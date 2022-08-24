@@ -120,6 +120,8 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.btnPrevWeek = new System.Windows.Forms.Button();
             this.btnNextWeek = new System.Windows.Forms.Button();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.offsetsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,6 +129,7 @@
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mainToolStripMenuItem,
+            this.settingsToolStripMenuItem,
             this.abouToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
@@ -147,21 +150,21 @@
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.printToolStripMenuItem.Text = "&Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.printMenu_Click);
             // 
             // resetToolStripMenuItem
             // 
             this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-            this.resetToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.resetToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.resetToolStripMenuItem.Text = "&Reset";
             this.resetToolStripMenuItem.Click += new System.EventHandler(this.resetToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitMenu_Click);
             // 
@@ -206,6 +209,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(1353, 37);
             this.txtName.TabIndex = 0;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // txtFrom
             // 
@@ -246,6 +250,7 @@
             this.txtCrew.Name = "txtCrew";
             this.txtCrew.Size = new System.Drawing.Size(292, 37);
             this.txtCrew.TabIndex = 1;
+            this.txtCrew.TextChanged += new System.EventHandler(this.txtCrew_TextChanged);
             // 
             // txtNumber
             // 
@@ -256,6 +261,7 @@
             this.txtNumber.Size = new System.Drawing.Size(377, 37);
             this.txtNumber.TabIndex = 2;
             this.txtNumber.Text = "220";
+            this.txtNumber.TextChanged += new System.EventHandler(this.txtNumber_TextChanged);
             // 
             // txtIn1
             // 
@@ -967,6 +973,20 @@
             this.btnNextWeek.UseVisualStyleBackColor = true;
             this.btnNextWeek.Click += new System.EventHandler(this.btnNextWeek_Click);
             // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.offsetsToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "&Settings";
+            // 
+            // offsetsToolStripMenuItem
+            // 
+            this.offsetsToolStripMenuItem.Name = "offsetsToolStripMenuItem";
+            this.offsetsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.offsetsToolStripMenuItem.Text = "&Offsets";
+            // 
             // frmPrintTimeCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1163,6 +1183,8 @@
         private System.Windows.Forms.ToolStripMenuItem printSettingsToolStripMenuItem;
         private System.Windows.Forms.Button btnPrevWeek;
         private System.Windows.Forms.Button btnNextWeek;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem offsetsToolStripMenuItem;
     }
 }
 

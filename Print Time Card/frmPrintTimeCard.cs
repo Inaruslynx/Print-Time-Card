@@ -385,7 +385,7 @@ namespace Print_Time_Card
                 if (Controls[i].GetType() == this.Controls["txtIn1"].GetType() && !Controls[i].Name.ToUpper().Contains("WORKDAYS"))
                 {
                     TextBox theText = (TextBox)Controls[i];
-                    graphics.DrawString(theText.Text, printFont, Brushes.Black, (theText.Bounds.Left * scalex) - 15, (theText.Bounds.Top * scaley) - 15, new StringFormat());
+                    graphics.DrawString(theText.Text, printFont, Brushes.Black, (theText.Bounds.Left * scalex) - 15 + Properties.Settings.Default.horOffset, (theText.Bounds.Top * scaley) - 15 + Properties.Settings.Default.verOffset, new StringFormat());
                 }
             }
         }
@@ -517,9 +517,9 @@ namespace Print_Time_Card
                 other.Text = "";
                 last.Text = "";
             }
-            txtName.Text = "";
-            txtNumber.Text = "220";
-            txtCrew.Text = "";
+            txtName.Text = Properties.Settings.Default.empName;
+            txtNumber.Text = Properties.Settings.Default.empNum;
+            txtCrew.Text = Properties.Settings.Default.empCrew;
             txtTotalO.Text = "";
             txtTotalW.Text = "";
             txtTotalB.Text = "";
@@ -562,6 +562,9 @@ namespace Print_Time_Card
             daysUntilSaturday = adjustDay(DayOfWeek.Saturday, currentDay, false);
             Sunday = currentDay.AddDays(-howManyDaysSinceSunday);
             Sunday = adjustTime(Sunday, 0, 0);
+            txtName.Text = Properties.Settings.Default.empName;
+            txtCrew.Text = Properties.Settings.Default.empCrew;
+            txtNumber.Text = Properties.Settings.Default.empNum;
             txtFrom.Text = currentDay.AddDays(-howManyDaysSinceSunday).ToShortDateString();
             txtTo.Text = currentDay.AddDays(daysUntilSaturday).ToShortDateString();
             var textBoxes = new System.Collections.Generic.List<Control>();
@@ -646,6 +649,27 @@ namespace Print_Time_Card
         private void btnNextWeek_Click(object sender, EventArgs e)
         {
             changeWeek(7);
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            if (txtName.Text.Length == 0) return;
+            else Properties.Settings.Default.empName = txtName.Text;
+            Properties.Settings.Default.Save();
+        }
+
+        private void txtCrew_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCrew.Text.Length == 0) return;
+            else Properties.Settings.Default.empCrew = txtCrew.Text;
+            Properties.Settings.Default.Save();
+        }
+
+        private void txtNumber_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNumber.Text.Length == 0) return;
+            else Properties.Settings.Default.empNum = txtNumber.Text;
+            Properties.Settings.Default.Save();
         }
     }
 }
