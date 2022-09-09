@@ -852,7 +852,8 @@
             "Nights",
             "Holiday",
             "Vacation",
-            "Bereavement"});
+            "Bereavement",
+            "Jury"});
             this.cbBox1.Location = new System.Drawing.Point(0, 529);
             this.cbBox1.Name = "cbBox1";
             this.cbBox1.Size = new System.Drawing.Size(60, 21);
@@ -877,7 +878,8 @@
             "Nights",
             "Holiday",
             "Vacation",
-            "Bereavement"});
+            "Bereavement",
+            "Jury"});
             this.cbBox2.Location = new System.Drawing.Point(0, 575);
             this.cbBox2.Name = "cbBox2";
             this.cbBox2.Size = new System.Drawing.Size(60, 21);
@@ -893,7 +895,8 @@
             "Nights",
             "Holiday",
             "Vacation",
-            "Bereavement"});
+            "Bereavement",
+            "Jury"});
             this.cbBox3.Location = new System.Drawing.Point(0, 620);
             this.cbBox3.Name = "cbBox3";
             this.cbBox3.Size = new System.Drawing.Size(60, 21);
@@ -909,7 +912,8 @@
             "Nights",
             "Holiday",
             "Vacation",
-            "Bereavement"});
+            "Bereavement",
+            "Jury"});
             this.cbBox4.Location = new System.Drawing.Point(1, 667);
             this.cbBox4.Name = "cbBox4";
             this.cbBox4.Size = new System.Drawing.Size(60, 21);
@@ -925,7 +929,8 @@
             "Nights",
             "Holiday",
             "Vacation",
-            "Bereavement"});
+            "Bereavement",
+            "Jury"});
             this.cbBox5.Location = new System.Drawing.Point(0, 713);
             this.cbBox5.Name = "cbBox5";
             this.cbBox5.Size = new System.Drawing.Size(60, 21);
@@ -941,7 +946,8 @@
             "Nights",
             "Holiday",
             "Vacation",
-            "Bereavement"});
+            "Bereavement",
+            "Jury"});
             this.cbBox6.Location = new System.Drawing.Point(0, 758);
             this.cbBox6.Name = "cbBox6";
             this.cbBox6.Size = new System.Drawing.Size(60, 21);
@@ -957,7 +963,8 @@
             "Nights",
             "Holiday",
             "Vacation",
-            "Bereavement"});
+            "Bereavement",
+            "Jury"});
             this.cbBox7.Location = new System.Drawing.Point(0, 806);
             this.cbBox7.Name = "cbBox7";
             this.cbBox7.Size = new System.Drawing.Size(60, 21);

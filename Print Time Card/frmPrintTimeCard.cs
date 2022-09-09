@@ -399,6 +399,7 @@ namespace Print_Time_Card
         // 3 - Holiday
         // 4 - Vacation
         // 5 - Bereavement
+        // 6 - Jury
         private void cmbBox_Change(object sender, EventArgs e)
         {
             ComboBox ctl = (ComboBox)sender;
@@ -497,6 +498,15 @@ namespace Print_Time_Card
                     Bonus.Text = "";
                     Other.Text = "8";
                     Code.Text = "B";
+                    break;
+                case 6:
+                    // Jury
+                    In.Text = "Jury";
+                    Out.Text = "";
+                    Worked.Text = "";
+                    Bonus.Text = "";
+                    Other.Text = "8";
+                    Code.Text = "J";
                     break;
                 default:
                     MessageBox.Show("Error. Let Joshua Edwards know what happened.");
