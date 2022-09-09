@@ -73,7 +73,7 @@ namespace Print_Time_Card
 
             // first we need to find which day it is
             int number;
-            bool In;
+            bool In, night = false;
             if (obj.Name.ToUpper().Contains("IN"))
             {
                 number = int.Parse(obj.Name.Remove(0, 5));
@@ -84,6 +84,8 @@ namespace Print_Time_Card
                 number = int.Parse(obj.Name.Remove(0, 6));
                 In = false;
             }
+            ComboBox Box = (ComboBox)grpBox.Controls["cbBox" + number];
+            if (Box.SelectedIndex == 2) night = true;
             // now we get a TimeSpan and change in and out time
             if (cb24hr.Checked == false)
             {
@@ -116,7 +118,7 @@ namespace Print_Time_Card
                 }
                 else
                 {
-                    adjOutTime(number, convertedTime);
+                    adjOutTime(number, convertedTime, night);
                 }
             }
             else
@@ -132,7 +134,7 @@ namespace Print_Time_Card
                 }
                 else
                 {
-                    adjOutTime(number, convertedTime);
+                    adjOutTime(number, convertedTime, night);
                 }
             }
         }
@@ -151,12 +153,12 @@ namespace Print_Time_Card
             }
         }
 
-        private void adjOutTime(int number, TimeSpan convertedTime)
+        private void adjOutTime(int number, TimeSpan convertedTime, bool night)
         {
             // Get number for checkbox passed in and time changed
-            CheckBox night = (CheckBox)Controls["cbNight" + number];
+            //CheckBox night = (CheckBox)Controls["cbNight" + number];
             TimeSpan timeOutDay;
-            if (night.Checked)
+            if (night)
             {
                 timeOutDay = outTime[number - 1] - Sunday.AddDays(number);
             }
@@ -385,12 +387,135 @@ namespace Print_Time_Card
                 if (Controls[i].GetType() == this.Controls["txtIn1"].GetType() && !Controls[i].Name.ToUpper().Contains("WORKDAYS"))
                 {
                     TextBox theText = (TextBox)Controls[i];
-                    graphics.DrawString(theText.Text, printFont, Brushes.Black, (theText.Bounds.Left * scalex) - 15 + Properties.Settings.Default.horOffset, (theText.Bounds.Top * scaley) - 15 + Properties.Settings.Default.verOffset, new StringFormat());
+                    graphics.DrawString(theText.Text, printFont, Brushes.Black, (theText.Bounds.Left * scalex) - 15 + (int)numHor.Value, (theText.Bounds.Top * scaley) - 15 + (int)numVert.Value, new StringFormat());
                 }
             }
         }
 
-        private void checkBox_ChangeCheck(object sender, EventArgs e)
+        // This checks what slection the user makes when they change a combobox
+        // 0 - SDO
+        // 1 - Days
+        // 2 - Nights
+        // 3 - Holiday
+        // 4 - Vacation
+        // 5 - Bereavement
+        // 6 - Jury
+        private void cmbBox_Change(object sender, EventArgs e)
+        {
+            ComboBox ctl = (ComboBox)sender;
+            int ctlNumber = int.Parse(ctl.Name.Remove(0, 5));
+            int userChoice = ctl.SelectedIndex;
+            TextBox In = (TextBox)Controls["txtIn" + ctlNumber];
+            TextBox Out = (TextBox)Controls["txtOut" + ctlNumber];
+            TextBox Worked = (TextBox)Controls["txtWorked" + ctlNumber];
+            TextBox Bonus = (TextBox)Controls["txtBonus" + ctlNumber];
+            TextBox Other = (TextBox)Controls["txtOther" + ctlNumber];
+            TextBox Code = (TextBox)Controls["txtCode" + ctlNumber];
+            switch (userChoice)
+            {
+                case 0:
+                    // SDO
+                    In.Text = "SDO";
+                    Out.Text = "";
+                    Worked.Text = "";
+                    Bonus.Text = "";
+                    Other.Text = "";
+                    Code.Text = "";
+                    break;
+                case 1:
+                    // Day
+                    if (cbEarly.Checked)
+                    {
+                        if (cb24hr.Checked)
+                        {
+                            enterTime(ctlNumber, "H:mm", 7, 30, 20, 0, false);
+                        }
+                        else
+                        {
+                            enterTime(ctlNumber, "h:mm tt", 7, 30, 20, 0, false);
+                        }
+                    }
+                    else
+                    {
+                        if (cb24hr.Checked)
+                        {
+                            enterTime(ctlNumber, "H:mm", 8, 0, 20, 0, false);
+                        }
+                        else
+                        {
+                            enterTime(ctlNumber, "h:mm tt", 8, 0, 20, 0, false);
+                        }
+                    }
+                    break;
+                case 2:
+                    // Night
+                    if (cbEarly.Checked)
+                    {
+                        if (cb24hr.Checked)
+                        {
+                            enterTime(ctlNumber, "H:mm", 19, 30, 8, 0, true);
+                        }
+                        else
+                        {
+                            enterTime(ctlNumber, "h:mm tt", 19, 30, 8, 0, true);
+                        }
+                    }
+                    else
+                    {
+                        if (cb24hr.Checked)
+                        {
+                            enterTime(ctlNumber, "H:mm", 20, 0, 8, 0, true);
+                        }
+                        else
+                        {
+                            enterTime(ctlNumber, "h:mm tt", 20, 0, 8, 0, true);
+                        }
+                    }
+                    break;
+                case 3:
+                    // Holiday
+                    In.Text = "Holiday";
+                    Out.Text = "";
+                    Worked.Text = "";
+                    Bonus.Text = "";
+                    Other.Text = "8";
+                    Code.Text = "H";
+                    break;
+                case 4:
+                    // Vacation
+                    In.Text = "Vacation";
+                    Out.Text = "";
+                    Worked.Text = "";
+                    Bonus.Text = "";
+                    Other.Text = "12";
+                    Code.Text = "V";
+                    break;
+                case 5:
+                    // Bereavement
+                    In.Text = "BRVMNT";
+                    Out.Text = "";
+                    Worked.Text = "";
+                    Bonus.Text = "";
+                    Other.Text = "8";
+                    Code.Text = "B";
+                    break;
+                case 6:
+                    // Jury
+                    In.Text = "Jury";
+                    Out.Text = "";
+                    Worked.Text = "";
+                    Bonus.Text = "";
+                    Other.Text = "8";
+                    Code.Text = "J";
+                    break;
+                default:
+                    MessageBox.Show("Error. Let Joshua Edwards know what happened.");
+                    break;
+            }
+        }
+
+        // Old method of user selecting either working days or nights
+        /*private void checkBox_ChangeCheck(object sender, EventArgs e)
         {
             Control ctl = (Control)sender;
             int ctlNumber;
@@ -470,12 +595,13 @@ namespace Print_Time_Card
                     }
                 }
             }
-        }
-        public void enterTime(int indexChecked, string format, int hr1, int min1, int hr2, int min2, CheckBox cbNight)
+        }*/
+
+        public void enterTime(int indexChecked, string format, int hr1, int min1, int hr2, int min2, bool night)
         {
             Control ctnIn = Controls["txtIn" + (indexChecked)];
             Control ctnOut = Controls["txtOut" + (indexChecked)];
-            if (cbNight.Checked)
+            if (night)
             {
                 inTime[indexChecked - 1] = adjustTime(Sunday.AddDays(indexChecked - 1), hr1, min1);
                 outTime[indexChecked - 1] = adjustTime(Sunday.AddDays(indexChecked), hr2, min2);
@@ -498,8 +624,9 @@ namespace Print_Time_Card
             }
             for (int i = 1; i < 8; i++)
             {
-                CheckBox day = (CheckBox)Controls["cbDay" + i];
-                CheckBox night = (CheckBox)Controls["cbNight" + i];
+                //CheckBox day = (CheckBox)Controls["cbDay" + i];
+                //CheckBox night = (CheckBox)Controls["cbNight" + i];
+                ComboBox Box = (ComboBox)Controls["cbBox" + i];
                 TextBox In = (TextBox)Controls["txtIn" + i];
                 TextBox Out = (TextBox)Controls["txtOut" + i];
                 TextBox worked = (TextBox)Controls["txtWorked" + i];
@@ -507,8 +634,9 @@ namespace Print_Time_Card
                 TextBox overtime = (TextBox)Controls["txtOvertime" + i];
                 TextBox other = (TextBox)Controls["txtOther" + i];
                 TextBox last = (TextBox)Controls["textBox" + i];
-                day.Checked = false;
-                night.Checked = false;
+                //day.Checked = false;
+                //night.Checked = false;
+                Box.SelectedIndex = 0;
                 In.Text = "SDO";
                 Out.Text = "";
                 worked.Text = "";
@@ -520,6 +648,8 @@ namespace Print_Time_Card
             txtName.Text = Properties.Settings.Default.empName;
             txtNumber.Text = Properties.Settings.Default.empNum;
             txtCrew.Text = Properties.Settings.Default.empCrew;
+            numHor.Value = Properties.Settings.Default.horOffset;
+            numVert.Value = Properties.Settings.Default.verOffset;
             txtTotalO.Text = "";
             txtTotalW.Text = "";
             txtTotalB.Text = "";
@@ -565,20 +695,27 @@ namespace Print_Time_Card
             txtName.Text = Properties.Settings.Default.empName;
             txtCrew.Text = Properties.Settings.Default.empCrew;
             txtNumber.Text = Properties.Settings.Default.empNum;
+            numHor.Value = Properties.Settings.Default.horOffset;
+            numVert.Value = Properties.Settings.Default.verOffset;
             txtFrom.Text = currentDay.AddDays(-howManyDaysSinceSunday).ToShortDateString();
             txtTo.Text = currentDay.AddDays(daysUntilSaturday).ToShortDateString();
             var textBoxes = new System.Collections.Generic.List<Control>();
-            var checkBoxes = new System.Collections.Generic.List<Control>();
+            //var checkBoxes = new System.Collections.Generic.List<Control>();
+            var comboBoxes = new System.Collections.Generic.List<Control>();
             foreach (Control control in Controls)
             {
                 if (control != null && control is TextBox)
                 {
                     textBoxes.Add(control as TextBox);
-                }
-                else if (control != null && control is CheckBox)
+                } // Old code
+                /*else if (control != null && control is CheckBox)
                 {
                     checkBoxes.Add(control as CheckBox);
-                }
+                }*/
+            }
+            foreach (Control control in grpBox.Controls)
+            {
+                comboBoxes.Add(control as ComboBox);
             }
             foreach (TextBox ctl in textBoxes)
             {
@@ -612,13 +749,23 @@ namespace Print_Time_Card
                     ctl.TextChanged += eventHandler;
                 }
 
-            }
-            foreach (CheckBox ctl in checkBoxes)
+            } // Old code
+            /*            foreach (CheckBox ctl in checkBoxes)
+                        {
+                            if ((ctl).Name.ToUpper().Contains("CBDAY") || (ctl).Name.ToUpper().Contains("CBNIGHT"))
+                            {
+                                EventHandler eventHandler = new EventHandler(checkBox_ChangeCheck);
+                                ctl.Click += eventHandler;
+                            }
+                        }*/
+            foreach (ComboBox ctl in comboBoxes)
             {
-                if ((ctl).Name.ToUpper().Contains("CBDAY") || (ctl).Name.ToUpper().Contains("CBNIGHT"))
+                if (ctl != null)
                 {
-                    EventHandler eventHandler = new EventHandler(checkBox_ChangeCheck);
-                    ctl.Click += eventHandler;
+                    Console.WriteLine(ctl.Name);
+                    EventHandler eventHandler = new EventHandler(cmbBox_Change);
+                    ctl.SelectedIndexChanged += eventHandler;
+                    ctl.SelectedIndex = 0;
                 }
             }
         }
@@ -651,24 +798,13 @@ namespace Print_Time_Card
             changeWeek(7);
         }
 
-        private void txtName_TextChanged(object sender, EventArgs e)
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (txtName.Text.Length == 0) return;
-            else Properties.Settings.Default.empName = txtName.Text;
-            Properties.Settings.Default.Save();
-        }
-
-        private void txtCrew_TextChanged(object sender, EventArgs e)
-        {
-            if (txtCrew.Text.Length == 0) return;
-            else Properties.Settings.Default.empCrew = txtCrew.Text;
-            Properties.Settings.Default.Save();
-        }
-
-        private void txtNumber_TextChanged(object sender, EventArgs e)
-        {
-            if (txtNumber.Text.Length == 0) return;
-            else Properties.Settings.Default.empNum = txtNumber.Text;
+            Properties.Settings.Default.empName = txtName.Text;
+            Properties.Settings.Default.empCrew = txtCrew.Text;
+            Properties.Settings.Default.empNum = txtNumber.Text;
+            Properties.Settings.Default.horOffset = (int)numHor.Value;
+            Properties.Settings.Default.verOffset = (int)numVert.Value;
             Properties.Settings.Default.Save();
         }
     }
