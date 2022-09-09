@@ -84,7 +84,7 @@ namespace Print_Time_Card
                 number = int.Parse(obj.Name.Remove(0, 6));
                 In = false;
             }
-            ComboBox Box = (ComboBox)Controls["cbBox" + number];
+            ComboBox Box = (ComboBox)grpBox.Controls["cbBox" + number];
             if (Box.SelectedIndex == 2) night = true;
             // now we get a TimeSpan and change in and out time
             if (cb24hr.Checked == false)
@@ -387,7 +387,7 @@ namespace Print_Time_Card
                 if (Controls[i].GetType() == this.Controls["txtIn1"].GetType() && !Controls[i].Name.ToUpper().Contains("WORKDAYS"))
                 {
                     TextBox theText = (TextBox)Controls[i];
-                    graphics.DrawString(theText.Text, printFont, Brushes.Black, (theText.Bounds.Left * scalex) - 15 + Properties.Settings.Default.horOffset, (theText.Bounds.Top * scaley) - 15 + Properties.Settings.Default.verOffset, new StringFormat());
+                    graphics.DrawString(theText.Text, printFont, Brushes.Black, (theText.Bounds.Left * scalex) - 15 + (int)numHor.Value, (theText.Bounds.Top * scaley) - 15 + (int)numVert.Value, new StringFormat());
                 }
             }
         }
@@ -648,6 +648,8 @@ namespace Print_Time_Card
             txtName.Text = Properties.Settings.Default.empName;
             txtNumber.Text = Properties.Settings.Default.empNum;
             txtCrew.Text = Properties.Settings.Default.empCrew;
+            numHor.Value = Properties.Settings.Default.horOffset;
+            numVert.Value = Properties.Settings.Default.verOffset;
             txtTotalO.Text = "";
             txtTotalW.Text = "";
             txtTotalB.Text = "";
@@ -693,6 +695,8 @@ namespace Print_Time_Card
             txtName.Text = Properties.Settings.Default.empName;
             txtCrew.Text = Properties.Settings.Default.empCrew;
             txtNumber.Text = Properties.Settings.Default.empNum;
+            numHor.Value = Properties.Settings.Default.horOffset;
+            numVert.Value = Properties.Settings.Default.verOffset;
             txtFrom.Text = currentDay.AddDays(-howManyDaysSinceSunday).ToShortDateString();
             txtTo.Text = currentDay.AddDays(daysUntilSaturday).ToShortDateString();
             var textBoxes = new System.Collections.Generic.List<Control>();
@@ -708,10 +712,10 @@ namespace Print_Time_Card
                 {
                     checkBoxes.Add(control as CheckBox);
                 }*/
-                else if (control != null && control is ComboBox)
-                {
-                    comboBoxes.Add(control as ComboBox);
-                }
+            }
+            foreach (Control control in grpBox.Controls)
+            {
+                comboBoxes.Add(control as ComboBox);
             }
             foreach (TextBox ctl in textBoxes)
             {
@@ -756,9 +760,13 @@ namespace Print_Time_Card
                         }*/
             foreach (ComboBox ctl in comboBoxes)
             {
-                EventHandler eventHandler = new EventHandler(cmbBox_Change);
-                ctl.SelectedIndexChanged += eventHandler;
-                ctl.SelectedIndex = 0;
+                if (ctl != null)
+                {
+                    Console.WriteLine(ctl.Name);
+                    EventHandler eventHandler = new EventHandler(cmbBox_Change);
+                    ctl.SelectedIndexChanged += eventHandler;
+                    ctl.SelectedIndex = 0;
+                }
             }
         }
 
@@ -790,24 +798,13 @@ namespace Print_Time_Card
             changeWeek(7);
         }
 
-        private void txtName_TextChanged(object sender, EventArgs e)
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (txtName.Text.Length == 0) return;
-            else Properties.Settings.Default.empName = txtName.Text;
-            Properties.Settings.Default.Save();
-        }
-
-        private void txtCrew_TextChanged(object sender, EventArgs e)
-        {
-            if (txtCrew.Text.Length == 0) return;
-            else Properties.Settings.Default.empCrew = txtCrew.Text;
-            Properties.Settings.Default.Save();
-        }
-
-        private void txtNumber_TextChanged(object sender, EventArgs e)
-        {
-            if (txtNumber.Text.Length == 0) return;
-            else Properties.Settings.Default.empNum = txtNumber.Text;
+            Properties.Settings.Default.empName = txtName.Text;
+            Properties.Settings.Default.empCrew = txtCrew.Text;
+            Properties.Settings.Default.empNum = txtNumber.Text;
+            Properties.Settings.Default.horOffset = (int)numHor.Value;
+            Properties.Settings.Default.verOffset = (int)numVert.Value;
             Properties.Settings.Default.Save();
         }
     }

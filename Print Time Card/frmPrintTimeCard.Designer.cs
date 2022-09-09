@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrintTimeCard));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.mainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -35,7 +36,7 @@
             this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.offsetsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abouToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,19 +103,34 @@
             this.txtCode5 = new System.Windows.Forms.TextBox();
             this.txtCode6 = new System.Windows.Forms.TextBox();
             this.txtCode7 = new System.Windows.Forms.TextBox();
-            this.txtWorkDays = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.btnPrevWeek = new System.Windows.Forms.Button();
             this.btnNextWeek = new System.Windows.Forms.Button();
             this.cbBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.cbBox2 = new System.Windows.Forms.ComboBox();
             this.cbBox3 = new System.Windows.Forms.ComboBox();
             this.cbBox4 = new System.Windows.Forms.ComboBox();
             this.cbBox5 = new System.Windows.Forms.ComboBox();
             this.cbBox6 = new System.Windows.Forms.ComboBox();
             this.cbBox7 = new System.Windows.Forms.ComboBox();
+            this.numHor = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.numVert = new System.Windows.Forms.NumericUpDown();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.grpBox = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numHor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numVert)).BeginInit();
+            this.grpBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -163,16 +179,17 @@
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.offsetsToolStripMenuItem});
+            this.saveToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "&Settings";
             // 
-            // offsetsToolStripMenuItem
+            // saveToolStripMenuItem
             // 
-            this.offsetsToolStripMenuItem.Name = "offsetsToolStripMenuItem";
-            this.offsetsToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.offsetsToolStripMenuItem.Text = "&Offsets";
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Text = "S&ave";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // abouToolStripMenuItem
             // 
@@ -203,10 +220,11 @@
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEarly.AutoSize = true;
-            this.cbEarly.Location = new System.Drawing.Point(107, 418);
+            this.cbEarly.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.cbEarly.Location = new System.Drawing.Point(18, 375);
             this.cbEarly.Name = "cbEarly";
-            this.cbEarly.Size = new System.Drawing.Size(119, 17);
-            this.cbEarly.TabIndex = 4;
+            this.cbEarly.Size = new System.Drawing.Size(313, 41);
+            this.cbEarly.TabIndex = 3;
             this.cbEarly.Text = "30 &Minute Meetings";
             this.cbEarly.UseVisualStyleBackColor = true;
             // 
@@ -218,7 +236,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(1353, 37);
             this.txtName.TabIndex = 0;
-            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // txtFrom
             // 
@@ -259,7 +276,6 @@
             this.txtCrew.Name = "txtCrew";
             this.txtCrew.Size = new System.Drawing.Size(292, 37);
             this.txtCrew.TabIndex = 1;
-            this.txtCrew.TextChanged += new System.EventHandler(this.txtCrew_TextChanged);
             // 
             // txtNumber
             // 
@@ -270,7 +286,6 @@
             this.txtNumber.Size = new System.Drawing.Size(377, 37);
             this.txtNumber.TabIndex = 2;
             this.txtNumber.Text = "220";
-            this.txtNumber.TextChanged += new System.EventHandler(this.txtNumber_TextChanged);
             // 
             // txtIn1
             // 
@@ -279,7 +294,7 @@
             this.txtIn1.Location = new System.Drawing.Point(293, 513);
             this.txtIn1.Name = "txtIn1";
             this.txtIn1.Size = new System.Drawing.Size(443, 37);
-            this.txtIn1.TabIndex = 19;
+            this.txtIn1.TabIndex = 5;
             this.txtIn1.Text = "SDO";
             // 
             // txtIn2
@@ -289,7 +304,7 @@
             this.txtIn2.Location = new System.Drawing.Point(292, 560);
             this.txtIn2.Name = "txtIn2";
             this.txtIn2.Size = new System.Drawing.Size(443, 37);
-            this.txtIn2.TabIndex = 20;
+            this.txtIn2.TabIndex = 6;
             this.txtIn2.Text = "SDO";
             // 
             // txtIn3
@@ -299,7 +314,7 @@
             this.txtIn3.Location = new System.Drawing.Point(292, 612);
             this.txtIn3.Name = "txtIn3";
             this.txtIn3.Size = new System.Drawing.Size(443, 37);
-            this.txtIn3.TabIndex = 21;
+            this.txtIn3.TabIndex = 7;
             this.txtIn3.Text = "SDO";
             // 
             // txtIn4
@@ -309,7 +324,7 @@
             this.txtIn4.Location = new System.Drawing.Point(293, 661);
             this.txtIn4.Name = "txtIn4";
             this.txtIn4.Size = new System.Drawing.Size(443, 37);
-            this.txtIn4.TabIndex = 22;
+            this.txtIn4.TabIndex = 8;
             this.txtIn4.Text = "SDO";
             // 
             // txtIn5
@@ -319,7 +334,7 @@
             this.txtIn5.Location = new System.Drawing.Point(292, 711);
             this.txtIn5.Name = "txtIn5";
             this.txtIn5.Size = new System.Drawing.Size(443, 37);
-            this.txtIn5.TabIndex = 23;
+            this.txtIn5.TabIndex = 9;
             this.txtIn5.Text = "SDO";
             // 
             // txtIn6
@@ -329,7 +344,7 @@
             this.txtIn6.Location = new System.Drawing.Point(292, 760);
             this.txtIn6.Name = "txtIn6";
             this.txtIn6.Size = new System.Drawing.Size(443, 37);
-            this.txtIn6.TabIndex = 24;
+            this.txtIn6.TabIndex = 10;
             this.txtIn6.Text = "SDO";
             // 
             // txtIn7
@@ -339,7 +354,7 @@
             this.txtIn7.Location = new System.Drawing.Point(291, 809);
             this.txtIn7.Name = "txtIn7";
             this.txtIn7.Size = new System.Drawing.Size(443, 37);
-            this.txtIn7.TabIndex = 25;
+            this.txtIn7.TabIndex = 11;
             this.txtIn7.Text = "SDO";
             // 
             // txtOut1
@@ -349,7 +364,7 @@
             this.txtOut1.Location = new System.Drawing.Point(748, 513);
             this.txtOut1.Name = "txtOut1";
             this.txtOut1.Size = new System.Drawing.Size(142, 37);
-            this.txtOut1.TabIndex = 26;
+            this.txtOut1.TabIndex = 12;
             // 
             // txtOut2
             // 
@@ -358,7 +373,7 @@
             this.txtOut2.Location = new System.Drawing.Point(748, 560);
             this.txtOut2.Name = "txtOut2";
             this.txtOut2.Size = new System.Drawing.Size(142, 37);
-            this.txtOut2.TabIndex = 27;
+            this.txtOut2.TabIndex = 13;
             // 
             // txtOut3
             // 
@@ -367,7 +382,7 @@
             this.txtOut3.Location = new System.Drawing.Point(748, 612);
             this.txtOut3.Name = "txtOut3";
             this.txtOut3.Size = new System.Drawing.Size(142, 37);
-            this.txtOut3.TabIndex = 28;
+            this.txtOut3.TabIndex = 14;
             // 
             // txtOut4
             // 
@@ -376,7 +391,7 @@
             this.txtOut4.Location = new System.Drawing.Point(748, 661);
             this.txtOut4.Name = "txtOut4";
             this.txtOut4.Size = new System.Drawing.Size(142, 37);
-            this.txtOut4.TabIndex = 29;
+            this.txtOut4.TabIndex = 15;
             // 
             // txtOut5
             // 
@@ -385,7 +400,7 @@
             this.txtOut5.Location = new System.Drawing.Point(748, 711);
             this.txtOut5.Name = "txtOut5";
             this.txtOut5.Size = new System.Drawing.Size(142, 37);
-            this.txtOut5.TabIndex = 30;
+            this.txtOut5.TabIndex = 16;
             // 
             // txtOut6
             // 
@@ -394,7 +409,7 @@
             this.txtOut6.Location = new System.Drawing.Point(748, 760);
             this.txtOut6.Name = "txtOut6";
             this.txtOut6.Size = new System.Drawing.Size(142, 37);
-            this.txtOut6.TabIndex = 31;
+            this.txtOut6.TabIndex = 17;
             // 
             // txtOut7
             // 
@@ -403,7 +418,7 @@
             this.txtOut7.Location = new System.Drawing.Point(748, 809);
             this.txtOut7.Name = "txtOut7";
             this.txtOut7.Size = new System.Drawing.Size(142, 37);
-            this.txtOut7.TabIndex = 32;
+            this.txtOut7.TabIndex = 18;
             // 
             // txtWorked1
             // 
@@ -609,6 +624,7 @@
             this.txtOther1.Name = "txtOther1";
             this.txtOther1.Size = new System.Drawing.Size(130, 37);
             this.txtOther1.TabIndex = 54;
+            this.txtOther1.TabStop = false;
             // 
             // txtOther2
             // 
@@ -618,6 +634,7 @@
             this.txtOther2.Name = "txtOther2";
             this.txtOther2.Size = new System.Drawing.Size(130, 37);
             this.txtOther2.TabIndex = 56;
+            this.txtOther2.TabStop = false;
             // 
             // txtOther3
             // 
@@ -627,6 +644,7 @@
             this.txtOther3.Name = "txtOther3";
             this.txtOther3.Size = new System.Drawing.Size(130, 37);
             this.txtOther3.TabIndex = 58;
+            this.txtOther3.TabStop = false;
             // 
             // txtOther4
             // 
@@ -636,6 +654,7 @@
             this.txtOther4.Name = "txtOther4";
             this.txtOther4.Size = new System.Drawing.Size(130, 37);
             this.txtOther4.TabIndex = 60;
+            this.txtOther4.TabStop = false;
             // 
             // txtOther5
             // 
@@ -645,6 +664,7 @@
             this.txtOther5.Name = "txtOther5";
             this.txtOther5.Size = new System.Drawing.Size(130, 37);
             this.txtOther5.TabIndex = 62;
+            this.txtOther5.TabStop = false;
             // 
             // txtOther6
             // 
@@ -654,6 +674,7 @@
             this.txtOther6.Name = "txtOther6";
             this.txtOther6.Size = new System.Drawing.Size(130, 37);
             this.txtOther6.TabIndex = 64;
+            this.txtOther6.TabStop = false;
             // 
             // txtOther7
             // 
@@ -663,6 +684,7 @@
             this.txtOther7.Name = "txtOther7";
             this.txtOther7.Size = new System.Drawing.Size(130, 37);
             this.txtOther7.TabIndex = 66;
+            this.txtOther7.TabStop = false;
             // 
             // txtTotalW
             // 
@@ -712,10 +734,11 @@
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cb24hr.AutoSize = true;
-            this.cb24hr.Location = new System.Drawing.Point(10, 418);
+            this.cb24hr.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.cb24hr.Location = new System.Drawing.Point(18, 422);
             this.cb24hr.Name = "cb24hr";
-            this.cb24hr.Size = new System.Drawing.Size(82, 17);
-            this.cb24hr.TabIndex = 3;
+            this.cb24hr.Size = new System.Drawing.Size(204, 41);
+            this.cb24hr.TabIndex = 4;
             this.cb24hr.Text = "24 &Hr Clock";
             this.cb24hr.UseVisualStyleBackColor = true;
             // 
@@ -741,6 +764,7 @@
             this.txtCode1.Name = "txtCode1";
             this.txtCode1.Size = new System.Drawing.Size(69, 37);
             this.txtCode1.TabIndex = 55;
+            this.txtCode1.TabStop = false;
             // 
             // txtCode2
             // 
@@ -750,6 +774,7 @@
             this.txtCode2.Name = "txtCode2";
             this.txtCode2.Size = new System.Drawing.Size(69, 37);
             this.txtCode2.TabIndex = 57;
+            this.txtCode2.TabStop = false;
             // 
             // txtCode3
             // 
@@ -759,6 +784,7 @@
             this.txtCode3.Name = "txtCode3";
             this.txtCode3.Size = new System.Drawing.Size(69, 37);
             this.txtCode3.TabIndex = 59;
+            this.txtCode3.TabStop = false;
             // 
             // txtCode4
             // 
@@ -768,6 +794,7 @@
             this.txtCode4.Name = "txtCode4";
             this.txtCode4.Size = new System.Drawing.Size(69, 37);
             this.txtCode4.TabIndex = 61;
+            this.txtCode4.TabStop = false;
             // 
             // txtCode5
             // 
@@ -777,6 +804,7 @@
             this.txtCode5.Name = "txtCode5";
             this.txtCode5.Size = new System.Drawing.Size(69, 37);
             this.txtCode5.TabIndex = 63;
+            this.txtCode5.TabStop = false;
             // 
             // txtCode6
             // 
@@ -786,6 +814,7 @@
             this.txtCode6.Name = "txtCode6";
             this.txtCode6.Size = new System.Drawing.Size(69, 37);
             this.txtCode6.TabIndex = 65;
+            this.txtCode6.TabStop = false;
             // 
             // txtCode7
             // 
@@ -795,49 +824,27 @@
             this.txtCode7.Name = "txtCode7";
             this.txtCode7.Size = new System.Drawing.Size(69, 37);
             this.txtCode7.TabIndex = 67;
-            // 
-            // txtWorkDays
-            // 
-            this.txtWorkDays.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtWorkDays.Enabled = false;
-            this.txtWorkDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWorkDays.Location = new System.Drawing.Point(60, 516);
-            this.txtWorkDays.Multiline = true;
-            this.txtWorkDays.Name = "txtWorkDays";
-            this.txtWorkDays.ReadOnly = true;
-            this.txtWorkDays.Size = new System.Drawing.Size(221, 329);
-            this.txtWorkDays.TabIndex = 81;
-            this.txtWorkDays.TabStop = false;
-            this.txtWorkDays.Text = "Sunday\r\nMonday\r\nTuesday\r\nWednesday\r\nThursday\r\nFriday\r\nSaturday";
-            // 
-            // textBox9
-            // 
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox9.Enabled = false;
-            this.textBox9.Location = new System.Drawing.Point(0, 478);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(285, 388);
-            this.textBox9.TabIndex = 5;
-            this.textBox9.TabStop = false;
+            this.txtCode7.TabStop = false;
             // 
             // btnPrevWeek
             // 
-            this.btnPrevWeek.Location = new System.Drawing.Point(37, 133);
+            this.btnPrevWeek.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.btnPrevWeek.Location = new System.Drawing.Point(25, 125);
             this.btnPrevWeek.Name = "btnPrevWeek";
-            this.btnPrevWeek.Size = new System.Drawing.Size(155, 36);
-            this.btnPrevWeek.TabIndex = 82;
-            this.btnPrevWeek.Text = "&Previous Week";
+            this.btnPrevWeek.Size = new System.Drawing.Size(179, 44);
+            this.btnPrevWeek.TabIndex = 6;
+            this.btnPrevWeek.Text = "&Prev Week";
             this.btnPrevWeek.UseVisualStyleBackColor = true;
             this.btnPrevWeek.Click += new System.EventHandler(this.btnPrevWeek_Click);
             // 
             // btnNextWeek
             // 
             this.btnNextWeek.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNextWeek.Location = new System.Drawing.Point(1595, 133);
+            this.btnNextWeek.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.btnNextWeek.Location = new System.Drawing.Point(1548, 127);
             this.btnNextWeek.Name = "btnNextWeek";
-            this.btnNextWeek.Size = new System.Drawing.Size(155, 36);
-            this.btnNextWeek.TabIndex = 83;
+            this.btnNextWeek.Size = new System.Drawing.Size(202, 40);
+            this.btnNextWeek.TabIndex = 7;
             this.btnNextWeek.Text = "&Next Week";
             this.btnNextWeek.UseVisualStyleBackColor = true;
             this.btnNextWeek.Click += new System.EventHandler(this.btnNextWeek_Click);
@@ -845,6 +852,7 @@
             // cbBox1
             // 
             this.cbBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.cbBox1.FormattingEnabled = true;
             this.cbBox1.Items.AddRange(new object[] {
             "SDO",
@@ -854,23 +862,15 @@
             "Vacation",
             "Bereavement",
             "Jury"});
-            this.cbBox1.Location = new System.Drawing.Point(0, 529);
+            this.cbBox1.Location = new System.Drawing.Point(6, 6);
             this.cbBox1.Name = "cbBox1";
-            this.cbBox1.Size = new System.Drawing.Size(60, 21);
-            this.cbBox1.TabIndex = 84;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 498);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 13);
-            this.label1.TabIndex = 85;
-            this.label1.Text = "Worked:";
+            this.cbBox1.Size = new System.Drawing.Size(128, 45);
+            this.cbBox1.TabIndex = 0;
             // 
             // cbBox2
             // 
             this.cbBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbBox2.FormattingEnabled = true;
             this.cbBox2.Items.AddRange(new object[] {
             "SDO",
@@ -880,14 +880,15 @@
             "Vacation",
             "Bereavement",
             "Jury"});
-            this.cbBox2.Location = new System.Drawing.Point(0, 575);
+            this.cbBox2.Location = new System.Drawing.Point(6, 53);
             this.cbBox2.Name = "cbBox2";
-            this.cbBox2.Size = new System.Drawing.Size(60, 21);
-            this.cbBox2.TabIndex = 86;
+            this.cbBox2.Size = new System.Drawing.Size(128, 45);
+            this.cbBox2.TabIndex = 1;
             // 
             // cbBox3
             // 
             this.cbBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbBox3.FormattingEnabled = true;
             this.cbBox3.Items.AddRange(new object[] {
             "SDO",
@@ -897,14 +898,15 @@
             "Vacation",
             "Bereavement",
             "Jury"});
-            this.cbBox3.Location = new System.Drawing.Point(0, 620);
+            this.cbBox3.Location = new System.Drawing.Point(6, 103);
             this.cbBox3.Name = "cbBox3";
-            this.cbBox3.Size = new System.Drawing.Size(60, 21);
-            this.cbBox3.TabIndex = 87;
+            this.cbBox3.Size = new System.Drawing.Size(128, 45);
+            this.cbBox3.TabIndex = 2;
             // 
             // cbBox4
             // 
             this.cbBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbBox4.FormattingEnabled = true;
             this.cbBox4.Items.AddRange(new object[] {
             "SDO",
@@ -914,14 +916,15 @@
             "Vacation",
             "Bereavement",
             "Jury"});
-            this.cbBox4.Location = new System.Drawing.Point(1, 667);
+            this.cbBox4.Location = new System.Drawing.Point(6, 154);
             this.cbBox4.Name = "cbBox4";
-            this.cbBox4.Size = new System.Drawing.Size(60, 21);
-            this.cbBox4.TabIndex = 88;
+            this.cbBox4.Size = new System.Drawing.Size(128, 45);
+            this.cbBox4.TabIndex = 3;
             // 
             // cbBox5
             // 
             this.cbBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbBox5.FormattingEnabled = true;
             this.cbBox5.Items.AddRange(new object[] {
             "SDO",
@@ -931,14 +934,15 @@
             "Vacation",
             "Bereavement",
             "Jury"});
-            this.cbBox5.Location = new System.Drawing.Point(0, 713);
+            this.cbBox5.Location = new System.Drawing.Point(6, 204);
             this.cbBox5.Name = "cbBox5";
-            this.cbBox5.Size = new System.Drawing.Size(60, 21);
-            this.cbBox5.TabIndex = 89;
+            this.cbBox5.Size = new System.Drawing.Size(128, 45);
+            this.cbBox5.TabIndex = 4;
             // 
             // cbBox6
             // 
             this.cbBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbBox6.FormattingEnabled = true;
             this.cbBox6.Items.AddRange(new object[] {
             "SDO",
@@ -948,14 +952,15 @@
             "Vacation",
             "Bereavement",
             "Jury"});
-            this.cbBox6.Location = new System.Drawing.Point(0, 758);
+            this.cbBox6.Location = new System.Drawing.Point(6, 253);
             this.cbBox6.Name = "cbBox6";
-            this.cbBox6.Size = new System.Drawing.Size(60, 21);
-            this.cbBox6.TabIndex = 90;
+            this.cbBox6.Size = new System.Drawing.Size(128, 45);
+            this.cbBox6.TabIndex = 5;
             // 
             // cbBox7
             // 
             this.cbBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbBox7.FormattingEnabled = true;
             this.cbBox7.Items.AddRange(new object[] {
             "SDO",
@@ -965,10 +970,199 @@
             "Vacation",
             "Bereavement",
             "Jury"});
-            this.cbBox7.Location = new System.Drawing.Point(0, 806);
+            this.cbBox7.Location = new System.Drawing.Point(6, 302);
             this.cbBox7.Name = "cbBox7";
-            this.cbBox7.Size = new System.Drawing.Size(60, 21);
-            this.cbBox7.TabIndex = 91;
+            this.cbBox7.Size = new System.Drawing.Size(128, 45);
+            this.cbBox7.TabIndex = 6;
+            // 
+            // numHor
+            // 
+            this.numHor.Location = new System.Drawing.Point(223, 143);
+            this.numHor.Maximum = new decimal(new int[] {
+            600,
+            0,
+            0,
+            0});
+            this.numHor.Minimum = new decimal(new int[] {
+            600,
+            0,
+            0,
+            -2147483648});
+            this.numHor.Name = "numHor";
+            this.numHor.Size = new System.Drawing.Size(120, 20);
+            this.numHor.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.numHor, "Hundreths of an inch (ie. 600 = 6\")");
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(220, 127);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(124, 13);
+            this.label2.TabIndex = 93;
+            this.label2.Text = "Adjust Horizontal Printing";
+            this.toolTip1.SetToolTip(this.label2, "Hundreths of an inch (ie. 600 = 6\")");
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(350, 127);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(112, 13);
+            this.label3.TabIndex = 94;
+            this.label3.Text = "Adjust Vertical Printing";
+            // 
+            // numVert
+            // 
+            this.numVert.Location = new System.Drawing.Point(353, 143);
+            this.numVert.Maximum = new decimal(new int[] {
+            425,
+            0,
+            0,
+            0});
+            this.numVert.Minimum = new decimal(new int[] {
+            425,
+            0,
+            0,
+            -2147483648});
+            this.numVert.Name = "numVert";
+            this.numVert.Size = new System.Drawing.Size(120, 20);
+            this.numVert.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.numVert, "Hundreths of an inch (ie. 600 = 6\")");
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(524, 130);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(967, 31);
+            this.label4.TabIndex = 96;
+            this.label4.Text = "Don\'t forget to save your print offsets, name, crew, and employee number";
+            this.toolTip1.SetToolTip(this.label4, "At the top, click Settings then Save");
+            // 
+            // grpBox
+            // 
+            this.grpBox.Controls.Add(this.label9);
+            this.grpBox.Controls.Add(this.label5);
+            this.grpBox.Controls.Add(this.label1);
+            this.grpBox.Controls.Add(this.label10);
+            this.grpBox.Controls.Add(this.label6);
+            this.grpBox.Controls.Add(this.label7);
+            this.grpBox.Controls.Add(this.label8);
+            this.grpBox.Controls.Add(this.cbBox2);
+            this.grpBox.Controls.Add(this.cbBox1);
+            this.grpBox.Controls.Add(this.cbBox3);
+            this.grpBox.Controls.Add(this.cbBox4);
+            this.grpBox.Controls.Add(this.cbBox7);
+            this.grpBox.Controls.Add(this.cbBox5);
+            this.grpBox.Controls.Add(this.cbBox6);
+            this.grpBox.Location = new System.Drawing.Point(12, 504);
+            this.grpBox.Name = "grpBox";
+            this.grpBox.Size = new System.Drawing.Size(273, 355);
+            this.grpBox.TabIndex = 5;
+            this.grpBox.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 31F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(184, 295);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(83, 48);
+            this.label9.TabIndex = 97;
+            this.label9.Text = "Sat";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 31F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(197, 246);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 48);
+            this.label5.TabIndex = 96;
+            this.label5.Text = "Fri";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 31F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(140, 197);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 48);
+            this.label1.TabIndex = 95;
+            this.label1.Text = "Thurs";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 31F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(161, 147);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(106, 48);
+            this.label10.TabIndex = 94;
+            this.label10.Text = "Wed";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 31F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(154, 96);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(113, 48);
+            this.label6.TabIndex = 93;
+            this.label6.Text = "Tues";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 31F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(166, 46);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(101, 48);
+            this.label7.TabIndex = 92;
+            this.label7.Text = "Mon";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 31F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(173, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(94, 48);
+            this.label8.TabIndex = 87;
+            this.label8.Text = "Sun";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.label11.Location = new System.Drawing.Point(18, 472);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(137, 37);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Worked:";
             // 
             // frmPrintTimeCard
             // 
@@ -978,17 +1172,14 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1799, 927);
-            this.Controls.Add(this.cbBox7);
-            this.Controls.Add(this.cbBox6);
-            this.Controls.Add(this.cbBox5);
-            this.Controls.Add(this.cbBox4);
-            this.Controls.Add(this.cbBox3);
-            this.Controls.Add(this.cbBox2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cbBox1);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.numVert);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.numHor);
             this.Controls.Add(this.btnNextWeek);
             this.Controls.Add(this.btnPrevWeek);
-            this.Controls.Add(this.txtWorkDays);
             this.Controls.Add(this.txtCode7);
             this.Controls.Add(this.txtCode6);
             this.Controls.Add(this.txtCode5);
@@ -1051,7 +1242,7 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.cbEarly);
             this.Controls.Add(this.menuStrip);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.grpBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
             this.Name = "frmPrintTimeCard";
@@ -1059,6 +1250,10 @@
             this.Load += new System.EventHandler(this.frmPrintTimeCard_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numHor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numVert)).EndInit();
+            this.grpBox.ResumeLayout(false);
+            this.grpBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1135,21 +1330,33 @@
         private System.Windows.Forms.TextBox txtCode5;
         private System.Windows.Forms.TextBox txtCode6;
         private System.Windows.Forms.TextBox txtCode7;
-        private System.Windows.Forms.TextBox txtWorkDays;
-        private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.ToolStripMenuItem printSettingsToolStripMenuItem;
         private System.Windows.Forms.Button btnPrevWeek;
         private System.Windows.Forms.Button btnNextWeek;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem offsetsToolStripMenuItem;
         private System.Windows.Forms.ComboBox cbBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbBox2;
         private System.Windows.Forms.ComboBox cbBox3;
         private System.Windows.Forms.ComboBox cbBox4;
         private System.Windows.Forms.ComboBox cbBox5;
         private System.Windows.Forms.ComboBox cbBox6;
         private System.Windows.Forms.ComboBox cbBox7;
+        private System.Windows.Forms.NumericUpDown numHor;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown numVert;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox grpBox;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label11;
     }
 }
 
