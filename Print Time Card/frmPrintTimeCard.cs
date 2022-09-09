@@ -390,7 +390,8 @@ namespace Print_Time_Card
             }
         }
 
-        private void checkBox_ChangeCheck(object sender, EventArgs e)
+        // Old method of user selecting either working days or nights
+        /*private void checkBox_ChangeCheck(object sender, EventArgs e)
         {
             Control ctl = (Control)sender;
             int ctlNumber;
@@ -470,7 +471,8 @@ namespace Print_Time_Card
                     }
                 }
             }
-        }
+        }*/
+
         public void enterTime(int indexChecked, string format, int hr1, int min1, int hr2, int min2, CheckBox cbNight)
         {
             Control ctnIn = Controls["txtIn" + (indexChecked)];
@@ -568,16 +570,21 @@ namespace Print_Time_Card
             txtFrom.Text = currentDay.AddDays(-howManyDaysSinceSunday).ToShortDateString();
             txtTo.Text = currentDay.AddDays(daysUntilSaturday).ToShortDateString();
             var textBoxes = new System.Collections.Generic.List<Control>();
-            var checkBoxes = new System.Collections.Generic.List<Control>();
+            //var checkBoxes = new System.Collections.Generic.List<Control>();
+            var comboBoxes = new System.Collections.Generic.List<Control>();
             foreach (Control control in Controls)
             {
                 if (control != null && control is TextBox)
                 {
                     textBoxes.Add(control as TextBox);
-                }
-                else if (control != null && control is CheckBox)
+                } // Old code
+                /*else if (control != null && control is CheckBox)
                 {
                     checkBoxes.Add(control as CheckBox);
+                }*/
+                else if (control != null && control is ComboBox)
+                {
+                    comboBoxes.Add(control as ComboBox);
                 }
             }
             foreach (TextBox ctl in textBoxes)
@@ -612,14 +619,18 @@ namespace Print_Time_Card
                     ctl.TextChanged += eventHandler;
                 }
 
-            }
-            foreach (CheckBox ctl in checkBoxes)
+            } // Old code
+            /*            foreach (CheckBox ctl in checkBoxes)
+                        {
+                            if ((ctl).Name.ToUpper().Contains("CBDAY") || (ctl).Name.ToUpper().Contains("CBNIGHT"))
+                            {
+                                EventHandler eventHandler = new EventHandler(checkBox_ChangeCheck);
+                                ctl.Click += eventHandler;
+                            }
+                        }*/
+            foreach (ComboBox ctl in comboBoxes)
             {
-                if ((ctl).Name.ToUpper().Contains("CBDAY") || (ctl).Name.ToUpper().Contains("CBNIGHT"))
-                {
-                    EventHandler eventHandler = new EventHandler(checkBox_ChangeCheck);
-                    ctl.Click += eventHandler;
-                }
+                ctl.SelectedIndex = 0;
             }
         }
 

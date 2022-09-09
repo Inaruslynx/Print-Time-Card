@@ -34,6 +34,8 @@
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.offsetsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abouToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,28 +102,18 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.cbDay1 = new System.Windows.Forms.CheckBox();
-            this.cbDay2 = new System.Windows.Forms.CheckBox();
-            this.cbDay3 = new System.Windows.Forms.CheckBox();
-            this.cbDay4 = new System.Windows.Forms.CheckBox();
-            this.cbDay5 = new System.Windows.Forms.CheckBox();
-            this.cbDay6 = new System.Windows.Forms.CheckBox();
-            this.cbDay7 = new System.Windows.Forms.CheckBox();
             this.txtWorkDays = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbNight1 = new System.Windows.Forms.CheckBox();
-            this.cbNight2 = new System.Windows.Forms.CheckBox();
-            this.cbNight3 = new System.Windows.Forms.CheckBox();
-            this.cbNight4 = new System.Windows.Forms.CheckBox();
-            this.cbNight5 = new System.Windows.Forms.CheckBox();
-            this.cbNight6 = new System.Windows.Forms.CheckBox();
-            this.cbNight7 = new System.Windows.Forms.CheckBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.btnPrevWeek = new System.Windows.Forms.Button();
             this.btnNextWeek = new System.Windows.Forms.Button();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.offsetsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cbBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbBox2 = new System.Windows.Forms.ComboBox();
+            this.cbBox3 = new System.Windows.Forms.ComboBox();
+            this.cbBox4 = new System.Windows.Forms.ComboBox();
+            this.cbBox5 = new System.Windows.Forms.ComboBox();
+            this.cbBox6 = new System.Windows.Forms.ComboBox();
+            this.cbBox7 = new System.Windows.Forms.ComboBox();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -150,23 +142,37 @@
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.printToolStripMenuItem.Text = "&Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.printMenu_Click);
             // 
             // resetToolStripMenuItem
             // 
             this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-            this.resetToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resetToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.resetToolStripMenuItem.Text = "&Reset";
             this.resetToolStripMenuItem.Click += new System.EventHandler(this.resetToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitMenu_Click);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.offsetsToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "&Settings";
+            // 
+            // offsetsToolStripMenuItem
+            // 
+            this.offsetsToolStripMenuItem.Name = "offsetsToolStripMenuItem";
+            this.offsetsToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.offsetsToolStripMenuItem.Text = "&Offsets";
             // 
             // abouToolStripMenuItem
             // 
@@ -193,6 +199,9 @@
             // 
             // cbEarly
             // 
+            this.cbEarly.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEarly.AutoSize = true;
             this.cbEarly.Location = new System.Drawing.Point(107, 418);
             this.cbEarly.Name = "cbEarly";
@@ -699,6 +708,9 @@
             // 
             // cb24hr
             // 
+            this.cb24hr.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cb24hr.AutoSize = true;
             this.cb24hr.Location = new System.Drawing.Point(10, 418);
             this.cb24hr.Name = "cb24hr";
@@ -784,69 +796,6 @@
             this.textBox7.Size = new System.Drawing.Size(69, 37);
             this.textBox7.TabIndex = 67;
             // 
-            // cbDay1
-            // 
-            this.cbDay1.AutoSize = true;
-            this.cbDay1.Location = new System.Drawing.Point(10, 531);
-            this.cbDay1.Name = "cbDay1";
-            this.cbDay1.Size = new System.Drawing.Size(15, 14);
-            this.cbDay1.TabIndex = 8;
-            this.cbDay1.UseVisualStyleBackColor = true;
-            // 
-            // cbDay2
-            // 
-            this.cbDay2.AutoSize = true;
-            this.cbDay2.Location = new System.Drawing.Point(10, 578);
-            this.cbDay2.Name = "cbDay2";
-            this.cbDay2.Size = new System.Drawing.Size(15, 14);
-            this.cbDay2.TabIndex = 10;
-            this.cbDay2.UseVisualStyleBackColor = true;
-            // 
-            // cbDay3
-            // 
-            this.cbDay3.AutoSize = true;
-            this.cbDay3.Location = new System.Drawing.Point(10, 626);
-            this.cbDay3.Name = "cbDay3";
-            this.cbDay3.Size = new System.Drawing.Size(15, 14);
-            this.cbDay3.TabIndex = 12;
-            this.cbDay3.UseVisualStyleBackColor = true;
-            // 
-            // cbDay4
-            // 
-            this.cbDay4.AutoSize = true;
-            this.cbDay4.Location = new System.Drawing.Point(10, 672);
-            this.cbDay4.Name = "cbDay4";
-            this.cbDay4.Size = new System.Drawing.Size(15, 14);
-            this.cbDay4.TabIndex = 14;
-            this.cbDay4.UseVisualStyleBackColor = true;
-            // 
-            // cbDay5
-            // 
-            this.cbDay5.AutoSize = true;
-            this.cbDay5.Location = new System.Drawing.Point(10, 720);
-            this.cbDay5.Name = "cbDay5";
-            this.cbDay5.Size = new System.Drawing.Size(15, 14);
-            this.cbDay5.TabIndex = 16;
-            this.cbDay5.UseVisualStyleBackColor = true;
-            // 
-            // cbDay6
-            // 
-            this.cbDay6.AutoSize = true;
-            this.cbDay6.Location = new System.Drawing.Point(10, 762);
-            this.cbDay6.Name = "cbDay6";
-            this.cbDay6.Size = new System.Drawing.Size(15, 14);
-            this.cbDay6.TabIndex = 18;
-            this.cbDay6.UseVisualStyleBackColor = true;
-            // 
-            // cbDay7
-            // 
-            this.cbDay7.AutoSize = true;
-            this.cbDay7.Location = new System.Drawing.Point(10, 809);
-            this.cbDay7.Name = "cbDay7";
-            this.cbDay7.Size = new System.Drawing.Size(15, 14);
-            this.cbDay7.TabIndex = 20;
-            this.cbDay7.UseVisualStyleBackColor = true;
-            // 
             // txtWorkDays
             // 
             this.txtWorkDays.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -860,87 +809,6 @@
             this.txtWorkDays.TabIndex = 81;
             this.txtWorkDays.TabStop = false;
             this.txtWorkDays.Text = "Sunday\r\nMonday\r\nTuesday\r\nWednesday\r\nThursday\r\nFriday\r\nSaturday";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 486);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Day";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 486);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Night";
-            // 
-            // cbNight1
-            // 
-            this.cbNight1.AutoSize = true;
-            this.cbNight1.Location = new System.Drawing.Point(38, 531);
-            this.cbNight1.Name = "cbNight1";
-            this.cbNight1.Size = new System.Drawing.Size(15, 14);
-            this.cbNight1.TabIndex = 9;
-            this.cbNight1.UseVisualStyleBackColor = true;
-            // 
-            // cbNight2
-            // 
-            this.cbNight2.AutoSize = true;
-            this.cbNight2.Location = new System.Drawing.Point(39, 578);
-            this.cbNight2.Name = "cbNight2";
-            this.cbNight2.Size = new System.Drawing.Size(15, 14);
-            this.cbNight2.TabIndex = 11;
-            this.cbNight2.UseVisualStyleBackColor = true;
-            // 
-            // cbNight3
-            // 
-            this.cbNight3.AutoSize = true;
-            this.cbNight3.Location = new System.Drawing.Point(37, 626);
-            this.cbNight3.Name = "cbNight3";
-            this.cbNight3.Size = new System.Drawing.Size(15, 14);
-            this.cbNight3.TabIndex = 13;
-            this.cbNight3.UseVisualStyleBackColor = true;
-            // 
-            // cbNight4
-            // 
-            this.cbNight4.AutoSize = true;
-            this.cbNight4.Location = new System.Drawing.Point(37, 672);
-            this.cbNight4.Name = "cbNight4";
-            this.cbNight4.Size = new System.Drawing.Size(15, 14);
-            this.cbNight4.TabIndex = 15;
-            this.cbNight4.UseVisualStyleBackColor = true;
-            // 
-            // cbNight5
-            // 
-            this.cbNight5.AutoSize = true;
-            this.cbNight5.Location = new System.Drawing.Point(38, 720);
-            this.cbNight5.Name = "cbNight5";
-            this.cbNight5.Size = new System.Drawing.Size(15, 14);
-            this.cbNight5.TabIndex = 17;
-            this.cbNight5.UseVisualStyleBackColor = true;
-            // 
-            // cbNight6
-            // 
-            this.cbNight6.AutoSize = true;
-            this.cbNight6.Location = new System.Drawing.Point(38, 762);
-            this.cbNight6.Name = "cbNight6";
-            this.cbNight6.Size = new System.Drawing.Size(15, 14);
-            this.cbNight6.TabIndex = 19;
-            this.cbNight6.UseVisualStyleBackColor = true;
-            // 
-            // cbNight7
-            // 
-            this.cbNight7.AutoSize = true;
-            this.cbNight7.Location = new System.Drawing.Point(38, 809);
-            this.cbNight7.Name = "cbNight7";
-            this.cbNight7.Size = new System.Drawing.Size(15, 14);
-            this.cbNight7.TabIndex = 21;
-            this.cbNight7.UseVisualStyleBackColor = true;
             // 
             // textBox9
             // 
@@ -965,6 +833,7 @@
             // 
             // btnNextWeek
             // 
+            this.btnNextWeek.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNextWeek.Location = new System.Drawing.Point(1595, 133);
             this.btnNextWeek.Name = "btnNextWeek";
             this.btnNextWeek.Size = new System.Drawing.Size(155, 36);
@@ -973,46 +842,146 @@
             this.btnNextWeek.UseVisualStyleBackColor = true;
             this.btnNextWeek.Click += new System.EventHandler(this.btnNextWeek_Click);
             // 
-            // settingsToolStripMenuItem
+            // cbBox1
             // 
-            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.offsetsToolStripMenuItem});
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.settingsToolStripMenuItem.Text = "&Settings";
+            this.cbBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBox1.FormattingEnabled = true;
+            this.cbBox1.Items.AddRange(new object[] {
+            "SDO",
+            "Days",
+            "Nights",
+            "Holiday",
+            "Vacation",
+            "Bereavement"});
+            this.cbBox1.Location = new System.Drawing.Point(0, 529);
+            this.cbBox1.Name = "cbBox1";
+            this.cbBox1.Size = new System.Drawing.Size(60, 21);
+            this.cbBox1.TabIndex = 84;
             // 
-            // offsetsToolStripMenuItem
+            // label1
             // 
-            this.offsetsToolStripMenuItem.Name = "offsetsToolStripMenuItem";
-            this.offsetsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.offsetsToolStripMenuItem.Text = "&Offsets";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 498);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.TabIndex = 85;
+            this.label1.Text = "Worked:";
+            // 
+            // cbBox2
+            // 
+            this.cbBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBox2.FormattingEnabled = true;
+            this.cbBox2.Items.AddRange(new object[] {
+            "SDO",
+            "Days",
+            "Nights",
+            "Holiday",
+            "Vacation",
+            "Bereavement"});
+            this.cbBox2.Location = new System.Drawing.Point(0, 575);
+            this.cbBox2.Name = "cbBox2";
+            this.cbBox2.Size = new System.Drawing.Size(60, 21);
+            this.cbBox2.TabIndex = 86;
+            // 
+            // cbBox3
+            // 
+            this.cbBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBox3.FormattingEnabled = true;
+            this.cbBox3.Items.AddRange(new object[] {
+            "SDO",
+            "Days",
+            "Nights",
+            "Holiday",
+            "Vacation",
+            "Bereavement"});
+            this.cbBox3.Location = new System.Drawing.Point(0, 620);
+            this.cbBox3.Name = "cbBox3";
+            this.cbBox3.Size = new System.Drawing.Size(60, 21);
+            this.cbBox3.TabIndex = 87;
+            // 
+            // cbBox4
+            // 
+            this.cbBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBox4.FormattingEnabled = true;
+            this.cbBox4.Items.AddRange(new object[] {
+            "SDO",
+            "Days",
+            "Nights",
+            "Holiday",
+            "Vacation",
+            "Bereavement"});
+            this.cbBox4.Location = new System.Drawing.Point(1, 667);
+            this.cbBox4.Name = "cbBox4";
+            this.cbBox4.Size = new System.Drawing.Size(60, 21);
+            this.cbBox4.TabIndex = 88;
+            // 
+            // cbBox5
+            // 
+            this.cbBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBox5.FormattingEnabled = true;
+            this.cbBox5.Items.AddRange(new object[] {
+            "SDO",
+            "Days",
+            "Nights",
+            "Holiday",
+            "Vacation",
+            "Bereavement"});
+            this.cbBox5.Location = new System.Drawing.Point(0, 713);
+            this.cbBox5.Name = "cbBox5";
+            this.cbBox5.Size = new System.Drawing.Size(60, 21);
+            this.cbBox5.TabIndex = 89;
+            // 
+            // cbBox6
+            // 
+            this.cbBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBox6.FormattingEnabled = true;
+            this.cbBox6.Items.AddRange(new object[] {
+            "SDO",
+            "Days",
+            "Nights",
+            "Holiday",
+            "Vacation",
+            "Bereavement"});
+            this.cbBox6.Location = new System.Drawing.Point(0, 758);
+            this.cbBox6.Name = "cbBox6";
+            this.cbBox6.Size = new System.Drawing.Size(60, 21);
+            this.cbBox6.TabIndex = 90;
+            // 
+            // cbBox7
+            // 
+            this.cbBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBox7.FormattingEnabled = true;
+            this.cbBox7.Items.AddRange(new object[] {
+            "SDO",
+            "Days",
+            "Nights",
+            "Holiday",
+            "Vacation",
+            "Bereavement"});
+            this.cbBox7.Location = new System.Drawing.Point(0, 806);
+            this.cbBox7.Name = "cbBox7";
+            this.cbBox7.Size = new System.Drawing.Size(60, 21);
+            this.cbBox7.TabIndex = 91;
             // 
             // frmPrintTimeCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1799, 927);
+            this.Controls.Add(this.cbBox7);
+            this.Controls.Add(this.cbBox6);
+            this.Controls.Add(this.cbBox5);
+            this.Controls.Add(this.cbBox4);
+            this.Controls.Add(this.cbBox3);
+            this.Controls.Add(this.cbBox2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cbBox1);
             this.Controls.Add(this.btnNextWeek);
             this.Controls.Add(this.btnPrevWeek);
-            this.Controls.Add(this.cbNight7);
-            this.Controls.Add(this.cbNight6);
-            this.Controls.Add(this.cbNight5);
-            this.Controls.Add(this.cbNight4);
-            this.Controls.Add(this.cbNight3);
-            this.Controls.Add(this.cbNight2);
-            this.Controls.Add(this.cbNight1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtWorkDays);
-            this.Controls.Add(this.cbDay7);
-            this.Controls.Add(this.cbDay6);
-            this.Controls.Add(this.cbDay5);
-            this.Controls.Add(this.cbDay4);
-            this.Controls.Add(this.cbDay3);
-            this.Controls.Add(this.cbDay2);
-            this.Controls.Add(this.cbDay1);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
@@ -1076,12 +1045,9 @@
             this.Controls.Add(this.cbEarly);
             this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.textBox9);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
-            this.MaximizeBox = false;
             this.Name = "frmPrintTimeCard";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Time Card";
             this.Load += new System.EventHandler(this.frmPrintTimeCard_Load);
             this.menuStrip.ResumeLayout(false);
@@ -1162,29 +1128,21 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.CheckBox cbDay1;
-        private System.Windows.Forms.CheckBox cbDay2;
-        private System.Windows.Forms.CheckBox cbDay3;
-        private System.Windows.Forms.CheckBox cbDay4;
-        private System.Windows.Forms.CheckBox cbDay5;
-        private System.Windows.Forms.CheckBox cbDay6;
-        private System.Windows.Forms.CheckBox cbDay7;
         private System.Windows.Forms.TextBox txtWorkDays;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox cbNight1;
-        private System.Windows.Forms.CheckBox cbNight2;
-        private System.Windows.Forms.CheckBox cbNight3;
-        private System.Windows.Forms.CheckBox cbNight4;
-        private System.Windows.Forms.CheckBox cbNight5;
-        private System.Windows.Forms.CheckBox cbNight6;
-        private System.Windows.Forms.CheckBox cbNight7;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.ToolStripMenuItem printSettingsToolStripMenuItem;
         private System.Windows.Forms.Button btnPrevWeek;
         private System.Windows.Forms.Button btnNextWeek;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem offsetsToolStripMenuItem;
+        private System.Windows.Forms.ComboBox cbBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbBox2;
+        private System.Windows.Forms.ComboBox cbBox3;
+        private System.Windows.Forms.ComboBox cbBox4;
+        private System.Windows.Forms.ComboBox cbBox5;
+        private System.Windows.Forms.ComboBox cbBox6;
+        private System.Windows.Forms.ComboBox cbBox7;
     }
 }
 
