@@ -73,7 +73,7 @@ namespace Print_Time_Card
 
             // first we need to find which day it is
             int number;
-            bool In;
+            bool In, night = false;
             if (obj.Name.ToUpper().Contains("IN"))
             {
                 number = int.Parse(obj.Name.Remove(0, 5));
@@ -84,6 +84,8 @@ namespace Print_Time_Card
                 number = int.Parse(obj.Name.Remove(0, 6));
                 In = false;
             }
+            ComboBox Box = (ComboBox)Controls["cbBox" + number];
+            if (Box.SelectedIndex == 2) night = true;
             // now we get a TimeSpan and change in and out time
             if (cb24hr.Checked == false)
             {
@@ -116,7 +118,7 @@ namespace Print_Time_Card
                 }
                 else
                 {
-                    adjOutTime(number, convertedTime);
+                    adjOutTime(number, convertedTime, night);
                 }
             }
             else
@@ -132,7 +134,7 @@ namespace Print_Time_Card
                 }
                 else
                 {
-                    adjOutTime(number, convertedTime);
+                    adjOutTime(number, convertedTime, night);
                 }
             }
         }
@@ -151,12 +153,12 @@ namespace Print_Time_Card
             }
         }
 
-        private void adjOutTime(int number, TimeSpan convertedTime)
+        private void adjOutTime(int number, TimeSpan convertedTime, bool night)
         {
             // Get number for checkbox passed in and time changed
-            CheckBox night = (CheckBox)Controls["cbNight" + number];
+            //CheckBox night = (CheckBox)Controls["cbNight" + number];
             TimeSpan timeOutDay;
-            if (night.Checked)
+            if (night)
             {
                 timeOutDay = outTime[number - 1] - Sunday.AddDays(number);
             }
@@ -390,6 +392,118 @@ namespace Print_Time_Card
             }
         }
 
+        // This checks what slection the user makes when they change a combobox
+        // 0 - SDO
+        // 1 - Days
+        // 2 - Nights
+        // 3 - Holiday
+        // 4 - Vacation
+        // 5 - Bereavement
+        private void cmbBox_Change(object sender, EventArgs e)
+        {
+            ComboBox ctl = (ComboBox)sender;
+            int ctlNumber = int.Parse(ctl.Name.Remove(0, 5));
+            int userChoice = ctl.SelectedIndex;
+            TextBox In = (TextBox)Controls["txtIn" + ctlNumber];
+            TextBox Out = (TextBox)Controls["txtOut" + ctlNumber];
+            TextBox Worked = (TextBox)Controls["txtWorked" + ctlNumber];
+            TextBox Bonus = (TextBox)Controls["txtBonus" + ctlNumber];
+            TextBox Other = (TextBox)Controls["txtOther" + ctlNumber];
+            TextBox Code = (TextBox)Controls["txtCode" + ctlNumber];
+            switch (userChoice)
+            {
+                case 0:
+                    // SDO
+                    In.Text = "SDO";
+                    Out.Text = "";
+                    Worked.Text = "";
+                    Bonus.Text = "";
+                    Other.Text = "";
+                    Code.Text = "";
+                    break;
+                case 1:
+                    // Day
+                    if (cbEarly.Checked)
+                    {
+                        if (cb24hr.Checked)
+                        {
+                            enterTime(ctlNumber, "H:mm", 7, 30, 20, 0, false);
+                        }
+                        else
+                        {
+                            enterTime(ctlNumber, "h:mm tt", 7, 30, 20, 0, false);
+                        }
+                    }
+                    else
+                    {
+                        if (cb24hr.Checked)
+                        {
+                            enterTime(ctlNumber, "H:mm", 8, 0, 20, 0, false);
+                        }
+                        else
+                        {
+                            enterTime(ctlNumber, "h:mm tt", 8, 0, 20, 0, false);
+                        }
+                    }
+                    break;
+                case 2:
+                    // Night
+                    if (cbEarly.Checked)
+                    {
+                        if (cb24hr.Checked)
+                        {
+                            enterTime(ctlNumber, "H:mm", 19, 30, 8, 0, true);
+                        }
+                        else
+                        {
+                            enterTime(ctlNumber, "h:mm tt", 19, 30, 8, 0, true);
+                        }
+                    }
+                    else
+                    {
+                        if (cb24hr.Checked)
+                        {
+                            enterTime(ctlNumber, "H:mm", 20, 0, 8, 0, true);
+                        }
+                        else
+                        {
+                            enterTime(ctlNumber, "h:mm tt", 20, 0, 8, 0, true);
+                        }
+                    }
+                    break;
+                case 3:
+                    // Holiday
+                    In.Text = "Holiday";
+                    Out.Text = "";
+                    Worked.Text = "";
+                    Bonus.Text = "";
+                    Other.Text = "8";
+                    Code.Text = "H";
+                    break;
+                case 4:
+                    // Vacation
+                    In.Text = "Vacation";
+                    Out.Text = "";
+                    Worked.Text = "";
+                    Bonus.Text = "";
+                    Other.Text = "12";
+                    Code.Text = "V";
+                    break;
+                case 5:
+                    // Bereavement
+                    In.Text = "BRVMNT";
+                    Out.Text = "";
+                    Worked.Text = "";
+                    Bonus.Text = "";
+                    Other.Text = "8";
+                    Code.Text = "B";
+                    break;
+                default:
+                    MessageBox.Show("Error. Let Joshua Edwards know what happened.");
+                    break;
+            }
+        }
+
         // Old method of user selecting either working days or nights
         /*private void checkBox_ChangeCheck(object sender, EventArgs e)
         {
@@ -473,11 +587,11 @@ namespace Print_Time_Card
             }
         }*/
 
-        public void enterTime(int indexChecked, string format, int hr1, int min1, int hr2, int min2, CheckBox cbNight)
+        public void enterTime(int indexChecked, string format, int hr1, int min1, int hr2, int min2, bool night)
         {
             Control ctnIn = Controls["txtIn" + (indexChecked)];
             Control ctnOut = Controls["txtOut" + (indexChecked)];
-            if (cbNight.Checked)
+            if (night)
             {
                 inTime[indexChecked - 1] = adjustTime(Sunday.AddDays(indexChecked - 1), hr1, min1);
                 outTime[indexChecked - 1] = adjustTime(Sunday.AddDays(indexChecked), hr2, min2);
@@ -500,8 +614,9 @@ namespace Print_Time_Card
             }
             for (int i = 1; i < 8; i++)
             {
-                CheckBox day = (CheckBox)Controls["cbDay" + i];
-                CheckBox night = (CheckBox)Controls["cbNight" + i];
+                //CheckBox day = (CheckBox)Controls["cbDay" + i];
+                //CheckBox night = (CheckBox)Controls["cbNight" + i];
+                ComboBox Box = (ComboBox)Controls["cbBox" + i];
                 TextBox In = (TextBox)Controls["txtIn" + i];
                 TextBox Out = (TextBox)Controls["txtOut" + i];
                 TextBox worked = (TextBox)Controls["txtWorked" + i];
@@ -509,8 +624,9 @@ namespace Print_Time_Card
                 TextBox overtime = (TextBox)Controls["txtOvertime" + i];
                 TextBox other = (TextBox)Controls["txtOther" + i];
                 TextBox last = (TextBox)Controls["textBox" + i];
-                day.Checked = false;
-                night.Checked = false;
+                //day.Checked = false;
+                //night.Checked = false;
+                Box.SelectedIndex = 0;
                 In.Text = "SDO";
                 Out.Text = "";
                 worked.Text = "";
@@ -630,6 +746,8 @@ namespace Print_Time_Card
                         }*/
             foreach (ComboBox ctl in comboBoxes)
             {
+                EventHandler eventHandler = new EventHandler(cmbBox_Change);
+                ctl.SelectedIndexChanged += eventHandler;
                 ctl.SelectedIndex = 0;
             }
         }

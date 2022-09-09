@@ -95,13 +95,13 @@
             this.cb24hr = new System.Windows.Forms.CheckBox();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtCode1 = new System.Windows.Forms.TextBox();
+            this.txtCode2 = new System.Windows.Forms.TextBox();
+            this.txtCode3 = new System.Windows.Forms.TextBox();
+            this.txtCode4 = new System.Windows.Forms.TextBox();
+            this.txtCode5 = new System.Windows.Forms.TextBox();
+            this.txtCode6 = new System.Windows.Forms.TextBox();
+            this.txtCode7 = new System.Windows.Forms.TextBox();
             this.txtWorkDays = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.btnPrevWeek = new System.Windows.Forms.Button();
@@ -733,68 +733,68 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
-            // textBox1
+            // txtCode1
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(1681, 514);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(69, 37);
-            this.textBox1.TabIndex = 55;
+            this.txtCode1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCode1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCode1.Location = new System.Drawing.Point(1681, 514);
+            this.txtCode1.Name = "txtCode1";
+            this.txtCode1.Size = new System.Drawing.Size(69, 37);
+            this.txtCode1.TabIndex = 55;
             // 
-            // textBox2
+            // txtCode2
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(1681, 560);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(69, 37);
-            this.textBox2.TabIndex = 57;
+            this.txtCode2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCode2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCode2.Location = new System.Drawing.Point(1681, 560);
+            this.txtCode2.Name = "txtCode2";
+            this.txtCode2.Size = new System.Drawing.Size(69, 37);
+            this.txtCode2.TabIndex = 57;
             // 
-            // textBox3
+            // txtCode3
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(1681, 612);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(69, 37);
-            this.textBox3.TabIndex = 59;
+            this.txtCode3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCode3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCode3.Location = new System.Drawing.Point(1681, 612);
+            this.txtCode3.Name = "txtCode3";
+            this.txtCode3.Size = new System.Drawing.Size(69, 37);
+            this.txtCode3.TabIndex = 59;
             // 
-            // textBox4
+            // txtCode4
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(1681, 661);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(69, 37);
-            this.textBox4.TabIndex = 61;
+            this.txtCode4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCode4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCode4.Location = new System.Drawing.Point(1681, 661);
+            this.txtCode4.Name = "txtCode4";
+            this.txtCode4.Size = new System.Drawing.Size(69, 37);
+            this.txtCode4.TabIndex = 61;
             // 
-            // textBox5
+            // txtCode5
             // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(1681, 711);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(69, 37);
-            this.textBox5.TabIndex = 63;
+            this.txtCode5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCode5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCode5.Location = new System.Drawing.Point(1681, 711);
+            this.txtCode5.Name = "txtCode5";
+            this.txtCode5.Size = new System.Drawing.Size(69, 37);
+            this.txtCode5.TabIndex = 63;
             // 
-            // textBox6
+            // txtCode6
             // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(1681, 760);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(69, 37);
-            this.textBox6.TabIndex = 65;
+            this.txtCode6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCode6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCode6.Location = new System.Drawing.Point(1681, 760);
+            this.txtCode6.Name = "txtCode6";
+            this.txtCode6.Size = new System.Drawing.Size(69, 37);
+            this.txtCode6.TabIndex = 65;
             // 
-            // textBox7
+            // txtCode7
             // 
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(1681, 809);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(69, 37);
-            this.textBox7.TabIndex = 67;
+            this.txtCode7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCode7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCode7.Location = new System.Drawing.Point(1681, 809);
+            this.txtCode7.Name = "txtCode7";
+            this.txtCode7.Size = new System.Drawing.Size(69, 37);
+            this.txtCode7.TabIndex = 67;
             // 
             // txtWorkDays
             // 
@@ -982,13 +982,13 @@
             this.Controls.Add(this.btnNextWeek);
             this.Controls.Add(this.btnPrevWeek);
             this.Controls.Add(this.txtWorkDays);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCode7);
+            this.Controls.Add(this.txtCode6);
+            this.Controls.Add(this.txtCode5);
+            this.Controls.Add(this.txtCode4);
+            this.Controls.Add(this.txtCode3);
+            this.Controls.Add(this.txtCode2);
+            this.Controls.Add(this.txtCode1);
             this.Controls.Add(this.cb24hr);
             this.Controls.Add(this.txtTotalOth);
             this.Controls.Add(this.txtTotalO);
@@ -1121,13 +1121,13 @@
         private System.Windows.Forms.CheckBox cb24hr;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtCode1;
+        private System.Windows.Forms.TextBox txtCode2;
+        private System.Windows.Forms.TextBox txtCode3;
+        private System.Windows.Forms.TextBox txtCode4;
+        private System.Windows.Forms.TextBox txtCode5;
+        private System.Windows.Forms.TextBox txtCode6;
+        private System.Windows.Forms.TextBox txtCode7;
         private System.Windows.Forms.TextBox txtWorkDays;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.ToolStripMenuItem printSettingsToolStripMenuItem;
