@@ -10,5 +10,5 @@ Requires .Net 4.8.
 
 ### Desired improvements:
 - Ability to resize UI without changing print layout.
-- Store data to file so suggestions can be made and automatic filing out of form.
-- Drop down list for days: SDO, Nights, Days, Holiday, Vacation, Bereavement, Jury, etc.
+- Store data to file so suggestions can be made and automatic filing out of form. (Done) 
+- Drop down list for days: SDO, Nights, Days, Holiday, Vacation, Bereavement, Jury, etc. (Done) 
