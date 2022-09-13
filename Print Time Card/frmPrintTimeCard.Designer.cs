@@ -187,7 +187,7 @@
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.saveToolStripMenuItem.Text = "S&ave";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -216,8 +216,8 @@
             // 
             // cbEarly
             // 
-            this.cbEarly.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.cbEarly.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEarly.AutoSize = true;
             this.cbEarly.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
@@ -266,7 +266,6 @@
             this.txtDept.Size = new System.Drawing.Size(422, 37);
             this.txtDept.TabIndex = 15;
             this.txtDept.TabStop = false;
-            this.txtDept.Text = "Hot Mill";
             // 
             // txtCrew
             // 
@@ -730,8 +729,8 @@
             // 
             // cb24hr
             // 
-            this.cb24hr.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.cb24hr.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cb24hr.AutoSize = true;
             this.cb24hr.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);

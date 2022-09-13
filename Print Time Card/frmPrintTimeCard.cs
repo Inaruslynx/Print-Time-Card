@@ -141,22 +141,22 @@ namespace Print_Time_Card
 
         private void adjInTime(int number, TimeSpan convertedTime)
         {
-            // Get number for checkbox passed in and time changed
+            // Get number for element passed in and time changed
             TimeSpan timeInDay = inTime[number - 1] - Sunday.AddDays(number - 1);
             if (convertedTime > timeInDay)
             {
-                inTime[number - 1] += convertedTime - timeInDay;
+                inTime[number - 1] += (convertedTime - timeInDay).Duration(); //need Duration for absolute time instead of relative time (+/-)
             }
             else if (convertedTime < timeInDay)
             {
-                inTime[number - 1] -= timeInDay - convertedTime;
+                inTime[number - 1] -= (timeInDay - convertedTime).Duration(); //need Duration for absolute time instead of relative time (+/-)
             }
         }
 
         private void adjOutTime(int number, TimeSpan convertedTime, bool night)
         {
-            // Get number for checkbox passed in and time changed
-            //CheckBox night = (CheckBox)Controls["cbNight" + number];
+            // Pass in number of element, time changed, and if it's night shift
+            //CheckBox night = (CheckBox)Controls["cbNight" + number]; // old code
             TimeSpan timeOutDay;
             if (night)
             {
@@ -168,11 +168,11 @@ namespace Print_Time_Card
             }
             if (convertedTime > timeOutDay)
             {
-                outTime[number - 1] += convertedTime - timeOutDay;
+                outTime[number - 1] += (convertedTime - timeOutDay).Duration(); //need Duration for absolute time instead of relative time (+/-)
             }
             else if (convertedTime < timeOutDay)
             {
-                outTime[number - 1] -= convertedTime - timeOutDay;
+                outTime[number - 1] -= (convertedTime - timeOutDay).Duration(); //need Duration for absolute time instead of relative time (+/-)
             }
         }
 
@@ -648,6 +648,7 @@ namespace Print_Time_Card
             txtName.Text = Properties.Settings.Default.empName;
             txtNumber.Text = Properties.Settings.Default.empNum;
             txtCrew.Text = Properties.Settings.Default.empCrew;
+            txtDept.Text = Properties.Settings.Default.empDept;
             numHor.Value = Properties.Settings.Default.horOffset;
             numVert.Value = Properties.Settings.Default.verOffset;
             txtTotalO.Text = "";
@@ -695,6 +696,7 @@ namespace Print_Time_Card
             txtName.Text = Properties.Settings.Default.empName;
             txtCrew.Text = Properties.Settings.Default.empCrew;
             txtNumber.Text = Properties.Settings.Default.empNum;
+            txtDept.Text = Properties.Settings.Default.empDept;
             numHor.Value = Properties.Settings.Default.horOffset;
             numVert.Value = Properties.Settings.Default.verOffset;
             txtFrom.Text = currentDay.AddDays(-howManyDaysSinceSunday).ToShortDateString();
@@ -803,6 +805,7 @@ namespace Print_Time_Card
             Properties.Settings.Default.empName = txtName.Text;
             Properties.Settings.Default.empCrew = txtCrew.Text;
             Properties.Settings.Default.empNum = txtNumber.Text;
+            Properties.Settings.Default.empDept = txtDept.Text;
             Properties.Settings.Default.horOffset = (int)numHor.Value;
             Properties.Settings.Default.verOffset = (int)numVert.Value;
             Properties.Settings.Default.Save();
