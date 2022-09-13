@@ -1033,11 +1033,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(524, 130);
+            this.label4.Location = new System.Drawing.Point(501, 130);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(967, 31);
+            this.label4.Size = new System.Drawing.Size(1041, 31);
             this.label4.TabIndex = 96;
-            this.label4.Text = "Don\'t forget to save your print offsets, name, crew, and employee number";
+            this.label4.Text = "Don\'t forget to save your print offsets, name, dept, crew, and employee number";
             this.toolTip1.SetToolTip(this.label4, "At the top, click Settings then Save");
             // 
             // grpBox
