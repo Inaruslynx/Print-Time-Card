@@ -127,10 +127,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.numCopies = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numVert)).BeginInit();
             this.grpBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numCopies)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -158,21 +161,21 @@
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.printToolStripMenuItem.Text = "&Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.printMenu_Click);
             // 
             // resetToolStripMenuItem
             // 
             this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-            this.resetToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.resetToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.resetToolStripMenuItem.Text = "&Reset";
             this.resetToolStripMenuItem.Click += new System.EventHandler(this.resetToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitMenu_Click);
             // 
@@ -1033,11 +1036,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(501, 130);
+            this.label4.Location = new System.Drawing.Point(606, 130);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1041, 31);
+            this.label4.Size = new System.Drawing.Size(445, 31);
             this.label4.TabIndex = 96;
-            this.label4.Text = "Don\'t forget to save your print offsets, name, dept, crew, and employee number";
+            this.label4.Text = "Don\'t forget to save your settings\r\n";
             this.toolTip1.SetToolTip(this.label4, "At the top, click Settings then Save");
             // 
             // grpBox
@@ -1163,6 +1166,32 @@
             this.label11.TabIndex = 5;
             this.label11.Text = "Worked:";
             // 
+            // numCopies
+            // 
+            this.numCopies.Location = new System.Drawing.Point(480, 142);
+            this.numCopies.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numCopies.Name = "numCopies";
+            this.numCopies.Size = new System.Drawing.Size(120, 20);
+            this.numCopies.TabIndex = 97;
+            this.numCopies.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(477, 127);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(91, 13);
+            this.label12.TabIndex = 98;
+            this.label12.Text = "Number of Copies";
+            // 
             // frmPrintTimeCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1171,6 +1200,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1799, 927);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.numCopies);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.numVert);
@@ -1253,6 +1284,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numVert)).EndInit();
             this.grpBox.ResumeLayout(false);
             this.grpBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numCopies)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1356,6 +1388,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.NumericUpDown numCopies;
+        private System.Windows.Forms.Label label12;
     }
 }
 

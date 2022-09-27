@@ -369,14 +369,14 @@ namespace Print_Time_Card
             }
         }
 
-        private void DrawAll(Graphics graphics)
+        private void DrawAll(Graphics graphics, int copies = 1)
         {
             // I need to print on a width of 6" and height of 4.25"
 
             RectangleF srcRect = new Rectangle(0, 0, this.BackgroundImage.Width, this.BackgroundImage.Height);
             int nWidth = 600;
             int nHeight = 425;
-            Font printFont = new Font(FontFamily.GenericSansSerif, 10);
+            Font printFont = new Font(FontFamily.GenericSansSerif, 9);
             RectangleF destRect = new Rectangle(0, 0, nWidth, nHeight);
             //graphics.DrawImage(this.BackgroundImage, destRect, srcRect, GraphicsUnit.Pixel);
             float scalex = destRect.Width / srcRect.Width;
@@ -626,14 +626,14 @@ namespace Print_Time_Card
             {
                 //CheckBox day = (CheckBox)Controls["cbDay" + i];
                 //CheckBox night = (CheckBox)Controls["cbNight" + i];
-                ComboBox Box = (ComboBox)Controls["cbBox" + i];
+                ComboBox Box = (ComboBox)grpBox.Controls["cbBox" + i];
                 TextBox In = (TextBox)Controls["txtIn" + i];
                 TextBox Out = (TextBox)Controls["txtOut" + i];
                 TextBox worked = (TextBox)Controls["txtWorked" + i];
                 TextBox bonus = (TextBox)Controls["txtBonus" + i];
                 TextBox overtime = (TextBox)Controls["txtOvertime" + i];
                 TextBox other = (TextBox)Controls["txtOther" + i];
-                TextBox last = (TextBox)Controls["textBox" + i];
+                TextBox last = (TextBox)Controls["txtCode" + i];
                 //day.Checked = false;
                 //night.Checked = false;
                 Box.SelectedIndex = 0;
@@ -651,6 +651,8 @@ namespace Print_Time_Card
             txtDept.Text = Properties.Settings.Default.empDept;
             numHor.Value = Properties.Settings.Default.horOffset;
             numVert.Value = Properties.Settings.Default.verOffset;
+            cb24hr.Checked = Properties.Settings.Default.milTime;
+            cbEarly.Checked = Properties.Settings.Default.meetings;
             txtTotalO.Text = "";
             txtTotalW.Text = "";
             txtTotalB.Text = "";
@@ -661,7 +663,9 @@ namespace Print_Time_Card
 
         private void printMenu_Click(object sender, EventArgs e)
         {
+            short numberOfCopies = (short)numCopies.Value;
             printPreviewDialog1.Document = this.printDocument1;
+            printDocument1.PrinterSettings.Copies = numberOfCopies;
             printPreviewDialog1.ShowDialog();
         }
 
@@ -699,6 +703,8 @@ namespace Print_Time_Card
             txtDept.Text = Properties.Settings.Default.empDept;
             numHor.Value = Properties.Settings.Default.horOffset;
             numVert.Value = Properties.Settings.Default.verOffset;
+            cb24hr.Checked = Properties.Settings.Default.milTime;
+            cbEarly.Checked = Properties.Settings.Default.meetings;
             txtFrom.Text = currentDay.AddDays(-howManyDaysSinceSunday).ToShortDateString();
             txtTo.Text = currentDay.AddDays(daysUntilSaturday).ToShortDateString();
             var textBoxes = new System.Collections.Generic.List<Control>();
@@ -808,6 +814,8 @@ namespace Print_Time_Card
             Properties.Settings.Default.empDept = txtDept.Text;
             Properties.Settings.Default.horOffset = (int)numHor.Value;
             Properties.Settings.Default.verOffset = (int)numVert.Value;
+            Properties.Settings.Default.meetings = cbEarly.Checked;
+            Properties.Settings.Default.milTime = cb24hr.Checked;
             Properties.Settings.Default.Save();
         }
     }

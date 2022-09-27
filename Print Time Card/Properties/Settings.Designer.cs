@@ -94,5 +94,29 @@ namespace Print_Time_Card.Properties {
                 this["empDept"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool meetings {
+            get {
+                return ((bool)(this["meetings"]));
+            }
+            set {
+                this["meetings"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool milTime {
+            get {
+                return ((bool)(this["milTime"]));
+            }
+            set {
+                this["milTime"] = value;
+            }
+        }
     }
 }
