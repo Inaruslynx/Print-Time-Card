@@ -118,5 +118,29 @@ namespace Print_Time_Card.Properties {
                 this["milTime"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("8:00")]
+        public string clockIn {
+            get {
+                return ((string)(this["clockIn"]));
+            }
+            set {
+                this["clockIn"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("8:00")]
+        public string clockOut {
+            get {
+                return ((string)(this["clockOut"]));
+            }
+            set {
+                this["clockOut"] = value;
+            }
+        }
     }
 }

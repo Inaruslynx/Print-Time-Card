@@ -26,5 +26,11 @@
     <Setting Name="milTime" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="clockIn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">8:00</Value>
+    </Setting>
+    <Setting Name="clockOut" Type="System.String" Scope="User">
+      <Value Profile="(Default)">8:00</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

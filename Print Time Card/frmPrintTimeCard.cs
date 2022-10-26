@@ -384,7 +384,7 @@ namespace Print_Time_Card
             // Pen aPen = new Pen(Brushes.Black, 1);
             for (int i = 0; i < this.Controls.Count; i++)
             {
-                if (Controls[i].GetType() == this.Controls["txtIn1"].GetType() && !Controls[i].Name.ToUpper().Contains("WORKDAYS"))
+                if (Controls[i].GetType() == this.Controls["txtIn1"].GetType() && !Controls[i].Name.ToUpper().Contains("CLOCK"))
                 {
                     TextBox theText = (TextBox)Controls[i];
                     graphics.DrawString(theText.Text, printFont, Brushes.Black, (theText.Bounds.Left * scalex) - 15 + (int)numHor.Value, (theText.Bounds.Top * scaley) - 15 + (int)numVert.Value, new StringFormat());
@@ -405,6 +405,7 @@ namespace Print_Time_Card
             ComboBox ctl = (ComboBox)sender;
             int ctlNumber = int.Parse(ctl.Name.Remove(0, 5));
             int userChoice = ctl.SelectedIndex;
+            int[] clockTimes = ProcessClockTimes();
             TextBox In = (TextBox)Controls["txtIn" + ctlNumber];
             TextBox Out = (TextBox)Controls["txtOut" + ctlNumber];
             TextBox Worked = (TextBox)Controls["txtWorked" + ctlNumber];
@@ -424,31 +425,39 @@ namespace Print_Time_Card
                     break;
                 case 1:
                     // Day
-                    if (cbEarly.Checked)
+                    if (clockTimes[0] == 0 && clockTimes[1] == 0 && clockTimes[2] == 0 && clockTimes[3] == 0)
                     {
-                        if (cb24hr.Checked)
-                        {
-                            enterTime(ctlNumber, "H:mm", 7, 30, 20, 0, false);
-                        }
-                        else
-                        {
-                            enterTime(ctlNumber, "h:mm tt", 7, 30, 20, 0, false);
-                        }
+                        MessageBox.Show("Please enter valid clock in and out times. If there is an error notify Joshua Edwards.");
                     }
                     else
                     {
                         if (cb24hr.Checked)
                         {
-                            enterTime(ctlNumber, "H:mm", 8, 0, 20, 0, false);
+                            enterTime(ctlNumber, "H:mm", clockTimes[0], clockTimes[1], clockTimes[2], clockTimes[3], false);
                         }
                         else
                         {
-                            enterTime(ctlNumber, "h:mm tt", 8, 0, 20, 0, false);
+                            enterTime(ctlNumber, "h:mm tt", clockTimes[0], clockTimes[1], clockTimes[2], clockTimes[3], false);
                         }
                     }
                     break;
                 case 2:
                     // Night
+                    if (clockTimes[0] == 0 && clockTimes[1] == 0 && clockTimes[2] == 0 && clockTimes[3] == 0)
+                    {
+                        MessageBox.Show("Please enter valid clock in and out times. If there is an error notify Joshua Edwards.");
+                    }
+                    else
+                    {
+                        if (cb24hr.Checked)
+                        {
+                            enterTime(ctlNumber, "H:mm", clockTimes[0] + 12, clockTimes[1], clockTimes[2] - 12, clockTimes[3], true);
+                        }
+                        else
+                        {
+                            enterTime(ctlNumber, "h:mm tt", clockTimes[0] + 12, clockTimes[1], clockTimes[2] - 12, clockTimes[3], true);
+                        }
+                    }/*
                     if (cbEarly.Checked)
                     {
                         if (cb24hr.Checked)
@@ -470,7 +479,7 @@ namespace Print_Time_Card
                         {
                             enterTime(ctlNumber, "h:mm tt", 20, 0, 8, 0, true);
                         }
-                    }
+                    }*/
                     break;
                 case 3:
                     // Holiday
@@ -512,6 +521,28 @@ namespace Print_Time_Card
                     MessageBox.Show("Error. Let Joshua Edwards know what happened.");
                     break;
             }
+        }
+
+        private int[] ProcessClockTimes()
+        {
+            string clockIn = txtClockIn.Text.ToLower();
+            string clockOut = txtClockOut.Text.ToLower();
+            TimeSpan timeIn, timeOut;
+            int[] returnZeros = new int[] { 0, 0, 0, 0 };
+            bool milTime = cb24hr.Checked;
+            if (milTime)
+            {
+                if (!TimeSpan.TryParse(clockIn, out timeIn)) return returnZeros;
+                if (!TimeSpan.TryParse(clockOut, out timeOut)) return returnZeros;
+            }
+            else
+            {
+                if (!TimeSpan.TryParse(clockIn.Remove(clockIn.Length - 2), out timeIn)) return returnZeros;
+                if (!TimeSpan.TryParse(clockOut.Remove(clockOut.Length - 2), out timeOut)) return returnZeros;
+                timeOut += new TimeSpan(12, 0, 0);
+            }
+            int[] returnValues = new int[] { timeIn.Hours, timeIn.Minutes, timeOut.Hours, timeOut.Minutes };
+            return returnValues;
         }
 
         // Old method of user selecting either working days or nights
@@ -599,8 +630,8 @@ namespace Print_Time_Card
 
         public void enterTime(int indexChecked, string format, int hr1, int min1, int hr2, int min2, bool night)
         {
-            Control ctnIn = Controls["txtIn" + (indexChecked)];
-            Control ctnOut = Controls["txtOut" + (indexChecked)];
+            Control ctnIn = Controls["txtIn" + indexChecked];
+            Control ctnOut = Controls["txtOut" + indexChecked];
             if (night)
             {
                 inTime[indexChecked - 1] = adjustTime(Sunday.AddDays(indexChecked - 1), hr1, min1);
@@ -652,13 +683,13 @@ namespace Print_Time_Card
             numHor.Value = Properties.Settings.Default.horOffset;
             numVert.Value = Properties.Settings.Default.verOffset;
             cb24hr.Checked = Properties.Settings.Default.milTime;
-            cbEarly.Checked = Properties.Settings.Default.meetings;
+            txtClockIn.Text = Properties.Settings.Default.clockIn;
+            txtClockOut.Text = Properties.Settings.Default.clockOut;
             txtTotalO.Text = "";
             txtTotalW.Text = "";
             txtTotalB.Text = "";
             txtTotalOth.Text = "";
             cb24hr.Checked = false;
-            cbEarly.Checked = false;
         }
 
         private void printMenu_Click(object sender, EventArgs e)
@@ -676,12 +707,12 @@ namespace Print_Time_Card
 
         private void aboutMenu_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Instructions:\n1. Fill out name, crew, and employee number. (tab to change box and space to select checkboxes)\n2. Check day or night on days worked.\n3. If you came in early every day for 30 minute meeting select 30 Minute Meetings\n\nThis app was created by Joshua Edwards.");
+            MessageBox.Show("This app was created by Joshua Edwards.");
         }
 
         private void printSettingsMenu_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Please verify the following settings for printer:\nPaper Size: 4.25 x 6.0 in\nOrientation: Landscape\nResolution: 300 dpi\n\nPlease make sure time cards are loaded appropriately");
+            MessageBox.Show("Please verify the following settings for printer:\nPaper Size: 4.25 x 6.0 in\nOrientation: Landscape\n\nPlease make sure time cards are loaded appropriately");
         }
 
         private void exitMenu_Click(object sender, EventArgs e)
@@ -704,7 +735,8 @@ namespace Print_Time_Card
             numHor.Value = Properties.Settings.Default.horOffset;
             numVert.Value = Properties.Settings.Default.verOffset;
             cb24hr.Checked = Properties.Settings.Default.milTime;
-            cbEarly.Checked = Properties.Settings.Default.meetings;
+            txtClockIn.Text = Properties.Settings.Default.clockIn;
+            txtClockOut.Text = Properties.Settings.Default.clockOut;
             txtFrom.Text = currentDay.AddDays(-howManyDaysSinceSunday).ToShortDateString();
             txtTo.Text = currentDay.AddDays(daysUntilSaturday).ToShortDateString();
             var textBoxes = new System.Collections.Generic.List<Control>();
@@ -770,7 +802,6 @@ namespace Print_Time_Card
             {
                 if (ctl != null)
                 {
-                    Console.WriteLine(ctl.Name);
                     EventHandler eventHandler = new EventHandler(cmbBox_Change);
                     ctl.SelectedIndexChanged += eventHandler;
                     ctl.SelectedIndex = 0;
@@ -814,8 +845,9 @@ namespace Print_Time_Card
             Properties.Settings.Default.empDept = txtDept.Text;
             Properties.Settings.Default.horOffset = (int)numHor.Value;
             Properties.Settings.Default.verOffset = (int)numVert.Value;
-            Properties.Settings.Default.meetings = cbEarly.Checked;
             Properties.Settings.Default.milTime = cb24hr.Checked;
+            Properties.Settings.Default.clockIn = txtClockIn.Text;
+            Properties.Settings.Default.clockOut = txtClockOut.Text;
             Properties.Settings.Default.Save();
         }
     }

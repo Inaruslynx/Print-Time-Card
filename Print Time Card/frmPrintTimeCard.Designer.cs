@@ -40,7 +40,6 @@
             this.abouToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cbEarly = new System.Windows.Forms.CheckBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtFrom = new System.Windows.Forms.TextBox();
             this.txtTo = new System.Windows.Forms.TextBox();
@@ -129,6 +128,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this.numCopies = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
+            this.txtClockIn = new System.Windows.Forms.TextBox();
+            this.txtClockOut = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numVert)).BeginInit();
@@ -161,21 +164,21 @@
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.printToolStripMenuItem.Text = "&Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.printMenu_Click);
             // 
             // resetToolStripMenuItem
             // 
             this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-            this.resetToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resetToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.resetToolStripMenuItem.Text = "&Reset";
             this.resetToolStripMenuItem.Click += new System.EventHandler(this.resetToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitMenu_Click);
             // 
@@ -216,20 +219,6 @@
             this.printSettingsToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.printSettingsToolStripMenuItem.Text = "&Print Settings";
             this.printSettingsToolStripMenuItem.Click += new System.EventHandler(this.printSettingsMenu_Click);
-            // 
-            // cbEarly
-            // 
-            this.cbEarly.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbEarly.AutoSize = true;
-            this.cbEarly.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.cbEarly.Location = new System.Drawing.Point(18, 375);
-            this.cbEarly.Name = "cbEarly";
-            this.cbEarly.Size = new System.Drawing.Size(313, 41);
-            this.cbEarly.TabIndex = 3;
-            this.cbEarly.Text = "30 &Minute Meetings";
-            this.cbEarly.UseVisualStyleBackColor = true;
             // 
             // txtName
             // 
@@ -1192,6 +1181,40 @@
             this.label12.TabIndex = 98;
             this.label12.Text = "Number of Copies";
             // 
+            // txtClockIn
+            // 
+            this.txtClockIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.txtClockIn.Location = new System.Drawing.Point(291, 405);
+            this.txtClockIn.Name = "txtClockIn";
+            this.txtClockIn.Size = new System.Drawing.Size(142, 44);
+            this.txtClockIn.TabIndex = 99;
+            // 
+            // txtClockOut
+            // 
+            this.txtClockOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.txtClockOut.Location = new System.Drawing.Point(748, 405);
+            this.txtClockOut.Name = "txtClockOut";
+            this.txtClockOut.Size = new System.Drawing.Size(142, 44);
+            this.txtClockOut.TabIndex = 100;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(288, 387);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(86, 13);
+            this.label13.TabIndex = 101;
+            this.label13.Text = "Usually Clock In:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(745, 387);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(94, 13);
+            this.label14.TabIndex = 102;
+            this.label14.Text = "Usually Clock Out:";
+            // 
             // frmPrintTimeCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1200,6 +1223,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1799, 927);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.txtClockOut);
+            this.Controls.Add(this.txtClockIn);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.numCopies);
             this.Controls.Add(this.label11);
@@ -1270,7 +1297,6 @@
             this.Controls.Add(this.txtTo);
             this.Controls.Add(this.txtFrom);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.cbEarly);
             this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.grpBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1298,7 +1324,6 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abouToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.CheckBox cbEarly;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtFrom;
         private System.Windows.Forms.TextBox txtTo;
@@ -1390,6 +1415,10 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.NumericUpDown numCopies;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtClockIn;
+        private System.Windows.Forms.TextBox txtClockOut;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
     }
 }
 
