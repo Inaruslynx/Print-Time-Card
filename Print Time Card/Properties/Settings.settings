@@ -27,10 +27,10 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="clockIn" Type="System.String" Scope="User">
-      <Value Profile="(Default)">8:00</Value>
+      <Value Profile="(Default)">8:00 AM</Value>
     </Setting>
     <Setting Name="clockOut" Type="System.String" Scope="User">
-      <Value Profile="(Default)">8:00</Value>
+      <Value Profile="(Default)">8:00 PM</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -121,7 +121,7 @@ namespace Print_Time_Card.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("8:00")]
+        [global::System.Configuration.DefaultSettingValueAttribute("8:00 AM")]
         public string clockIn {
             get {
                 return ((string)(this["clockIn"]));
@@ -133,7 +133,7 @@ namespace Print_Time_Card.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("8:00")]
+        [global::System.Configuration.DefaultSettingValueAttribute("8:00 PM")]
         public string clockOut {
             get {
                 return ((string)(this["clockOut"]));

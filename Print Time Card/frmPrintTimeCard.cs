@@ -320,7 +320,11 @@ namespace Print_Time_Card
 
         private void textBox_totalOvertime(object sender, EventArgs e)
         {
-
+            for (int i = 1; i < 8; i++)
+            {
+                Control ctl = Controls["txtOvertime" + i];
+                ctl.Text = "";
+            }
             if (!(txtTotalW.Text == ""))
             {
                 double totalWorkedHours = Convert.ToDouble(txtTotalW.Text);
@@ -333,17 +337,7 @@ namespace Print_Time_Card
                 {
                     txtTotalO.Text = "";
                 }
-
             }
-            if (txtTotalO.Text == "")
-            {
-                for (int i = 1; i < 8; i++)
-                {
-                    Control ctl = Controls["txtOvertime" + i];
-                    ctl.Text = "";
-                }
-            }
-
         }
 
         private void textBox_Overtime(object sender, EventArgs e)
