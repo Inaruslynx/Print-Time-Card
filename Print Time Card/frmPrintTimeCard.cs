@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Print_Time_Card.Tools;
+using System;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Globalization;
 using System.Windows.Forms;
 
@@ -7,173 +9,12 @@ namespace Print_Time_Card
 {
     public partial class frmPrintTimeCard : Form
     {
-        DateTime[] inTime = new DateTime[7];
-        DateTime[] outTime = new DateTime[7];
-        DateTime currentDay = DateTime.Today;
-        DateTime Sunday;
+        Time TimeTools = new Time();
+        UI UITools = new UI();
 
         public frmPrintTimeCard()
         {
             InitializeComponent();
-        }
-
-        public int adjustDay(DayOfWeek day, DateTime time, bool past)
-        {
-            int numberOfDays = 0;
-            if (past)
-            {
-                while (day != time.AddDays(-numberOfDays).DayOfWeek)
-                {
-                    numberOfDays++;
-                }
-            }
-            else
-            {
-                while (day != time.AddDays(numberOfDays).DayOfWeek)
-                {
-                    numberOfDays++;
-                }
-            }
-            return numberOfDays;
-        }
-
-        public DateTime adjustTime(DateTime time, int hour, int minute)
-        {
-            while (time.Hour != hour)
-            {
-                if (time.Hour > hour)
-                {
-                    time = time.AddHours(-1);
-                }
-
-                if (time.Hour < hour)
-                {
-                    time = time.AddHours(1);
-                }
-            }
-            while (time.Minute != minute)
-            {
-                if (time.Minute > minute)
-                {
-                    time = time.AddMinutes(-1);
-                }
-
-                if (time.Minute < minute)
-                {
-                    time = time.AddMinutes(1);
-                }
-            }
-            return time;
-        }
-
-        public void ProcessTextboxChange(TextBox obj)
-        {
-            // Get a Timespan then if a day simply adjust inTime and outTime
-            // if night then make sure outTime is the next day
-
-            // first we need to find which day it is
-            int number;
-            bool In, night = false;
-            if (obj.Name.ToUpper().Contains("IN"))
-            {
-                number = int.Parse(obj.Name.Remove(0, 5));
-                In = true;
-            }
-            else
-            {
-                number = int.Parse(obj.Name.Remove(0, 6));
-                In = false;
-            }
-            ComboBox Box = (ComboBox)grpBox.Controls["cbBox" + number];
-            if (Box.SelectedIndex == 2) night = true;
-            // now we get a TimeSpan and change in and out time
-            if (cb24hr.Checked == false)
-            {
-                // expected text for time: hh:mm pm/am but it could be h:mm pm/am
-                // also the user could be in the middle of changing the time so
-                // it could be h:m pm/am so need to return if not valid
-                string entry = obj.Text.ToUpper().Trim();
-                bool morning = entry.Contains("AM");
-                bool afternoon = entry.Contains("PM");
-                TimeSpan convertedTime;
-                if (morning)
-                {
-                    if (!TimeSpan.TryParse(entry.Remove(entry.Length - 2), out convertedTime)) return;
-                }
-                else if (afternoon)
-                {
-                    if (!TimeSpan.TryParse(entry.Remove(entry.Length - 2), out convertedTime)) return;
-                    convertedTime += new TimeSpan(12, 0, 0);
-                }
-                else
-                {
-                    return;
-                }
-                // I need to first determine if difference will be earlier or later than previous time
-                // then I need to add or substract the difference in time to inTime or outTime
-                // to determine if earlier or later I need to compare convertedTime to inTime/outTime (depending if obj)
-                if (In)
-                {
-                    adjInTime(number, convertedTime);
-                }
-                else
-                {
-                    adjOutTime(number, convertedTime, night);
-                }
-            }
-            else
-            {
-                TimeSpan convertedTime;
-                if (obj.Text == "SDO" || !TimeSpan.TryParse(obj.Text, out convertedTime))
-                {
-                    return;
-                }
-                if (In)
-                {
-                    adjInTime(number, convertedTime);
-                }
-                else
-                {
-                    adjOutTime(number, convertedTime, night);
-                }
-            }
-        }
-
-        private void adjInTime(int number, TimeSpan convertedTime)
-        {
-            // Get number for element passed in and time changed
-            TimeSpan timeInDay = inTime[number - 1] - Sunday.AddDays(number - 1);
-            if (convertedTime > timeInDay)
-            {
-                inTime[number - 1] += (convertedTime - timeInDay).Duration(); //need Duration for absolute time instead of relative time (+/-)
-            }
-            else if (convertedTime < timeInDay)
-            {
-                inTime[number - 1] -= (timeInDay - convertedTime).Duration(); //need Duration for absolute time instead of relative time (+/-)
-            }
-        }
-
-        private void adjOutTime(int number, TimeSpan convertedTime, bool night)
-        {
-            // Pass in number of element, time changed, and if it's night shift
-            //CheckBox night = (CheckBox)Controls["cbNight" + number]; // old code
-            TimeSpan timeOutDay;
-            if (night)
-            {
-                timeOutDay = outTime[number - 1] - Sunday.AddDays(number);
-            }
-            else
-            {
-                timeOutDay = outTime[number - 1] - Sunday.AddDays(number - 1);
-            }
-            if (convertedTime > timeOutDay)
-            {
-                outTime[number - 1] += (convertedTime - timeOutDay).Duration(); //need Duration for absolute time instead of relative time (+/-)
-            }
-            else if (convertedTime < timeOutDay)
-            {
-                outTime[number - 1] -= (convertedTime - timeOutDay).Duration(); //need Duration for absolute time instead of relative time (+/-)
-            }
         }
 
         public void textBox_WorkHours(object sender, EventArgs args)
@@ -181,7 +22,6 @@ namespace Print_Time_Card
             // sender is a TextBox
             TextBox ctl = sender as TextBox;
             int number = 0;
-            //TimeSpan convertedTimeIn, convertedTimeOut, originalTimeIn, originalTimeOut;
             Control ctlIn, ctlOut;
             // Need the day
             if (ctl.Name.ToUpper().Contains("IN"))
@@ -196,7 +36,7 @@ namespace Print_Time_Card
                     b.Text = "";
                     return;
                 }
-                ProcessTextboxChange((TextBox)ctlIn);
+                UITools.ProcessTextboxChange((TextBox)ctlIn, TimeTools, cb24hr, grpBox);
             }
             else if (ctl.Name.ToUpper().Contains("OUT"))
             {
@@ -210,24 +50,10 @@ namespace Print_Time_Card
                     b.Text = "";
                     return;
                 }
-                ProcessTextboxChange((TextBox)ctlOut);
+                UITools.ProcessTextboxChange((TextBox)ctlOut, TimeTools, cb24hr, grpBox);
             }
             // Need logic here to take into account for Night (19:30 - 8:00 is 11.5 not 12.5)
-            TimeSpan difference = outTime[number - 1] - inTime[number - 1]; ;
-            //CheckBox cbNight = (CheckBox)Controls["cbNight" + number];
-            //if (cbNight.Checked)
-            //{
-            //    // Already changed inTime and outTime
-            //    DateTime midnight = adjustTime(inTime[number - 1], 0, 0);
-            //    TimeSpan firstDifference = midnight - outTime[number - 1];
-            //    TimeSpan secondDifference = inTime[number - 1] - midnight;
-            //    difference.Add(firstDifference);
-            //    difference.Add(secondDifference);
-            //}
-            //else
-            //{
-            //    difference = outTime[number - 1] - inTime[number - 1];
-            //}
+            TimeSpan difference = TimeTools.outTime[number - 1] - TimeTools.inTime[number - 1];
             Control ctlWork = Controls["txtWorked" + number];
             ctlWork.Text = difference.TotalHours.ToString();
         }
@@ -427,11 +253,11 @@ namespace Print_Time_Card
                     {
                         if (cb24hr.Checked)
                         {
-                            enterTime(ctlNumber, "H:mm", clockTimes[0], clockTimes[1], clockTimes[2], clockTimes[3], false);
+                            TimeTools.enterTime(Controls, ctlNumber, "H:mm", clockTimes[0], clockTimes[1], clockTimes[2], clockTimes[3], false);
                         }
                         else
                         {
-                            enterTime(ctlNumber, "h:mm tt", clockTimes[0], clockTimes[1], clockTimes[2], clockTimes[3], false);
+                            TimeTools.enterTime(Controls, ctlNumber, "h:mm tt", clockTimes[0], clockTimes[1], clockTimes[2], clockTimes[3], false);
                         }
                     }
                     break;
@@ -445,35 +271,13 @@ namespace Print_Time_Card
                     {
                         if (cb24hr.Checked)
                         {
-                            enterTime(ctlNumber, "H:mm", clockTimes[0] + 12, clockTimes[1], clockTimes[2] - 12, clockTimes[3], true);
+                            TimeTools.enterTime(Controls, ctlNumber, "H:mm", clockTimes[0] + 12, clockTimes[1], clockTimes[2] - 12, clockTimes[3], true);
                         }
                         else
                         {
-                            enterTime(ctlNumber, "h:mm tt", clockTimes[0] + 12, clockTimes[1], clockTimes[2] - 12, clockTimes[3], true);
-                        }
-                    }/*
-                    if (cbEarly.Checked)
-                    {
-                        if (cb24hr.Checked)
-                        {
-                            enterTime(ctlNumber, "H:mm", 19, 30, 8, 0, true);
-                        }
-                        else
-                        {
-                            enterTime(ctlNumber, "h:mm tt", 19, 30, 8, 0, true);
+                            TimeTools.enterTime(Controls, ctlNumber, "h:mm tt", clockTimes[0] + 12, clockTimes[1], clockTimes[2] - 12, clockTimes[3], true);
                         }
                     }
-                    else
-                    {
-                        if (cb24hr.Checked)
-                        {
-                            enterTime(ctlNumber, "H:mm", 20, 0, 8, 0, true);
-                        }
-                        else
-                        {
-                            enterTime(ctlNumber, "h:mm tt", 20, 0, 8, 0, true);
-                        }
-                    }*/
                     break;
                 case 3:
                     // Holiday
@@ -539,113 +343,12 @@ namespace Print_Time_Card
             return returnValues;
         }
 
-        // Old method of user selecting either working days or nights
-        /*private void checkBox_ChangeCheck(object sender, EventArgs e)
-        {
-            Control ctl = (Control)sender;
-            int ctlNumber;
-            CheckBox day, night;
-            TextBox In, Out;
-            if (ctl.Name.ToUpper().Contains("CBDAY"))
-            {
-                ctlNumber = int.Parse(ctl.Name.Remove(0, 5));
-                day = (CheckBox)Controls["cbDay" + ctlNumber];
-                night = (CheckBox)Controls["cbNight" + ctlNumber];
-                In = (TextBox)Controls["txtIn" + ctlNumber];
-                Out = (TextBox)Controls["txtOut" + ctlNumber];
-                night.Checked = false;
-            }
-            else
-            {
-                ctlNumber = int.Parse(ctl.Name.Remove(0, 7));
-                day = (CheckBox)Controls["cbDay" + ctlNumber];
-                night = (CheckBox)Controls["cbNight" + ctlNumber];
-                In = (TextBox)Controls["txtIn" + ctlNumber];
-                Out = (TextBox)Controls["txtOut" + ctlNumber];
-                day.Checked = false;
-            }
-            if (!day.Checked && !night.Checked)
-            {
-                In.Text = "SDO";
-                Out.Text = "";
-
-            }
-            else if (!day.Checked && night.Checked)
-            {
-                if (cbEarly.Checked)
-                {
-                    if (cb24hr.Checked)
-                    {
-                        enterTime(ctlNumber, "H:mm", 19, 30, 8, 0, night);
-                    }
-                    else
-                    {
-                        enterTime(ctlNumber, "h:mm tt", 19, 30, 8, 0, night);
-                    }
-                }
-                else
-                {
-                    if (cb24hr.Checked)
-                    {
-                        enterTime(ctlNumber, "H:mm", 20, 0, 8, 0, night);
-                    }
-                    else
-                    {
-                        enterTime(ctlNumber, "h:mm tt", 20, 0, 8, 0, night);
-                    }
-                }
-            }
-            else if (day.Checked && !night.Checked)
-            {
-                if (cbEarly.Checked)
-                {
-                    if (cb24hr.Checked)
-                    {
-                        enterTime(ctlNumber, "H:mm", 7, 30, 20, 0, night);
-                    }
-                    else
-                    {
-                        enterTime(ctlNumber, "h:mm tt", 7, 30, 20, 0, night);
-                    }
-                }
-                else
-                {
-                    if (cb24hr.Checked)
-                    {
-                        enterTime(ctlNumber, "H:mm", 8, 0, 20, 0, night);
-                    }
-                    else
-                    {
-                        enterTime(ctlNumber, "h:mm tt", 8, 0, 20, 0, night);
-                    }
-                }
-            }
-        }*/
-
-        public void enterTime(int indexChecked, string format, int hr1, int min1, int hr2, int min2, bool night)
-        {
-            Control ctnIn = Controls["txtIn" + indexChecked];
-            Control ctnOut = Controls["txtOut" + indexChecked];
-            if (night)
-            {
-                inTime[indexChecked - 1] = adjustTime(Sunday.AddDays(indexChecked - 1), hr1, min1);
-                outTime[indexChecked - 1] = adjustTime(Sunday.AddDays(indexChecked), hr2, min2);
-            }
-            else
-            {
-                inTime[indexChecked - 1] = adjustTime(Sunday.AddDays(indexChecked - 1), hr1, min1);
-                outTime[indexChecked - 1] = adjustTime(Sunday.AddDays(indexChecked - 1), hr2, min2);
-            }
-            ctnIn.Text = inTime[indexChecked - 1].ToString(format);
-            ctnOut.Text = outTime[indexChecked - 1].ToString(format);
-        }
-
         private void resetToolStripMenuItem_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < 7; i++)
             {
-                inTime[i] = Sunday;
-                outTime[i] = Sunday;
+                TimeTools.inTime[i] = TimeTools.Sunday;
+                TimeTools.outTime[i] = TimeTools.Sunday;
             }
             for (int i = 1; i < 8; i++)
             {
@@ -691,6 +394,8 @@ namespace Print_Time_Card
             short numberOfCopies = (short)numCopies.Value;
             printPreviewDialog1.Document = this.printDocument1;
             printDocument1.PrinterSettings.Copies = numberOfCopies;
+            printDocument1.DefaultPageSettings.PaperSize = new PaperSize("Time Card", 425, 600);
+            printDocument1.DefaultPageSettings.Landscape = true;
             printPreviewDialog1.ShowDialog();
         }
 
@@ -711,17 +416,12 @@ namespace Print_Time_Card
 
         private void exitMenu_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void frmPrintTimeCard_Load(object sender, EventArgs e)
         {
-            int howManyDaysSinceSunday = 0;
-            int daysUntilSaturday = 0;
-            howManyDaysSinceSunday = adjustDay(DayOfWeek.Sunday, currentDay, true);
-            daysUntilSaturday = adjustDay(DayOfWeek.Saturday, currentDay, false);
-            Sunday = currentDay.AddDays(-howManyDaysSinceSunday);
-            Sunday = adjustTime(Sunday, 0, 0);
+            TimeTools.Initialize();
             txtName.Text = Properties.Settings.Default.empName;
             txtCrew.Text = Properties.Settings.Default.empCrew;
             txtNumber.Text = Properties.Settings.Default.empNum;
@@ -731,8 +431,8 @@ namespace Print_Time_Card
             cb24hr.Checked = Properties.Settings.Default.milTime;
             txtClockIn.Text = Properties.Settings.Default.clockIn;
             txtClockOut.Text = Properties.Settings.Default.clockOut;
-            txtFrom.Text = currentDay.AddDays(-howManyDaysSinceSunday).ToShortDateString();
-            txtTo.Text = currentDay.AddDays(daysUntilSaturday).ToShortDateString();
+            txtFrom.Text = TimeTools.Sunday.ToShortDateString();
+            txtTo.Text = TimeTools.Saturday.ToShortDateString();
             var textBoxes = new System.Collections.Generic.List<Control>();
             //var checkBoxes = new System.Collections.Generic.List<Control>();
             var comboBoxes = new System.Collections.Generic.List<Control>();
@@ -783,15 +483,7 @@ namespace Print_Time_Card
                     ctl.TextChanged += eventHandler;
                 }
 
-            } // Old code
-            /*            foreach (CheckBox ctl in checkBoxes)
-                        {
-                            if ((ctl).Name.ToUpper().Contains("CBDAY") || (ctl).Name.ToUpper().Contains("CBNIGHT"))
-                            {
-                                EventHandler eventHandler = new EventHandler(checkBox_ChangeCheck);
-                                ctl.Click += eventHandler;
-                            }
-                        }*/
+            }
             foreach (ComboBox ctl in comboBoxes)
             {
                 if (ctl != null)
@@ -803,32 +495,18 @@ namespace Print_Time_Card
             }
         }
 
-        private void changeWeek(int days)
-        {
-            Sunday = Sunday.AddDays(days);
-            for (int i = 0; i < 7; i++)
-            {
-                if (inTime[i] != new DateTime())
-                {
-                    inTime[i] = inTime[i].AddDays(days);
-                }
-                if (outTime[i] != new DateTime())
-                {
-                    outTime[i] = outTime[i].AddDays(days);
-                }
-            }
-            txtFrom.Text = Sunday.ToShortDateString();
-            txtTo.Text = Sunday.AddDays(6).ToShortDateString();
-        }
-
         private void btnPrevWeek_Click(object sender, EventArgs e)
         {
-            changeWeek(-7);
+            TimeTools.changeWeek(-7);
+            txtFrom.Text = TimeTools.Sunday.ToShortDateString();
+            txtTo.Text = TimeTools.Saturday.ToShortDateString();
         }
 
         private void btnNextWeek_Click(object sender, EventArgs e)
         {
-            changeWeek(7);
+            TimeTools.changeWeek(7);
+            txtFrom.Text = TimeTools.Sunday.ToShortDateString();
+            txtTo.Text = TimeTools.Saturday.ToShortDateString();
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
