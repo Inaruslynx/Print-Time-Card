@@ -147,7 +147,7 @@
             this.abouToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1540, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1799, 24);
             this.menuStrip.TabIndex = 22;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -832,7 +832,7 @@
             // 
             this.btnNextWeek.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNextWeek.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.btnNextWeek.Location = new System.Drawing.Point(1289, 127);
+            this.btnNextWeek.Location = new System.Drawing.Point(1548, 127);
             this.btnNextWeek.Name = "btnNextWeek";
             this.btnNextWeek.Size = new System.Drawing.Size(202, 40);
             this.btnNextWeek.TabIndex = 7;
@@ -1222,7 +1222,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1540, 845);
+            this.ClientSize = new System.Drawing.Size(1799, 927);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txtClockOut);
