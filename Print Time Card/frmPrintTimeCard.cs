@@ -394,7 +394,7 @@ namespace Print_Time_Card
             short numberOfCopies = (short)numCopies.Value;
             printPreviewDialog1.Document = this.printDocument1;
             printDocument1.PrinterSettings.Copies = numberOfCopies;
-            printDocument1.DefaultPageSettings.PaperSize = new PaperSize("Time Card", 425, 600);
+            printDocument1.DefaultPageSettings.PaperSize = new PaperSize("Time Card", 400, 600);
             printDocument1.DefaultPageSettings.Landscape = true;
             printPreviewDialog1.ShowDialog();
         }
