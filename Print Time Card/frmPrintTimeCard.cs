@@ -117,14 +117,15 @@ namespace Print_Time_Card
             Control bonusHours = Controls["txtBonus" + number];
             if (hoursWorked.Text != "")
             {
+                int maxProductionHrs = Convert.ToInt32(txtProduction.Text);
                 double valueOfHoursWorked = Convert.ToDouble(hoursWorked.Text);
-                if (valueOfHoursWorked < 12.0)
+                if (valueOfHoursWorked < maxProductionHrs)
                 {
                     bonusHours.Text = valueOfHoursWorked.ToString();
                 }
                 else
                 {
-                    bonusHours.Text = "12.0";
+                    bonusHours.Text = maxProductionHrs.ToString();
                 }
             }
         }
@@ -433,6 +434,7 @@ namespace Print_Time_Card
             txtClockOut.Text = Properties.Settings.Default.clockOut;
             txtFrom.Text = TimeTools.Sunday.ToShortDateString();
             txtTo.Text = TimeTools.Saturday.ToShortDateString();
+            txtProduction.Text = Convert.ToString(Properties.Settings.Default.dailyProduction);
             var textBoxes = new System.Collections.Generic.List<Control>();
             //var checkBoxes = new System.Collections.Generic.List<Control>();
             var comboBoxes = new System.Collections.Generic.List<Control>();
@@ -520,6 +522,7 @@ namespace Print_Time_Card
             Properties.Settings.Default.milTime = cb24hr.Checked;
             Properties.Settings.Default.clockIn = txtClockIn.Text;
             Properties.Settings.Default.clockOut = txtClockOut.Text;
+            Properties.Settings.Default.dailyProduction = Convert.ToInt32(txtProduction.Text);
             Properties.Settings.Default.Save();
         }
     }

@@ -89,6 +89,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Tools\Time.cs" />
     <Compile Include="Tools\UI.cs" />
     <EmbeddedResource Include="frmPrintTimeCard.resx">

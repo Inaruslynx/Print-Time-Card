@@ -20,9 +20,6 @@
     <Setting Name="empDept" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="meetings" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
     <Setting Name="milTime" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
@@ -31,6 +28,9 @@
     </Setting>
     <Setting Name="clockOut" Type="System.String" Scope="User">
       <Value Profile="(Default)">8:00 PM</Value>
+    </Setting>
+    <Setting Name="dailyProduction" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">12</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -132,6 +132,8 @@
             this.txtClockOut = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.txtProduction = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numVert)).BeginInit();
@@ -1215,6 +1217,23 @@
             this.label14.TabIndex = 102;
             this.label14.Text = "Usually Clock Out:";
             // 
+            // txtProduction
+            // 
+            this.txtProduction.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.txtProduction.Location = new System.Drawing.Point(1113, 366);
+            this.txtProduction.Name = "txtProduction";
+            this.txtProduction.Size = new System.Drawing.Size(196, 44);
+            this.txtProduction.TabIndex = 103;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(1020, 376);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(87, 13);
+            this.label15.TabIndex = 104;
+            this.label15.Text = "Daily Production:";
+            // 
             // frmPrintTimeCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1223,6 +1242,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1799, 927);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.txtProduction);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txtClockOut);
@@ -1419,6 +1440,8 @@
         private System.Windows.Forms.TextBox txtClockOut;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtProduction;
+        private System.Windows.Forms.Label label15;
     }
 }
 
