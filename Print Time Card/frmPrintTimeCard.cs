@@ -420,7 +420,7 @@ namespace Print_Time_Card
             System.Windows.Forms.Application.Exit();
         }
 
-        private void frmPrintTimeCard_Load(object sender, EventArgs e)
+        private async void frmPrintTimeCard_Load(object sender, EventArgs e)
         {
             TimeTools.Initialize();
             txtName.Text = Properties.Settings.Default.empName;
@@ -495,6 +495,7 @@ namespace Print_Time_Card
                     ctl.SelectedIndex = 0;
                 }
             }
+            await Github.CheckVersion();
         }
 
         private void btnPrevWeek_Click(object sender, EventArgs e)
