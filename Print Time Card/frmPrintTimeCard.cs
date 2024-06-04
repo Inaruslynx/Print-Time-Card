@@ -526,6 +526,27 @@ namespace Print_Time_Card
             Properties.Settings.Default.dailyProduction = Convert.ToInt32(txtProduction.Text);
             Properties.Settings.Default.Save();
         }
+
+        private void frmPrintTimeCard_SizeChanged(object sender, EventArgs e)
+        {
+            const double AspectRatio = 4.0 / 6.0;
+            int newWidth = this.Width;
+            int newHeight = (int)(newWidth / AspectRatio);
+
+            if (newHeight > Screen.PrimaryScreen.WorkingArea.Height)
+            {
+                newHeight = Screen.PrimaryScreen.WorkingArea.Height;
+                newWidth = (int)(newHeight * AspectRatio);
+            }
+
+            if (newWidth > Screen.PrimaryScreen.WorkingArea.Width)
+            {
+                newWidth = Screen.PrimaryScreen.WorkingArea.Width;
+                newHeight = (int)(newWidth * AspectRatio);
+            }
+
+            this.Size = new Size(newWidth, newHeight);
+        }
     }
 }
 
