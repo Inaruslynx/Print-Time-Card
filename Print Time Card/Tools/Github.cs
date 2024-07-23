@@ -1,29 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
-using System.Reflection;
-using Microsoft.Extensions.Configuration;
 
 namespace Print_Time_Card.Tools
 {
     internal class Github
     {
+        private static readonly string currentVersion = "1.6.0.0";
         private static readonly string repoOwner = "Inaruslynx";
         private static readonly string repoName = "Print-Time-Card";
-        private static readonly string githubToken = ""; # secret
+        private static readonly string githubToken = ""; // Secret 
 
         public static async Task CheckVersion()
         {
-            var currentVersion = GetCurrentVersion();
             var (latestVersion, releaseUrl) = await GetLatestVersionFromGitHub();
-            
             if (IsNewVersionAvailable(currentVersion,latestVersion))
             {
                 ShowUpdateNotification(latestVersion, releaseUrl);
@@ -32,7 +25,7 @@ namespace Print_Time_Card.Tools
 
         private static string GetCurrentVersion()
         {
-            return Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            return Application.ProductVersion;
         }
 
         private static async Task<(string, string)> GetLatestVersionFromGitHub()

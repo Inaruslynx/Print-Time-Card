@@ -28,1313 +28,1323 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrintTimeCard));
-            this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.mainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.abouToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtFrom = new System.Windows.Forms.TextBox();
-            this.txtTo = new System.Windows.Forms.TextBox();
-            this.txtDept = new System.Windows.Forms.TextBox();
-            this.txtCrew = new System.Windows.Forms.TextBox();
-            this.txtNumber = new System.Windows.Forms.TextBox();
-            this.txtIn1 = new System.Windows.Forms.TextBox();
-            this.txtIn2 = new System.Windows.Forms.TextBox();
-            this.txtIn3 = new System.Windows.Forms.TextBox();
-            this.txtIn4 = new System.Windows.Forms.TextBox();
-            this.txtIn5 = new System.Windows.Forms.TextBox();
-            this.txtIn6 = new System.Windows.Forms.TextBox();
-            this.txtIn7 = new System.Windows.Forms.TextBox();
-            this.txtOut1 = new System.Windows.Forms.TextBox();
-            this.txtOut2 = new System.Windows.Forms.TextBox();
-            this.txtOut3 = new System.Windows.Forms.TextBox();
-            this.txtOut4 = new System.Windows.Forms.TextBox();
-            this.txtOut5 = new System.Windows.Forms.TextBox();
-            this.txtOut6 = new System.Windows.Forms.TextBox();
-            this.txtOut7 = new System.Windows.Forms.TextBox();
-            this.txtWorked1 = new System.Windows.Forms.TextBox();
-            this.txtWorked2 = new System.Windows.Forms.TextBox();
-            this.txtWorked3 = new System.Windows.Forms.TextBox();
-            this.txtWorked4 = new System.Windows.Forms.TextBox();
-            this.txtWorked5 = new System.Windows.Forms.TextBox();
-            this.txtWorked6 = new System.Windows.Forms.TextBox();
-            this.txtWorked7 = new System.Windows.Forms.TextBox();
-            this.txtBonus1 = new System.Windows.Forms.TextBox();
-            this.txtBonus2 = new System.Windows.Forms.TextBox();
-            this.txtBonus3 = new System.Windows.Forms.TextBox();
-            this.txtBonus4 = new System.Windows.Forms.TextBox();
-            this.txtBonus5 = new System.Windows.Forms.TextBox();
-            this.txtBonus6 = new System.Windows.Forms.TextBox();
-            this.txtBonus7 = new System.Windows.Forms.TextBox();
-            this.txtOvertime1 = new System.Windows.Forms.TextBox();
-            this.txtOvertime2 = new System.Windows.Forms.TextBox();
-            this.txtOvertime3 = new System.Windows.Forms.TextBox();
-            this.txtOvertime4 = new System.Windows.Forms.TextBox();
-            this.txtOvertime5 = new System.Windows.Forms.TextBox();
-            this.txtOvertime6 = new System.Windows.Forms.TextBox();
-            this.txtOvertime7 = new System.Windows.Forms.TextBox();
-            this.txtOther1 = new System.Windows.Forms.TextBox();
-            this.txtOther2 = new System.Windows.Forms.TextBox();
-            this.txtOther3 = new System.Windows.Forms.TextBox();
-            this.txtOther4 = new System.Windows.Forms.TextBox();
-            this.txtOther5 = new System.Windows.Forms.TextBox();
-            this.txtOther6 = new System.Windows.Forms.TextBox();
-            this.txtOther7 = new System.Windows.Forms.TextBox();
-            this.txtTotalW = new System.Windows.Forms.TextBox();
-            this.txtTotalB = new System.Windows.Forms.TextBox();
-            this.txtTotalO = new System.Windows.Forms.TextBox();
-            this.txtTotalOth = new System.Windows.Forms.TextBox();
-            this.cb24hr = new System.Windows.Forms.CheckBox();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.txtCode1 = new System.Windows.Forms.TextBox();
-            this.txtCode2 = new System.Windows.Forms.TextBox();
-            this.txtCode3 = new System.Windows.Forms.TextBox();
-            this.txtCode4 = new System.Windows.Forms.TextBox();
-            this.txtCode5 = new System.Windows.Forms.TextBox();
-            this.txtCode6 = new System.Windows.Forms.TextBox();
-            this.txtCode7 = new System.Windows.Forms.TextBox();
-            this.btnPrevWeek = new System.Windows.Forms.Button();
-            this.btnNextWeek = new System.Windows.Forms.Button();
-            this.cbBox1 = new System.Windows.Forms.ComboBox();
-            this.cbBox2 = new System.Windows.Forms.ComboBox();
-            this.cbBox3 = new System.Windows.Forms.ComboBox();
-            this.cbBox4 = new System.Windows.Forms.ComboBox();
-            this.cbBox5 = new System.Windows.Forms.ComboBox();
-            this.cbBox6 = new System.Windows.Forms.ComboBox();
-            this.cbBox7 = new System.Windows.Forms.ComboBox();
-            this.numHor = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.numVert = new System.Windows.Forms.NumericUpDown();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label4 = new System.Windows.Forms.Label();
-            this.grpBox = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.numCopies = new System.Windows.Forms.NumericUpDown();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtClockIn = new System.Windows.Forms.TextBox();
-            this.txtClockOut = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtProduction = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.menuStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numHor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numVert)).BeginInit();
-            this.grpBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numCopies)).BeginInit();
-            this.SuspendLayout();
+            menuStrip = new System.Windows.Forms.MenuStrip();
+            mainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            abouToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            printSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            txtName = new System.Windows.Forms.TextBox();
+            txtFrom = new System.Windows.Forms.TextBox();
+            txtTo = new System.Windows.Forms.TextBox();
+            txtDept = new System.Windows.Forms.TextBox();
+            txtCrew = new System.Windows.Forms.TextBox();
+            txtNumber = new System.Windows.Forms.TextBox();
+            txtIn1 = new System.Windows.Forms.TextBox();
+            txtIn2 = new System.Windows.Forms.TextBox();
+            txtIn3 = new System.Windows.Forms.TextBox();
+            txtIn4 = new System.Windows.Forms.TextBox();
+            txtIn5 = new System.Windows.Forms.TextBox();
+            txtIn6 = new System.Windows.Forms.TextBox();
+            txtIn7 = new System.Windows.Forms.TextBox();
+            txtOut1 = new System.Windows.Forms.TextBox();
+            txtOut2 = new System.Windows.Forms.TextBox();
+            txtOut3 = new System.Windows.Forms.TextBox();
+            txtOut4 = new System.Windows.Forms.TextBox();
+            txtOut5 = new System.Windows.Forms.TextBox();
+            txtOut6 = new System.Windows.Forms.TextBox();
+            txtOut7 = new System.Windows.Forms.TextBox();
+            txtWorked1 = new System.Windows.Forms.TextBox();
+            txtWorked2 = new System.Windows.Forms.TextBox();
+            txtWorked3 = new System.Windows.Forms.TextBox();
+            txtWorked4 = new System.Windows.Forms.TextBox();
+            txtWorked5 = new System.Windows.Forms.TextBox();
+            txtWorked6 = new System.Windows.Forms.TextBox();
+            txtWorked7 = new System.Windows.Forms.TextBox();
+            txtBonus1 = new System.Windows.Forms.TextBox();
+            txtBonus2 = new System.Windows.Forms.TextBox();
+            txtBonus3 = new System.Windows.Forms.TextBox();
+            txtBonus4 = new System.Windows.Forms.TextBox();
+            txtBonus5 = new System.Windows.Forms.TextBox();
+            txtBonus6 = new System.Windows.Forms.TextBox();
+            txtBonus7 = new System.Windows.Forms.TextBox();
+            txtOvertime1 = new System.Windows.Forms.TextBox();
+            txtOvertime2 = new System.Windows.Forms.TextBox();
+            txtOvertime3 = new System.Windows.Forms.TextBox();
+            txtOvertime4 = new System.Windows.Forms.TextBox();
+            txtOvertime5 = new System.Windows.Forms.TextBox();
+            txtOvertime6 = new System.Windows.Forms.TextBox();
+            txtOvertime7 = new System.Windows.Forms.TextBox();
+            txtOther1 = new System.Windows.Forms.TextBox();
+            txtOther2 = new System.Windows.Forms.TextBox();
+            txtOther3 = new System.Windows.Forms.TextBox();
+            txtOther4 = new System.Windows.Forms.TextBox();
+            txtOther5 = new System.Windows.Forms.TextBox();
+            txtOther6 = new System.Windows.Forms.TextBox();
+            txtOther7 = new System.Windows.Forms.TextBox();
+            txtTotalW = new System.Windows.Forms.TextBox();
+            txtTotalB = new System.Windows.Forms.TextBox();
+            txtTotalO = new System.Windows.Forms.TextBox();
+            txtTotalOth = new System.Windows.Forms.TextBox();
+            cb24hr = new System.Windows.Forms.CheckBox();
+            printDocument1 = new System.Drawing.Printing.PrintDocument();
+            printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            txtCode1 = new System.Windows.Forms.TextBox();
+            txtCode2 = new System.Windows.Forms.TextBox();
+            txtCode3 = new System.Windows.Forms.TextBox();
+            txtCode4 = new System.Windows.Forms.TextBox();
+            txtCode5 = new System.Windows.Forms.TextBox();
+            txtCode6 = new System.Windows.Forms.TextBox();
+            txtCode7 = new System.Windows.Forms.TextBox();
+            btnPrevWeek = new System.Windows.Forms.Button();
+            btnNextWeek = new System.Windows.Forms.Button();
+            cbBox1 = new System.Windows.Forms.ComboBox();
+            cbBox2 = new System.Windows.Forms.ComboBox();
+            cbBox3 = new System.Windows.Forms.ComboBox();
+            cbBox4 = new System.Windows.Forms.ComboBox();
+            cbBox5 = new System.Windows.Forms.ComboBox();
+            cbBox6 = new System.Windows.Forms.ComboBox();
+            cbBox7 = new System.Windows.Forms.ComboBox();
+            numHor = new System.Windows.Forms.NumericUpDown();
+            label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            numVert = new System.Windows.Forms.NumericUpDown();
+            toolTip1 = new System.Windows.Forms.ToolTip(components);
+            label4 = new System.Windows.Forms.Label();
+            grpBox = new System.Windows.Forms.GroupBox();
+            label9 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
+            label10 = new System.Windows.Forms.Label();
+            label6 = new System.Windows.Forms.Label();
+            label7 = new System.Windows.Forms.Label();
+            label8 = new System.Windows.Forms.Label();
+            label11 = new System.Windows.Forms.Label();
+            numCopies = new System.Windows.Forms.NumericUpDown();
+            label12 = new System.Windows.Forms.Label();
+            txtClockIn = new System.Windows.Forms.TextBox();
+            txtClockOut = new System.Windows.Forms.TextBox();
+            label13 = new System.Windows.Forms.Label();
+            label14 = new System.Windows.Forms.Label();
+            txtProduction = new System.Windows.Forms.TextBox();
+            label15 = new System.Windows.Forms.Label();
+            menuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numHor).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numVert).BeginInit();
+            grpBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numCopies).BeginInit();
+            SuspendLayout();
             // 
             // menuStrip
             // 
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mainToolStripMenuItem,
-            this.settingsToolStripMenuItem,
-            this.abouToolStripMenuItem});
-            this.menuStrip.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1799, 24);
-            this.menuStrip.TabIndex = 22;
-            this.menuStrip.Text = "menuStrip";
+            menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { mainToolStripMenuItem, settingsToolStripMenuItem, abouToolStripMenuItem });
+            menuStrip.Location = new System.Drawing.Point(0, 0);
+            menuStrip.Name = "menuStrip";
+            menuStrip.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            menuStrip.Size = new System.Drawing.Size(866, 24);
+            menuStrip.TabIndex = 22;
+            menuStrip.Text = "menuStrip";
             // 
             // mainToolStripMenuItem
             // 
-            this.mainToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.printToolStripMenuItem,
-            this.resetToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.mainToolStripMenuItem.Name = "mainToolStripMenuItem";
-            this.mainToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.mainToolStripMenuItem.Text = "&File";
+            mainToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { printToolStripMenuItem, resetToolStripMenuItem, exitToolStripMenuItem });
+            mainToolStripMenuItem.Name = "mainToolStripMenuItem";
+            mainToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            mainToolStripMenuItem.Text = "&File";
             // 
             // printToolStripMenuItem
             // 
-            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
-            this.printToolStripMenuItem.Text = "&Print";
-            this.printToolStripMenuItem.Click += new System.EventHandler(this.printMenu_Click);
+            printToolStripMenuItem.Name = "printToolStripMenuItem";
+            printToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            printToolStripMenuItem.Text = "&Print";
+            printToolStripMenuItem.Click += printMenu_Click;
             // 
             // resetToolStripMenuItem
             // 
-            this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-            this.resetToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
-            this.resetToolStripMenuItem.Text = "&Reset";
-            this.resetToolStripMenuItem.Click += new System.EventHandler(this.resetToolStripMenuItem_Click);
+            resetToolStripMenuItem.Name = "resetToolStripMenuItem";
+            resetToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            resetToolStripMenuItem.Text = "&Reset";
+            resetToolStripMenuItem.Click += resetToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
-            this.exitToolStripMenuItem.Text = "E&xit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitMenu_Click);
+            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            exitToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            exitToolStripMenuItem.Text = "E&xit";
+            exitToolStripMenuItem.Click += exitMenu_Click;
             // 
             // settingsToolStripMenuItem
             // 
-            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveToolStripMenuItem});
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.settingsToolStripMenuItem.Text = "&Settings";
+            settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { saveToolStripMenuItem });
+            settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            settingsToolStripMenuItem.Text = "&Settings";
             // 
             // saveToolStripMenuItem
             // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
-            this.saveToolStripMenuItem.Text = "S&ave";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            saveToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            saveToolStripMenuItem.Text = "S&ave";
+            saveToolStripMenuItem.Click += saveToolStripMenuItem_Click;
             // 
             // abouToolStripMenuItem
             // 
-            this.abouToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem,
-            this.printSettingsToolStripMenuItem});
-            this.abouToolStripMenuItem.Name = "abouToolStripMenuItem";
-            this.abouToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.abouToolStripMenuItem.Text = "&Help";
+            abouToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { aboutToolStripMenuItem, printSettingsToolStripMenuItem });
+            abouToolStripMenuItem.Name = "abouToolStripMenuItem";
+            abouToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            abouToolStripMenuItem.Text = "&Help";
             // 
             // aboutToolStripMenuItem
             // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
-            this.aboutToolStripMenuItem.Text = "&About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutMenu_Click);
+            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            aboutToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            aboutToolStripMenuItem.Text = "&About";
+            aboutToolStripMenuItem.Click += aboutMenu_Click;
             // 
             // printSettingsToolStripMenuItem
             // 
-            this.printSettingsToolStripMenuItem.Name = "printSettingsToolStripMenuItem";
-            this.printSettingsToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
-            this.printSettingsToolStripMenuItem.Text = "&Print Settings";
-            this.printSettingsToolStripMenuItem.Click += new System.EventHandler(this.printSettingsMenu_Click);
+            printSettingsToolStripMenuItem.Name = "printSettingsToolStripMenuItem";
+            printSettingsToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            printSettingsToolStripMenuItem.Text = "&Print Settings";
+            printSettingsToolStripMenuItem.Click += printSettingsMenu_Click;
             // 
             // txtName
             // 
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(404, 248);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(1353, 37);
-            this.txtName.TabIndex = 0;
+            txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtName.Location = new System.Drawing.Point(196, 110);
+            txtName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtName.Name = "txtName";
+            txtName.Size = new System.Drawing.Size(647, 14);
+            txtName.TabIndex = 0;
             // 
             // txtFrom
             // 
-            this.txtFrom.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFrom.Location = new System.Drawing.Point(153, 175);
-            this.txtFrom.Name = "txtFrom";
-            this.txtFrom.Size = new System.Drawing.Size(576, 37);
-            this.txtFrom.TabIndex = 13;
-            this.txtFrom.TabStop = false;
+            txtFrom.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtFrom.Location = new System.Drawing.Point(75, 79);
+            txtFrom.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtFrom.Name = "txtFrom";
+            txtFrom.Size = new System.Drawing.Size(270, 14);
+            txtFrom.TabIndex = 13;
+            txtFrom.TabStop = false;
             // 
             // txtTo
             // 
-            this.txtTo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTo.Location = new System.Drawing.Point(970, 179);
-            this.txtTo.Name = "txtTo";
-            this.txtTo.Size = new System.Drawing.Size(648, 37);
-            this.txtTo.TabIndex = 14;
-            this.txtTo.TabStop = false;
+            txtTo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtTo.Location = new System.Drawing.Point(465, 79);
+            txtTo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtTo.Name = "txtTo";
+            txtTo.Size = new System.Drawing.Size(309, 14);
+            txtTo.TabIndex = 14;
+            txtTo.TabStop = false;
             // 
             // txtDept
             // 
-            this.txtDept.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDept.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDept.Location = new System.Drawing.Point(153, 321);
-            this.txtDept.Name = "txtDept";
-            this.txtDept.Size = new System.Drawing.Size(422, 37);
-            this.txtDept.TabIndex = 15;
-            this.txtDept.TabStop = false;
+            txtDept.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtDept.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtDept.Location = new System.Drawing.Point(75, 144);
+            txtDept.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtDept.Name = "txtDept";
+            txtDept.Size = new System.Drawing.Size(197, 14);
+            txtDept.TabIndex = 15;
+            txtDept.TabStop = false;
             // 
             // txtCrew
             // 
-            this.txtCrew.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCrew.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCrew.Location = new System.Drawing.Point(761, 323);
-            this.txtCrew.Name = "txtCrew";
-            this.txtCrew.Size = new System.Drawing.Size(292, 37);
-            this.txtCrew.TabIndex = 1;
+            txtCrew.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtCrew.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtCrew.Location = new System.Drawing.Point(369, 144);
+            txtCrew.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtCrew.Name = "txtCrew";
+            txtCrew.Size = new System.Drawing.Size(127, 14);
+            txtCrew.TabIndex = 1;
             // 
             // txtNumber
             // 
-            this.txtNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumber.Location = new System.Drawing.Point(1380, 323);
-            this.txtNumber.Name = "txtNumber";
-            this.txtNumber.Size = new System.Drawing.Size(377, 37);
-            this.txtNumber.TabIndex = 2;
-            this.txtNumber.Text = "220";
+            txtNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtNumber.Location = new System.Drawing.Point(669, 144);
+            txtNumber.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtNumber.Name = "txtNumber";
+            txtNumber.Size = new System.Drawing.Size(174, 14);
+            txtNumber.TabIndex = 2;
+            txtNumber.Text = "220";
             // 
             // txtIn1
             // 
-            this.txtIn1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIn1.Location = new System.Drawing.Point(293, 513);
-            this.txtIn1.Name = "txtIn1";
-            this.txtIn1.Size = new System.Drawing.Size(443, 37);
-            this.txtIn1.TabIndex = 5;
-            this.txtIn1.Text = "SDO";
+            txtIn1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtIn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtIn1.Location = new System.Drawing.Point(145, 223);
+            txtIn1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtIn1.Name = "txtIn1";
+            txtIn1.Size = new System.Drawing.Size(65, 13);
+            txtIn1.TabIndex = 5;
+            txtIn1.Text = "SDO";
             // 
             // txtIn2
             // 
-            this.txtIn2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIn2.Location = new System.Drawing.Point(292, 560);
-            this.txtIn2.Name = "txtIn2";
-            this.txtIn2.Size = new System.Drawing.Size(443, 37);
-            this.txtIn2.TabIndex = 6;
-            this.txtIn2.Text = "SDO";
+            txtIn2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtIn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtIn2.Location = new System.Drawing.Point(145, 246);
+            txtIn2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtIn2.Name = "txtIn2";
+            txtIn2.Size = new System.Drawing.Size(65, 13);
+            txtIn2.TabIndex = 6;
+            txtIn2.Text = "SDO";
             // 
             // txtIn3
             // 
-            this.txtIn3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIn3.Location = new System.Drawing.Point(292, 612);
-            this.txtIn3.Name = "txtIn3";
-            this.txtIn3.Size = new System.Drawing.Size(443, 37);
-            this.txtIn3.TabIndex = 7;
-            this.txtIn3.Text = "SDO";
+            txtIn3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtIn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtIn3.Location = new System.Drawing.Point(145, 266);
+            txtIn3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtIn3.Name = "txtIn3";
+            txtIn3.Size = new System.Drawing.Size(65, 13);
+            txtIn3.TabIndex = 7;
+            txtIn3.Text = "SDO";
             // 
             // txtIn4
             // 
-            this.txtIn4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIn4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIn4.Location = new System.Drawing.Point(293, 661);
-            this.txtIn4.Name = "txtIn4";
-            this.txtIn4.Size = new System.Drawing.Size(443, 37);
-            this.txtIn4.TabIndex = 8;
-            this.txtIn4.Text = "SDO";
+            txtIn4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtIn4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtIn4.Location = new System.Drawing.Point(145, 288);
+            txtIn4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtIn4.Name = "txtIn4";
+            txtIn4.Size = new System.Drawing.Size(65, 13);
+            txtIn4.TabIndex = 8;
+            txtIn4.Text = "SDO";
             // 
             // txtIn5
             // 
-            this.txtIn5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIn5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIn5.Location = new System.Drawing.Point(292, 711);
-            this.txtIn5.Name = "txtIn5";
-            this.txtIn5.Size = new System.Drawing.Size(443, 37);
-            this.txtIn5.TabIndex = 9;
-            this.txtIn5.Text = "SDO";
+            txtIn5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtIn5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtIn5.Location = new System.Drawing.Point(145, 309);
+            txtIn5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtIn5.Name = "txtIn5";
+            txtIn5.Size = new System.Drawing.Size(65, 13);
+            txtIn5.TabIndex = 9;
+            txtIn5.Text = "SDO";
             // 
             // txtIn6
             // 
-            this.txtIn6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIn6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIn6.Location = new System.Drawing.Point(292, 760);
-            this.txtIn6.Name = "txtIn6";
-            this.txtIn6.Size = new System.Drawing.Size(443, 37);
-            this.txtIn6.TabIndex = 10;
-            this.txtIn6.Text = "SDO";
+            txtIn6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtIn6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtIn6.Location = new System.Drawing.Point(145, 330);
+            txtIn6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtIn6.Name = "txtIn6";
+            txtIn6.Size = new System.Drawing.Size(65, 13);
+            txtIn6.TabIndex = 10;
+            txtIn6.Text = "SDO";
             // 
             // txtIn7
             // 
-            this.txtIn7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIn7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIn7.Location = new System.Drawing.Point(291, 809);
-            this.txtIn7.Name = "txtIn7";
-            this.txtIn7.Size = new System.Drawing.Size(443, 37);
-            this.txtIn7.TabIndex = 11;
-            this.txtIn7.Text = "SDO";
+            txtIn7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtIn7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtIn7.Location = new System.Drawing.Point(145, 353);
+            txtIn7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtIn7.Name = "txtIn7";
+            txtIn7.Size = new System.Drawing.Size(65, 13);
+            txtIn7.TabIndex = 11;
+            txtIn7.Text = "SDO";
             // 
             // txtOut1
             // 
-            this.txtOut1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtOut1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOut1.Location = new System.Drawing.Point(748, 513);
-            this.txtOut1.Name = "txtOut1";
-            this.txtOut1.Size = new System.Drawing.Size(142, 37);
-            this.txtOut1.TabIndex = 12;
+            txtOut1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtOut1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtOut1.Location = new System.Drawing.Point(360, 223);
+            txtOut1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtOut1.Name = "txtOut1";
+            txtOut1.Size = new System.Drawing.Size(68, 13);
+            txtOut1.TabIndex = 12;
             // 
             // txtOut2
             // 
-            this.txtOut2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtOut2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOut2.Location = new System.Drawing.Point(748, 560);
-            this.txtOut2.Name = "txtOut2";
-            this.txtOut2.Size = new System.Drawing.Size(142, 37);
-            this.txtOut2.TabIndex = 13;
+            txtOut2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtOut2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtOut2.Location = new System.Drawing.Point(360, 246);
+            txtOut2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtOut2.Name = "txtOut2";
+            txtOut2.Size = new System.Drawing.Size(68, 13);
+            txtOut2.TabIndex = 13;
             // 
             // txtOut3
             // 
-            this.txtOut3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtOut3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOut3.Location = new System.Drawing.Point(748, 612);
-            this.txtOut3.Name = "txtOut3";
-            this.txtOut3.Size = new System.Drawing.Size(142, 37);
-            this.txtOut3.TabIndex = 14;
+            txtOut3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtOut3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtOut3.Location = new System.Drawing.Point(360, 266);
+            txtOut3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtOut3.Name = "txtOut3";
+            txtOut3.Size = new System.Drawing.Size(68, 13);
+            txtOut3.TabIndex = 14;
             // 
             // txtOut4
             // 
-            this.txtOut4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtOut4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOut4.Location = new System.Drawing.Point(748, 661);
-            this.txtOut4.Name = "txtOut4";
-            this.txtOut4.Size = new System.Drawing.Size(142, 37);
-            this.txtOut4.TabIndex = 15;
+            txtOut4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtOut4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtOut4.Location = new System.Drawing.Point(360, 288);
+            txtOut4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtOut4.Name = "txtOut4";
+            txtOut4.Size = new System.Drawing.Size(68, 13);
+            txtOut4.TabIndex = 15;
             // 
             // txtOut5
             // 
-            this.txtOut5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtOut5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOut5.Location = new System.Drawing.Point(748, 711);
-            this.txtOut5.Name = "txtOut5";
-            this.txtOut5.Size = new System.Drawing.Size(142, 37);
-            this.txtOut5.TabIndex = 16;
+            txtOut5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtOut5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtOut5.Location = new System.Drawing.Point(360, 309);
+            txtOut5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtOut5.Name = "txtOut5";
+            txtOut5.Size = new System.Drawing.Size(68, 13);
+            txtOut5.TabIndex = 16;
             // 
             // txtOut6
             // 
-            this.txtOut6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtOut6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOut6.Location = new System.Drawing.Point(748, 760);
-            this.txtOut6.Name = "txtOut6";
-            this.txtOut6.Size = new System.Drawing.Size(142, 37);
-            this.txtOut6.TabIndex = 17;
+            txtOut6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtOut6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtOut6.Location = new System.Drawing.Point(360, 330);
+            txtOut6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtOut6.Name = "txtOut6";
+            txtOut6.Size = new System.Drawing.Size(68, 13);
+            txtOut6.TabIndex = 17;
             // 
             // txtOut7
             // 
-            this.txtOut7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtOut7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOut7.Location = new System.Drawing.Point(748, 809);
-            this.txtOut7.Name = "txtOut7";
-            this.txtOut7.Size = new System.Drawing.Size(142, 37);
-            this.txtOut7.TabIndex = 18;
+            txtOut7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtOut7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtOut7.Location = new System.Drawing.Point(360, 353);
+            txtOut7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtOut7.Name = "txtOut7";
+            txtOut7.Size = new System.Drawing.Size(68, 13);
+            txtOut7.TabIndex = 18;
             // 
             // txtWorked1
             // 
-            this.txtWorked1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtWorked1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWorked1.Location = new System.Drawing.Point(901, 514);
-            this.txtWorked1.Name = "txtWorked1";
-            this.txtWorked1.Size = new System.Drawing.Size(196, 37);
-            this.txtWorked1.TabIndex = 33;
+            txtWorked1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtWorked1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtWorked1.Location = new System.Drawing.Point(433, 223);
+            txtWorked1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtWorked1.Name = "txtWorked1";
+            txtWorked1.Size = new System.Drawing.Size(94, 13);
+            txtWorked1.TabIndex = 33;
             // 
             // txtWorked2
             // 
-            this.txtWorked2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtWorked2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWorked2.Location = new System.Drawing.Point(901, 560);
-            this.txtWorked2.Name = "txtWorked2";
-            this.txtWorked2.Size = new System.Drawing.Size(196, 37);
-            this.txtWorked2.TabIndex = 34;
+            txtWorked2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtWorked2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtWorked2.Location = new System.Drawing.Point(433, 246);
+            txtWorked2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtWorked2.Name = "txtWorked2";
+            txtWorked2.Size = new System.Drawing.Size(94, 13);
+            txtWorked2.TabIndex = 34;
             // 
             // txtWorked3
             // 
-            this.txtWorked3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtWorked3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWorked3.Location = new System.Drawing.Point(901, 612);
-            this.txtWorked3.Name = "txtWorked3";
-            this.txtWorked3.Size = new System.Drawing.Size(196, 37);
-            this.txtWorked3.TabIndex = 35;
+            txtWorked3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtWorked3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtWorked3.Location = new System.Drawing.Point(433, 266);
+            txtWorked3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtWorked3.Name = "txtWorked3";
+            txtWorked3.Size = new System.Drawing.Size(94, 13);
+            txtWorked3.TabIndex = 35;
             // 
             // txtWorked4
             // 
-            this.txtWorked4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtWorked4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWorked4.Location = new System.Drawing.Point(901, 661);
-            this.txtWorked4.Name = "txtWorked4";
-            this.txtWorked4.Size = new System.Drawing.Size(196, 37);
-            this.txtWorked4.TabIndex = 36;
+            txtWorked4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtWorked4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtWorked4.Location = new System.Drawing.Point(433, 288);
+            txtWorked4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtWorked4.Name = "txtWorked4";
+            txtWorked4.Size = new System.Drawing.Size(94, 13);
+            txtWorked4.TabIndex = 36;
             // 
             // txtWorked5
             // 
-            this.txtWorked5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtWorked5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWorked5.Location = new System.Drawing.Point(901, 711);
-            this.txtWorked5.Name = "txtWorked5";
-            this.txtWorked5.Size = new System.Drawing.Size(196, 37);
-            this.txtWorked5.TabIndex = 37;
+            txtWorked5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtWorked5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtWorked5.Location = new System.Drawing.Point(433, 310);
+            txtWorked5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtWorked5.Name = "txtWorked5";
+            txtWorked5.Size = new System.Drawing.Size(94, 13);
+            txtWorked5.TabIndex = 37;
             // 
             // txtWorked6
             // 
-            this.txtWorked6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtWorked6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWorked6.Location = new System.Drawing.Point(901, 760);
-            this.txtWorked6.Name = "txtWorked6";
-            this.txtWorked6.Size = new System.Drawing.Size(196, 37);
-            this.txtWorked6.TabIndex = 38;
+            txtWorked6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtWorked6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtWorked6.Location = new System.Drawing.Point(433, 330);
+            txtWorked6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtWorked6.Name = "txtWorked6";
+            txtWorked6.Size = new System.Drawing.Size(94, 13);
+            txtWorked6.TabIndex = 38;
             // 
             // txtWorked7
             // 
-            this.txtWorked7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtWorked7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWorked7.Location = new System.Drawing.Point(901, 809);
-            this.txtWorked7.Name = "txtWorked7";
-            this.txtWorked7.Size = new System.Drawing.Size(196, 37);
-            this.txtWorked7.TabIndex = 39;
+            txtWorked7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtWorked7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtWorked7.Location = new System.Drawing.Point(433, 353);
+            txtWorked7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtWorked7.Name = "txtWorked7";
+            txtWorked7.Size = new System.Drawing.Size(94, 13);
+            txtWorked7.TabIndex = 39;
             // 
             // txtBonus1
             // 
-            this.txtBonus1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBonus1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBonus1.Location = new System.Drawing.Point(1113, 514);
-            this.txtBonus1.Name = "txtBonus1";
-            this.txtBonus1.Size = new System.Drawing.Size(196, 37);
-            this.txtBonus1.TabIndex = 40;
+            txtBonus1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtBonus1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtBonus1.Location = new System.Drawing.Point(540, 223);
+            txtBonus1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtBonus1.Name = "txtBonus1";
+            txtBonus1.Size = new System.Drawing.Size(90, 13);
+            txtBonus1.TabIndex = 40;
             // 
             // txtBonus2
             // 
-            this.txtBonus2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBonus2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBonus2.Location = new System.Drawing.Point(1113, 560);
-            this.txtBonus2.Name = "txtBonus2";
-            this.txtBonus2.Size = new System.Drawing.Size(196, 37);
-            this.txtBonus2.TabIndex = 41;
+            txtBonus2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtBonus2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtBonus2.Location = new System.Drawing.Point(540, 246);
+            txtBonus2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtBonus2.Name = "txtBonus2";
+            txtBonus2.Size = new System.Drawing.Size(90, 13);
+            txtBonus2.TabIndex = 41;
             // 
             // txtBonus3
             // 
-            this.txtBonus3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBonus3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBonus3.Location = new System.Drawing.Point(1113, 612);
-            this.txtBonus3.Name = "txtBonus3";
-            this.txtBonus3.Size = new System.Drawing.Size(196, 37);
-            this.txtBonus3.TabIndex = 42;
+            txtBonus3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtBonus3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtBonus3.Location = new System.Drawing.Point(540, 266);
+            txtBonus3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtBonus3.Name = "txtBonus3";
+            txtBonus3.Size = new System.Drawing.Size(90, 13);
+            txtBonus3.TabIndex = 42;
             // 
             // txtBonus4
             // 
-            this.txtBonus4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBonus4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBonus4.Location = new System.Drawing.Point(1113, 661);
-            this.txtBonus4.Name = "txtBonus4";
-            this.txtBonus4.Size = new System.Drawing.Size(196, 37);
-            this.txtBonus4.TabIndex = 43;
+            txtBonus4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtBonus4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtBonus4.Location = new System.Drawing.Point(540, 288);
+            txtBonus4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtBonus4.Name = "txtBonus4";
+            txtBonus4.Size = new System.Drawing.Size(90, 13);
+            txtBonus4.TabIndex = 43;
             // 
             // txtBonus5
             // 
-            this.txtBonus5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBonus5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBonus5.Location = new System.Drawing.Point(1113, 711);
-            this.txtBonus5.Name = "txtBonus5";
-            this.txtBonus5.Size = new System.Drawing.Size(196, 37);
-            this.txtBonus5.TabIndex = 44;
+            txtBonus5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtBonus5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtBonus5.Location = new System.Drawing.Point(540, 310);
+            txtBonus5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtBonus5.Name = "txtBonus5";
+            txtBonus5.Size = new System.Drawing.Size(90, 13);
+            txtBonus5.TabIndex = 44;
             // 
             // txtBonus6
             // 
-            this.txtBonus6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBonus6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBonus6.Location = new System.Drawing.Point(1113, 760);
-            this.txtBonus6.Name = "txtBonus6";
-            this.txtBonus6.Size = new System.Drawing.Size(196, 37);
-            this.txtBonus6.TabIndex = 45;
+            txtBonus6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtBonus6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtBonus6.Location = new System.Drawing.Point(540, 331);
+            txtBonus6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtBonus6.Name = "txtBonus6";
+            txtBonus6.Size = new System.Drawing.Size(90, 13);
+            txtBonus6.TabIndex = 45;
             // 
             // txtBonus7
             // 
-            this.txtBonus7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBonus7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBonus7.Location = new System.Drawing.Point(1113, 809);
-            this.txtBonus7.Name = "txtBonus7";
-            this.txtBonus7.Size = new System.Drawing.Size(196, 37);
-            this.txtBonus7.TabIndex = 46;
+            txtBonus7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtBonus7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtBonus7.Location = new System.Drawing.Point(540, 353);
+            txtBonus7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtBonus7.Name = "txtBonus7";
+            txtBonus7.Size = new System.Drawing.Size(90, 13);
+            txtBonus7.TabIndex = 46;
             // 
             // txtOvertime1
             // 
-            this.txtOvertime1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtOvertime1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOvertime1.Location = new System.Drawing.Point(1327, 514);
-            this.txtOvertime1.Name = "txtOvertime1";
-            this.txtOvertime1.Size = new System.Drawing.Size(196, 37);
-            this.txtOvertime1.TabIndex = 47;
-            this.txtOvertime1.TabStop = false;
+            txtOvertime1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtOvertime1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtOvertime1.Location = new System.Drawing.Point(638, 223);
+            txtOvertime1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtOvertime1.Name = "txtOvertime1";
+            txtOvertime1.Size = new System.Drawing.Size(96, 13);
+            txtOvertime1.TabIndex = 47;
+            txtOvertime1.TabStop = false;
             // 
             // txtOvertime2
             // 
-            this.txtOvertime2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtOvertime2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOvertime2.Location = new System.Drawing.Point(1327, 560);
-            this.txtOvertime2.Name = "txtOvertime2";
-            this.txtOvertime2.Size = new System.Drawing.Size(196, 37);
-            this.txtOvertime2.TabIndex = 48;
-            this.txtOvertime2.TabStop = false;
+            txtOvertime2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtOvertime2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtOvertime2.Location = new System.Drawing.Point(637, 246);
+            txtOvertime2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtOvertime2.Name = "txtOvertime2";
+            txtOvertime2.Size = new System.Drawing.Size(96, 13);
+            txtOvertime2.TabIndex = 48;
+            txtOvertime2.TabStop = false;
             // 
             // txtOvertime3
             // 
-            this.txtOvertime3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtOvertime3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOvertime3.Location = new System.Drawing.Point(1327, 612);
-            this.txtOvertime3.Name = "txtOvertime3";
-            this.txtOvertime3.Size = new System.Drawing.Size(196, 37);
-            this.txtOvertime3.TabIndex = 49;
-            this.txtOvertime3.TabStop = false;
+            txtOvertime3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtOvertime3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtOvertime3.Location = new System.Drawing.Point(637, 266);
+            txtOvertime3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtOvertime3.Name = "txtOvertime3";
+            txtOvertime3.Size = new System.Drawing.Size(96, 13);
+            txtOvertime3.TabIndex = 49;
+            txtOvertime3.TabStop = false;
             // 
             // txtOvertime4
             // 
-            this.txtOvertime4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtOvertime4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOvertime4.Location = new System.Drawing.Point(1327, 661);
-            this.txtOvertime4.Name = "txtOvertime4";
-            this.txtOvertime4.Size = new System.Drawing.Size(196, 37);
-            this.txtOvertime4.TabIndex = 50;
-            this.txtOvertime4.TabStop = false;
+            txtOvertime4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtOvertime4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtOvertime4.Location = new System.Drawing.Point(638, 288);
+            txtOvertime4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtOvertime4.Name = "txtOvertime4";
+            txtOvertime4.Size = new System.Drawing.Size(96, 13);
+            txtOvertime4.TabIndex = 50;
+            txtOvertime4.TabStop = false;
             // 
             // txtOvertime5
             // 
-            this.txtOvertime5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtOvertime5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOvertime5.Location = new System.Drawing.Point(1327, 711);
-            this.txtOvertime5.Name = "txtOvertime5";
-            this.txtOvertime5.Size = new System.Drawing.Size(196, 37);
-            this.txtOvertime5.TabIndex = 51;
-            this.txtOvertime5.TabStop = false;
+            txtOvertime5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtOvertime5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtOvertime5.Location = new System.Drawing.Point(637, 310);
+            txtOvertime5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtOvertime5.Name = "txtOvertime5";
+            txtOvertime5.Size = new System.Drawing.Size(96, 13);
+            txtOvertime5.TabIndex = 51;
+            txtOvertime5.TabStop = false;
             // 
             // txtOvertime6
             // 
-            this.txtOvertime6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtOvertime6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOvertime6.Location = new System.Drawing.Point(1327, 760);
-            this.txtOvertime6.Name = "txtOvertime6";
-            this.txtOvertime6.Size = new System.Drawing.Size(196, 37);
-            this.txtOvertime6.TabIndex = 52;
-            this.txtOvertime6.TabStop = false;
+            txtOvertime6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtOvertime6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtOvertime6.Location = new System.Drawing.Point(637, 331);
+            txtOvertime6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtOvertime6.Name = "txtOvertime6";
+            txtOvertime6.Size = new System.Drawing.Size(96, 13);
+            txtOvertime6.TabIndex = 52;
+            txtOvertime6.TabStop = false;
             // 
             // txtOvertime7
             // 
-            this.txtOvertime7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtOvertime7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOvertime7.Location = new System.Drawing.Point(1327, 809);
-            this.txtOvertime7.Name = "txtOvertime7";
-            this.txtOvertime7.Size = new System.Drawing.Size(196, 37);
-            this.txtOvertime7.TabIndex = 53;
-            this.txtOvertime7.TabStop = false;
+            txtOvertime7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtOvertime7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtOvertime7.Location = new System.Drawing.Point(638, 353);
+            txtOvertime7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtOvertime7.Name = "txtOvertime7";
+            txtOvertime7.Size = new System.Drawing.Size(96, 13);
+            txtOvertime7.TabIndex = 53;
+            txtOvertime7.TabStop = false;
             // 
             // txtOther1
             // 
-            this.txtOther1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtOther1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOther1.Location = new System.Drawing.Point(1548, 514);
-            this.txtOther1.Name = "txtOther1";
-            this.txtOther1.Size = new System.Drawing.Size(130, 37);
-            this.txtOther1.TabIndex = 54;
-            this.txtOther1.TabStop = false;
+            txtOther1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtOther1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtOther1.Location = new System.Drawing.Point(742, 223);
+            txtOther1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtOther1.Name = "txtOther1";
+            txtOther1.Size = new System.Drawing.Size(53, 13);
+            txtOther1.TabIndex = 54;
+            txtOther1.TabStop = false;
             // 
             // txtOther2
             // 
-            this.txtOther2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtOther2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOther2.Location = new System.Drawing.Point(1548, 560);
-            this.txtOther2.Name = "txtOther2";
-            this.txtOther2.Size = new System.Drawing.Size(130, 37);
-            this.txtOther2.TabIndex = 56;
-            this.txtOther2.TabStop = false;
+            txtOther2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtOther2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtOther2.Location = new System.Drawing.Point(742, 246);
+            txtOther2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtOther2.Name = "txtOther2";
+            txtOther2.Size = new System.Drawing.Size(53, 13);
+            txtOther2.TabIndex = 56;
+            txtOther2.TabStop = false;
             // 
             // txtOther3
             // 
-            this.txtOther3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtOther3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOther3.Location = new System.Drawing.Point(1548, 612);
-            this.txtOther3.Name = "txtOther3";
-            this.txtOther3.Size = new System.Drawing.Size(130, 37);
-            this.txtOther3.TabIndex = 58;
-            this.txtOther3.TabStop = false;
+            txtOther3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtOther3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtOther3.Location = new System.Drawing.Point(742, 266);
+            txtOther3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtOther3.Name = "txtOther3";
+            txtOther3.Size = new System.Drawing.Size(53, 13);
+            txtOther3.TabIndex = 58;
+            txtOther3.TabStop = false;
             // 
             // txtOther4
             // 
-            this.txtOther4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtOther4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOther4.Location = new System.Drawing.Point(1548, 661);
-            this.txtOther4.Name = "txtOther4";
-            this.txtOther4.Size = new System.Drawing.Size(130, 37);
-            this.txtOther4.TabIndex = 60;
-            this.txtOther4.TabStop = false;
+            txtOther4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtOther4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtOther4.Location = new System.Drawing.Point(742, 288);
+            txtOther4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtOther4.Name = "txtOther4";
+            txtOther4.Size = new System.Drawing.Size(53, 13);
+            txtOther4.TabIndex = 60;
+            txtOther4.TabStop = false;
             // 
             // txtOther5
             // 
-            this.txtOther5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtOther5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOther5.Location = new System.Drawing.Point(1548, 711);
-            this.txtOther5.Name = "txtOther5";
-            this.txtOther5.Size = new System.Drawing.Size(130, 37);
-            this.txtOther5.TabIndex = 62;
-            this.txtOther5.TabStop = false;
+            txtOther5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtOther5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtOther5.Location = new System.Drawing.Point(742, 309);
+            txtOther5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtOther5.Name = "txtOther5";
+            txtOther5.Size = new System.Drawing.Size(53, 13);
+            txtOther5.TabIndex = 62;
+            txtOther5.TabStop = false;
             // 
             // txtOther6
             // 
-            this.txtOther6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtOther6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOther6.Location = new System.Drawing.Point(1548, 760);
-            this.txtOther6.Name = "txtOther6";
-            this.txtOther6.Size = new System.Drawing.Size(130, 37);
-            this.txtOther6.TabIndex = 64;
-            this.txtOther6.TabStop = false;
+            txtOther6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtOther6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtOther6.Location = new System.Drawing.Point(742, 330);
+            txtOther6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtOther6.Name = "txtOther6";
+            txtOther6.Size = new System.Drawing.Size(53, 13);
+            txtOther6.TabIndex = 64;
+            txtOther6.TabStop = false;
             // 
             // txtOther7
             // 
-            this.txtOther7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtOther7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOther7.Location = new System.Drawing.Point(1548, 809);
-            this.txtOther7.Name = "txtOther7";
-            this.txtOther7.Size = new System.Drawing.Size(130, 37);
-            this.txtOther7.TabIndex = 66;
-            this.txtOther7.TabStop = false;
+            txtOther7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtOther7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtOther7.Location = new System.Drawing.Point(742, 353);
+            txtOther7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtOther7.Name = "txtOther7";
+            txtOther7.Size = new System.Drawing.Size(53, 13);
+            txtOther7.TabIndex = 66;
+            txtOther7.TabStop = false;
             // 
             // txtTotalW
             // 
-            this.txtTotalW.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTotalW.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalW.Location = new System.Drawing.Point(900, 857);
-            this.txtTotalW.Name = "txtTotalW";
-            this.txtTotalW.Size = new System.Drawing.Size(196, 37);
-            this.txtTotalW.TabIndex = 61;
-            this.txtTotalW.TabStop = false;
-            this.txtTotalW.TextChanged += new System.EventHandler(this.textBox_totalOvertime);
+            txtTotalW.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtTotalW.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtTotalW.Location = new System.Drawing.Point(433, 372);
+            txtTotalW.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtTotalW.Name = "txtTotalW";
+            txtTotalW.Size = new System.Drawing.Size(94, 13);
+            txtTotalW.TabIndex = 61;
+            txtTotalW.TabStop = false;
+            txtTotalW.TextChanged += textBox_totalOvertime;
             // 
             // txtTotalB
             // 
-            this.txtTotalB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTotalB.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalB.Location = new System.Drawing.Point(1113, 857);
-            this.txtTotalB.Name = "txtTotalB";
-            this.txtTotalB.Size = new System.Drawing.Size(196, 37);
-            this.txtTotalB.TabIndex = 62;
-            this.txtTotalB.TabStop = false;
+            txtTotalB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtTotalB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtTotalB.Location = new System.Drawing.Point(540, 372);
+            txtTotalB.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtTotalB.Name = "txtTotalB";
+            txtTotalB.Size = new System.Drawing.Size(90, 13);
+            txtTotalB.TabIndex = 62;
+            txtTotalB.TabStop = false;
             // 
             // txtTotalO
             // 
-            this.txtTotalO.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTotalO.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalO.Location = new System.Drawing.Point(1327, 857);
-            this.txtTotalO.Name = "txtTotalO";
-            this.txtTotalO.Size = new System.Drawing.Size(196, 37);
-            this.txtTotalO.TabIndex = 63;
-            this.txtTotalO.TabStop = false;
-            this.txtTotalO.TextChanged += new System.EventHandler(this.textBox_Overtime);
+            txtTotalO.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtTotalO.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtTotalO.Location = new System.Drawing.Point(638, 372);
+            txtTotalO.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtTotalO.Name = "txtTotalO";
+            txtTotalO.Size = new System.Drawing.Size(96, 13);
+            txtTotalO.TabIndex = 63;
+            txtTotalO.TabStop = false;
+            txtTotalO.TextChanged += textBox_Overtime;
             // 
             // txtTotalOth
             // 
-            this.txtTotalOth.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTotalOth.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalOth.Location = new System.Drawing.Point(1548, 857);
-            this.txtTotalOth.Name = "txtTotalOth";
-            this.txtTotalOth.Size = new System.Drawing.Size(196, 37);
-            this.txtTotalOth.TabIndex = 64;
-            this.txtTotalOth.TabStop = false;
+            txtTotalOth.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtTotalOth.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtTotalOth.Location = new System.Drawing.Point(742, 372);
+            txtTotalOth.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtTotalOth.Name = "txtTotalOth";
+            txtTotalOth.Size = new System.Drawing.Size(91, 13);
+            txtTotalOth.TabIndex = 64;
+            txtTotalOth.TabStop = false;
             // 
             // cb24hr
             // 
-            this.cb24hr.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cb24hr.AutoSize = true;
-            this.cb24hr.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.cb24hr.Location = new System.Drawing.Point(18, 422);
-            this.cb24hr.Name = "cb24hr";
-            this.cb24hr.Size = new System.Drawing.Size(204, 41);
-            this.cb24hr.TabIndex = 4;
-            this.cb24hr.Text = "24 &Hr Clock";
-            this.cb24hr.UseVisualStyleBackColor = true;
+            cb24hr.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            cb24hr.AutoSize = true;
+            cb24hr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            cb24hr.Location = new System.Drawing.Point(8, 164);
+            cb24hr.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cb24hr.Name = "cb24hr";
+            cb24hr.Size = new System.Drawing.Size(89, 19);
+            cb24hr.TabIndex = 4;
+            cb24hr.Text = "24 &Hr Clock";
+            cb24hr.UseVisualStyleBackColor = true;
             // 
             // printDocument1
             // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            printDocument1.PrintPage += printDocument1_PrintPage;
             // 
             // printPreviewDialog1
             // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
+            printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            printPreviewDialog1.Enabled = true;
+            printPreviewDialog1.Icon = (System.Drawing.Icon)resources.GetObject("printPreviewDialog1.Icon");
+            printPreviewDialog1.Name = "printPreviewDialog1";
+            printPreviewDialog1.Visible = false;
             // 
             // txtCode1
             // 
-            this.txtCode1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCode1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCode1.Location = new System.Drawing.Point(1681, 514);
-            this.txtCode1.Name = "txtCode1";
-            this.txtCode1.Size = new System.Drawing.Size(69, 37);
-            this.txtCode1.TabIndex = 55;
-            this.txtCode1.TabStop = false;
+            txtCode1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtCode1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtCode1.Location = new System.Drawing.Point(797, 223);
+            txtCode1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtCode1.Name = "txtCode1";
+            txtCode1.Size = new System.Drawing.Size(41, 13);
+            txtCode1.TabIndex = 55;
+            txtCode1.TabStop = false;
             // 
             // txtCode2
             // 
-            this.txtCode2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCode2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCode2.Location = new System.Drawing.Point(1681, 560);
-            this.txtCode2.Name = "txtCode2";
-            this.txtCode2.Size = new System.Drawing.Size(69, 37);
-            this.txtCode2.TabIndex = 57;
-            this.txtCode2.TabStop = false;
+            txtCode2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtCode2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtCode2.Location = new System.Drawing.Point(797, 246);
+            txtCode2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtCode2.Name = "txtCode2";
+            txtCode2.Size = new System.Drawing.Size(41, 13);
+            txtCode2.TabIndex = 57;
+            txtCode2.TabStop = false;
             // 
             // txtCode3
             // 
-            this.txtCode3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCode3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCode3.Location = new System.Drawing.Point(1681, 612);
-            this.txtCode3.Name = "txtCode3";
-            this.txtCode3.Size = new System.Drawing.Size(69, 37);
-            this.txtCode3.TabIndex = 59;
-            this.txtCode3.TabStop = false;
+            txtCode3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtCode3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtCode3.Location = new System.Drawing.Point(797, 266);
+            txtCode3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtCode3.Name = "txtCode3";
+            txtCode3.Size = new System.Drawing.Size(41, 13);
+            txtCode3.TabIndex = 59;
+            txtCode3.TabStop = false;
             // 
             // txtCode4
             // 
-            this.txtCode4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCode4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCode4.Location = new System.Drawing.Point(1681, 661);
-            this.txtCode4.Name = "txtCode4";
-            this.txtCode4.Size = new System.Drawing.Size(69, 37);
-            this.txtCode4.TabIndex = 61;
-            this.txtCode4.TabStop = false;
+            txtCode4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtCode4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtCode4.Location = new System.Drawing.Point(797, 288);
+            txtCode4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtCode4.Name = "txtCode4";
+            txtCode4.Size = new System.Drawing.Size(41, 13);
+            txtCode4.TabIndex = 61;
+            txtCode4.TabStop = false;
             // 
             // txtCode5
             // 
-            this.txtCode5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCode5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCode5.Location = new System.Drawing.Point(1681, 711);
-            this.txtCode5.Name = "txtCode5";
-            this.txtCode5.Size = new System.Drawing.Size(69, 37);
-            this.txtCode5.TabIndex = 63;
-            this.txtCode5.TabStop = false;
+            txtCode5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtCode5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtCode5.Location = new System.Drawing.Point(797, 309);
+            txtCode5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtCode5.Name = "txtCode5";
+            txtCode5.Size = new System.Drawing.Size(41, 13);
+            txtCode5.TabIndex = 63;
+            txtCode5.TabStop = false;
             // 
             // txtCode6
             // 
-            this.txtCode6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCode6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCode6.Location = new System.Drawing.Point(1681, 760);
-            this.txtCode6.Name = "txtCode6";
-            this.txtCode6.Size = new System.Drawing.Size(69, 37);
-            this.txtCode6.TabIndex = 65;
-            this.txtCode6.TabStop = false;
+            txtCode6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtCode6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtCode6.Location = new System.Drawing.Point(797, 330);
+            txtCode6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtCode6.Name = "txtCode6";
+            txtCode6.Size = new System.Drawing.Size(41, 13);
+            txtCode6.TabIndex = 65;
+            txtCode6.TabStop = false;
             // 
             // txtCode7
             // 
-            this.txtCode7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCode7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCode7.Location = new System.Drawing.Point(1681, 809);
-            this.txtCode7.Name = "txtCode7";
-            this.txtCode7.Size = new System.Drawing.Size(69, 37);
-            this.txtCode7.TabIndex = 67;
-            this.txtCode7.TabStop = false;
+            txtCode7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtCode7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            txtCode7.Location = new System.Drawing.Point(797, 353);
+            txtCode7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtCode7.Name = "txtCode7";
+            txtCode7.Size = new System.Drawing.Size(41, 13);
+            txtCode7.TabIndex = 67;
+            txtCode7.TabStop = false;
             // 
             // btnPrevWeek
             // 
-            this.btnPrevWeek.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.btnPrevWeek.Location = new System.Drawing.Point(25, 125);
-            this.btnPrevWeek.Name = "btnPrevWeek";
-            this.btnPrevWeek.Size = new System.Drawing.Size(179, 44);
-            this.btnPrevWeek.TabIndex = 6;
-            this.btnPrevWeek.Text = "&Prev Week";
-            this.btnPrevWeek.UseVisualStyleBackColor = true;
-            this.btnPrevWeek.Click += new System.EventHandler(this.btnPrevWeek_Click);
+            btnPrevWeek.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            btnPrevWeek.Location = new System.Drawing.Point(13, 31);
+            btnPrevWeek.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnPrevWeek.Name = "btnPrevWeek";
+            btnPrevWeek.Size = new System.Drawing.Size(79, 37);
+            btnPrevWeek.TabIndex = 6;
+            btnPrevWeek.Text = "&Prev Week";
+            btnPrevWeek.UseVisualStyleBackColor = true;
+            btnPrevWeek.Click += btnPrevWeek_Click;
             // 
             // btnNextWeek
             // 
-            this.btnNextWeek.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNextWeek.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.btnNextWeek.Location = new System.Drawing.Point(1548, 127);
-            this.btnNextWeek.Name = "btnNextWeek";
-            this.btnNextWeek.Size = new System.Drawing.Size(202, 40);
-            this.btnNextWeek.TabIndex = 7;
-            this.btnNextWeek.Text = "&Next Week";
-            this.btnNextWeek.UseVisualStyleBackColor = true;
-            this.btnNextWeek.Click += new System.EventHandler(this.btnNextWeek_Click);
+            btnNextWeek.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            btnNextWeek.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            btnNextWeek.Location = new System.Drawing.Point(764, 31);
+            btnNextWeek.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnNextWeek.Name = "btnNextWeek";
+            btnNextWeek.Size = new System.Drawing.Size(79, 37);
+            btnNextWeek.TabIndex = 7;
+            btnNextWeek.Text = "&Next Week";
+            btnNextWeek.UseVisualStyleBackColor = true;
+            btnNextWeek.Click += btnNextWeek_Click;
             // 
             // cbBox1
             // 
-            this.cbBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.cbBox1.FormattingEnabled = true;
-            this.cbBox1.Items.AddRange(new object[] {
-            "SDO",
-            "Days",
-            "Nights",
-            "Holiday",
-            "Vacation",
-            "Bereavement",
-            "Jury"});
-            this.cbBox1.Location = new System.Drawing.Point(6, 6);
-            this.cbBox1.Name = "cbBox1";
-            this.cbBox1.Size = new System.Drawing.Size(128, 45);
-            this.cbBox1.TabIndex = 0;
+            cbBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            cbBox1.FormattingEnabled = true;
+            cbBox1.Items.AddRange(new object[] { "SDO", "Days", "Nights", "Holiday", "Vacation", "Bereavement", "Jury" });
+            cbBox1.Location = new System.Drawing.Point(7, 2);
+            cbBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbBox1.Name = "cbBox1";
+            cbBox1.Size = new System.Drawing.Size(76, 21);
+            cbBox1.TabIndex = 0;
             // 
             // cbBox2
             // 
-            this.cbBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbBox2.FormattingEnabled = true;
-            this.cbBox2.Items.AddRange(new object[] {
-            "SDO",
-            "Days",
-            "Nights",
-            "Holiday",
-            "Vacation",
-            "Bereavement",
-            "Jury"});
-            this.cbBox2.Location = new System.Drawing.Point(6, 53);
-            this.cbBox2.Name = "cbBox2";
-            this.cbBox2.Size = new System.Drawing.Size(128, 45);
-            this.cbBox2.TabIndex = 1;
+            cbBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            cbBox2.FormattingEnabled = true;
+            cbBox2.Items.AddRange(new object[] { "SDO", "Days", "Nights", "Holiday", "Vacation", "Bereavement", "Jury" });
+            cbBox2.Location = new System.Drawing.Point(7, 25);
+            cbBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbBox2.Name = "cbBox2";
+            cbBox2.Size = new System.Drawing.Size(76, 21);
+            cbBox2.TabIndex = 1;
             // 
             // cbBox3
             // 
-            this.cbBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbBox3.FormattingEnabled = true;
-            this.cbBox3.Items.AddRange(new object[] {
-            "SDO",
-            "Days",
-            "Nights",
-            "Holiday",
-            "Vacation",
-            "Bereavement",
-            "Jury"});
-            this.cbBox3.Location = new System.Drawing.Point(6, 103);
-            this.cbBox3.Name = "cbBox3";
-            this.cbBox3.Size = new System.Drawing.Size(128, 45);
-            this.cbBox3.TabIndex = 2;
+            cbBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            cbBox3.FormattingEnabled = true;
+            cbBox3.Items.AddRange(new object[] { "SDO", "Days", "Nights", "Holiday", "Vacation", "Bereavement", "Jury" });
+            cbBox3.Location = new System.Drawing.Point(7, 45);
+            cbBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbBox3.Name = "cbBox3";
+            cbBox3.Size = new System.Drawing.Size(76, 21);
+            cbBox3.TabIndex = 2;
             // 
             // cbBox4
             // 
-            this.cbBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbBox4.FormattingEnabled = true;
-            this.cbBox4.Items.AddRange(new object[] {
-            "SDO",
-            "Days",
-            "Nights",
-            "Holiday",
-            "Vacation",
-            "Bereavement",
-            "Jury"});
-            this.cbBox4.Location = new System.Drawing.Point(6, 154);
-            this.cbBox4.Name = "cbBox4";
-            this.cbBox4.Size = new System.Drawing.Size(128, 45);
-            this.cbBox4.TabIndex = 3;
+            cbBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            cbBox4.FormattingEnabled = true;
+            cbBox4.Items.AddRange(new object[] { "SDO", "Days", "Nights", "Holiday", "Vacation", "Bereavement", "Jury" });
+            cbBox4.Location = new System.Drawing.Point(7, 67);
+            cbBox4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbBox4.Name = "cbBox4";
+            cbBox4.Size = new System.Drawing.Size(76, 21);
+            cbBox4.TabIndex = 3;
             // 
             // cbBox5
             // 
-            this.cbBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbBox5.FormattingEnabled = true;
-            this.cbBox5.Items.AddRange(new object[] {
-            "SDO",
-            "Days",
-            "Nights",
-            "Holiday",
-            "Vacation",
-            "Bereavement",
-            "Jury"});
-            this.cbBox5.Location = new System.Drawing.Point(6, 204);
-            this.cbBox5.Name = "cbBox5";
-            this.cbBox5.Size = new System.Drawing.Size(128, 45);
-            this.cbBox5.TabIndex = 4;
+            cbBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            cbBox5.FormattingEnabled = true;
+            cbBox5.Items.AddRange(new object[] { "SDO", "Days", "Nights", "Holiday", "Vacation", "Bereavement", "Jury" });
+            cbBox5.Location = new System.Drawing.Point(7, 88);
+            cbBox5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbBox5.Name = "cbBox5";
+            cbBox5.Size = new System.Drawing.Size(76, 21);
+            cbBox5.TabIndex = 4;
             // 
             // cbBox6
             // 
-            this.cbBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbBox6.FormattingEnabled = true;
-            this.cbBox6.Items.AddRange(new object[] {
-            "SDO",
-            "Days",
-            "Nights",
-            "Holiday",
-            "Vacation",
-            "Bereavement",
-            "Jury"});
-            this.cbBox6.Location = new System.Drawing.Point(6, 253);
-            this.cbBox6.Name = "cbBox6";
-            this.cbBox6.Size = new System.Drawing.Size(128, 45);
-            this.cbBox6.TabIndex = 5;
+            cbBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            cbBox6.FormattingEnabled = true;
+            cbBox6.Items.AddRange(new object[] { "SDO", "Days", "Nights", "Holiday", "Vacation", "Bereavement", "Jury" });
+            cbBox6.Location = new System.Drawing.Point(7, 110);
+            cbBox6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbBox6.Name = "cbBox6";
+            cbBox6.Size = new System.Drawing.Size(76, 21);
+            cbBox6.TabIndex = 5;
             // 
             // cbBox7
             // 
-            this.cbBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbBox7.FormattingEnabled = true;
-            this.cbBox7.Items.AddRange(new object[] {
-            "SDO",
-            "Days",
-            "Nights",
-            "Holiday",
-            "Vacation",
-            "Bereavement",
-            "Jury"});
-            this.cbBox7.Location = new System.Drawing.Point(6, 302);
-            this.cbBox7.Name = "cbBox7";
-            this.cbBox7.Size = new System.Drawing.Size(128, 45);
-            this.cbBox7.TabIndex = 6;
+            cbBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            cbBox7.FormattingEnabled = true;
+            cbBox7.Items.AddRange(new object[] { "SDO", "Days", "Nights", "Holiday", "Vacation", "Bereavement", "Jury" });
+            cbBox7.Location = new System.Drawing.Point(7, 132);
+            cbBox7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbBox7.Name = "cbBox7";
+            cbBox7.Size = new System.Drawing.Size(76, 21);
+            cbBox7.TabIndex = 6;
             // 
             // numHor
             // 
-            this.numHor.Location = new System.Drawing.Point(223, 143);
-            this.numHor.Maximum = new decimal(new int[] {
-            600,
-            0,
-            0,
-            0});
-            this.numHor.Minimum = new decimal(new int[] {
-            600,
-            0,
-            0,
-            -2147483648});
-            this.numHor.Name = "numHor";
-            this.numHor.Size = new System.Drawing.Size(120, 20);
-            this.numHor.TabIndex = 8;
-            this.toolTip1.SetToolTip(this.numHor, "Hundreths of an inch (ie. 600 = 6\")");
+            numHor.Location = new System.Drawing.Point(104, 46);
+            numHor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            numHor.Maximum = new decimal(new int[] { 600, 0, 0, 0 });
+            numHor.Minimum = new decimal(new int[] { 600, 0, 0, int.MinValue });
+            numHor.Name = "numHor";
+            numHor.Size = new System.Drawing.Size(140, 23);
+            numHor.TabIndex = 8;
+            toolTip1.SetToolTip(numHor, "Hundreths of an inch (ie. 600 = 6\")");
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(220, 127);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 13);
-            this.label2.TabIndex = 93;
-            this.label2.Text = "Adjust Horizontal Printing";
-            this.toolTip1.SetToolTip(this.label2, "Hundreths of an inch (ie. 600 = 6\")");
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(100, 31);
+            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(144, 15);
+            label2.TabIndex = 93;
+            label2.Text = "Adjust Horizontal Printing";
+            toolTip1.SetToolTip(label2, "Hundreths of an inch (ie. 600 = 6\")");
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(350, 127);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 13);
-            this.label3.TabIndex = 94;
-            this.label3.Text = "Adjust Vertical Printing";
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(252, 31);
+            label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(127, 15);
+            label3.TabIndex = 94;
+            label3.Text = "Adjust Vertical Printing";
             // 
             // numVert
             // 
-            this.numVert.Location = new System.Drawing.Point(353, 143);
-            this.numVert.Maximum = new decimal(new int[] {
-            425,
-            0,
-            0,
-            0});
-            this.numVert.Minimum = new decimal(new int[] {
-            425,
-            0,
-            0,
-            -2147483648});
-            this.numVert.Name = "numVert";
-            this.numVert.Size = new System.Drawing.Size(120, 20);
-            this.numVert.TabIndex = 9;
-            this.toolTip1.SetToolTip(this.numVert, "Hundreths of an inch (ie. 600 = 6\")");
+            numVert.Location = new System.Drawing.Point(252, 45);
+            numVert.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            numVert.Maximum = new decimal(new int[] { 425, 0, 0, 0 });
+            numVert.Minimum = new decimal(new int[] { 425, 0, 0, int.MinValue });
+            numVert.Name = "numVert";
+            numVert.Size = new System.Drawing.Size(140, 23);
+            numVert.TabIndex = 9;
+            toolTip1.SetToolTip(numVert, "Hundreths of an inch (ie. 600 = 6\")");
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(606, 130);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(445, 31);
-            this.label4.TabIndex = 96;
-            this.label4.Text = "Don\'t forget to save your settings\r\n";
-            this.toolTip1.SetToolTip(this.label4, "At the top, click Settings then Save");
+            label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label4.Location = new System.Drawing.Point(540, 28);
+            label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(216, 15);
+            label4.TabIndex = 96;
+            label4.Text = "Don't forget to save your settings\r\n";
+            toolTip1.SetToolTip(label4, "At the top, click Settings then Save");
             // 
             // grpBox
             // 
-            this.grpBox.Controls.Add(this.label9);
-            this.grpBox.Controls.Add(this.label5);
-            this.grpBox.Controls.Add(this.label1);
-            this.grpBox.Controls.Add(this.label10);
-            this.grpBox.Controls.Add(this.label6);
-            this.grpBox.Controls.Add(this.label7);
-            this.grpBox.Controls.Add(this.label8);
-            this.grpBox.Controls.Add(this.cbBox2);
-            this.grpBox.Controls.Add(this.cbBox1);
-            this.grpBox.Controls.Add(this.cbBox3);
-            this.grpBox.Controls.Add(this.cbBox4);
-            this.grpBox.Controls.Add(this.cbBox7);
-            this.grpBox.Controls.Add(this.cbBox5);
-            this.grpBox.Controls.Add(this.cbBox6);
-            this.grpBox.Location = new System.Drawing.Point(12, 504);
-            this.grpBox.Name = "grpBox";
-            this.grpBox.Size = new System.Drawing.Size(273, 355);
-            this.grpBox.TabIndex = 5;
-            this.grpBox.TabStop = false;
+            grpBox.Controls.Add(label9);
+            grpBox.Controls.Add(label5);
+            grpBox.Controls.Add(label1);
+            grpBox.Controls.Add(label10);
+            grpBox.Controls.Add(label6);
+            grpBox.Controls.Add(label7);
+            grpBox.Controls.Add(label8);
+            grpBox.Controls.Add(cbBox2);
+            grpBox.Controls.Add(cbBox1);
+            grpBox.Controls.Add(cbBox3);
+            grpBox.Controls.Add(cbBox4);
+            grpBox.Controls.Add(cbBox7);
+            grpBox.Controls.Add(cbBox5);
+            grpBox.Controls.Add(cbBox6);
+            grpBox.Location = new System.Drawing.Point(8, 218);
+            grpBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            grpBox.Name = "grpBox";
+            grpBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            grpBox.Size = new System.Drawing.Size(129, 157);
+            grpBox.TabIndex = 5;
+            grpBox.TabStop = false;
             // 
             // label9
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 31F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(184, 295);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(83, 48);
-            this.label9.TabIndex = 97;
-            this.label9.Text = "Sat";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label9.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            label9.AutoSize = true;
+            label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            label9.Location = new System.Drawing.Point(91, 135);
+            label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(23, 13);
+            label9.TabIndex = 97;
+            label9.Text = "Sat";
+            label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 31F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(197, 246);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 48);
-            this.label5.TabIndex = 96;
-            this.label5.Text = "Fri";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label5.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            label5.AutoSize = true;
+            label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            label5.Location = new System.Drawing.Point(97, 112);
+            label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(18, 13);
+            label5.TabIndex = 96;
+            label5.Text = "Fri";
+            label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 31F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(140, 197);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 48);
-            this.label1.TabIndex = 95;
-            this.label1.Text = "Thurs";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            label1.Location = new System.Drawing.Point(88, 92);
+            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(34, 13);
+            label1.TabIndex = 95;
+            label1.Text = "Thurs";
+            label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label10
             // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 31F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(161, 147);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(106, 48);
-            this.label10.TabIndex = 94;
-            this.label10.Text = "Wed";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label10.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            label10.AutoSize = true;
+            label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            label10.Location = new System.Drawing.Point(91, 70);
+            label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(30, 13);
+            label10.TabIndex = 94;
+            label10.Text = "Wed";
+            label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 31F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(154, 96);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 48);
-            this.label6.TabIndex = 93;
-            this.label6.Text = "Tues";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label6.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            label6.AutoSize = true;
+            label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            label6.Location = new System.Drawing.Point(88, 48);
+            label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(31, 13);
+            label6.TabIndex = 93;
+            label6.Text = "Tues";
+            label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label7
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 31F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(166, 46);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 48);
-            this.label7.TabIndex = 92;
-            this.label7.Text = "Mon";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label7.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            label7.AutoSize = true;
+            label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            label7.Location = new System.Drawing.Point(88, 28);
+            label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(28, 13);
+            label7.TabIndex = 92;
+            label7.Text = "Mon";
+            label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label8
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 31F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(173, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(94, 48);
-            this.label8.TabIndex = 87;
-            this.label8.Text = "Sun";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label8.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            label8.AutoSize = true;
+            label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            label8.Location = new System.Drawing.Point(87, 5);
+            label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(26, 13);
+            label8.TabIndex = 87;
+            label8.Text = "Sun";
+            label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.label11.Location = new System.Drawing.Point(18, 472);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(137, 37);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "Worked:";
+            label11.AutoSize = true;
+            label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label11.Location = new System.Drawing.Point(8, 187);
+            label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label11.Name = "label11";
+            label11.Size = new System.Drawing.Size(52, 15);
+            label11.TabIndex = 5;
+            label11.Text = "Worked:";
             // 
             // numCopies
             // 
-            this.numCopies.Location = new System.Drawing.Point(480, 142);
-            this.numCopies.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numCopies.Name = "numCopies";
-            this.numCopies.Size = new System.Drawing.Size(120, 20);
-            this.numCopies.TabIndex = 97;
-            this.numCopies.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            numCopies.Location = new System.Drawing.Point(400, 45);
+            numCopies.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            numCopies.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numCopies.Name = "numCopies";
+            numCopies.Size = new System.Drawing.Size(140, 23);
+            numCopies.TabIndex = 97;
+            numCopies.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // label12
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(477, 127);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(91, 13);
-            this.label12.TabIndex = 98;
-            this.label12.Text = "Number of Copies";
+            label12.AutoSize = true;
+            label12.Location = new System.Drawing.Point(403, 29);
+            label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label12.Name = "label12";
+            label12.Size = new System.Drawing.Size(104, 15);
+            label12.TabIndex = 98;
+            label12.Text = "Number of Copies";
             // 
             // txtClockIn
             // 
-            this.txtClockIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.txtClockIn.Location = new System.Drawing.Point(291, 405);
-            this.txtClockIn.Name = "txtClockIn";
-            this.txtClockIn.Size = new System.Drawing.Size(142, 44);
-            this.txtClockIn.TabIndex = 99;
+            txtClockIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtClockIn.Location = new System.Drawing.Point(144, 181);
+            txtClockIn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtClockIn.Name = "txtClockIn";
+            txtClockIn.Size = new System.Drawing.Size(66, 21);
+            txtClockIn.TabIndex = 99;
             // 
             // txtClockOut
             // 
-            this.txtClockOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.txtClockOut.Location = new System.Drawing.Point(748, 405);
-            this.txtClockOut.Name = "txtClockOut";
-            this.txtClockOut.Size = new System.Drawing.Size(142, 44);
-            this.txtClockOut.TabIndex = 100;
+            txtClockOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtClockOut.Location = new System.Drawing.Point(360, 181);
+            txtClockOut.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtClockOut.Name = "txtClockOut";
+            txtClockOut.Size = new System.Drawing.Size(68, 21);
+            txtClockOut.TabIndex = 100;
             // 
             // label13
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(288, 387);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(86, 13);
-            this.label13.TabIndex = 101;
-            this.label13.Text = "Usually Clock In:";
+            label13.AutoSize = true;
+            label13.Location = new System.Drawing.Point(120, 163);
+            label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label13.Name = "label13";
+            label13.Size = new System.Drawing.Size(94, 15);
+            label13.TabIndex = 101;
+            label13.Text = "Usually Clock In:";
             // 
             // label14
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(745, 387);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(94, 13);
-            this.label14.TabIndex = 102;
-            this.label14.Text = "Usually Clock Out:";
+            label14.AutoSize = true;
+            label14.Location = new System.Drawing.Point(330, 163);
+            label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label14.Name = "label14";
+            label14.Size = new System.Drawing.Size(104, 15);
+            label14.TabIndex = 102;
+            label14.Text = "Usually Clock Out:";
             // 
             // txtProduction
             // 
-            this.txtProduction.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.txtProduction.Location = new System.Drawing.Point(1113, 366);
-            this.txtProduction.Name = "txtProduction";
-            this.txtProduction.Size = new System.Drawing.Size(196, 44);
-            this.txtProduction.TabIndex = 103;
+            txtProduction.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txtProduction.Location = new System.Drawing.Point(540, 157);
+            txtProduction.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txtProduction.Name = "txtProduction";
+            txtProduction.Size = new System.Drawing.Size(90, 21);
+            txtProduction.TabIndex = 103;
             // 
             // label15
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(1020, 376);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(87, 13);
-            this.label15.TabIndex = 104;
-            this.label15.Text = "Daily Production:";
+            label15.AutoSize = true;
+            label15.Location = new System.Drawing.Point(442, 161);
+            label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label15.Name = "label15";
+            label15.Size = new System.Drawing.Size(98, 15);
+            label15.TabIndex = 104;
+            label15.Text = "Daily Production:";
             // 
             // frmPrintTimeCard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1799, 927);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.txtProduction);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.txtClockOut);
-            this.Controls.Add(this.txtClockIn);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.numCopies);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.numVert);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.numHor);
-            this.Controls.Add(this.btnNextWeek);
-            this.Controls.Add(this.btnPrevWeek);
-            this.Controls.Add(this.txtCode7);
-            this.Controls.Add(this.txtCode6);
-            this.Controls.Add(this.txtCode5);
-            this.Controls.Add(this.txtCode4);
-            this.Controls.Add(this.txtCode3);
-            this.Controls.Add(this.txtCode2);
-            this.Controls.Add(this.txtCode1);
-            this.Controls.Add(this.cb24hr);
-            this.Controls.Add(this.txtTotalOth);
-            this.Controls.Add(this.txtTotalO);
-            this.Controls.Add(this.txtTotalB);
-            this.Controls.Add(this.txtTotalW);
-            this.Controls.Add(this.txtOther7);
-            this.Controls.Add(this.txtOther6);
-            this.Controls.Add(this.txtOther5);
-            this.Controls.Add(this.txtOther4);
-            this.Controls.Add(this.txtOther3);
-            this.Controls.Add(this.txtOther2);
-            this.Controls.Add(this.txtOther1);
-            this.Controls.Add(this.txtOvertime7);
-            this.Controls.Add(this.txtOvertime6);
-            this.Controls.Add(this.txtOvertime5);
-            this.Controls.Add(this.txtOvertime4);
-            this.Controls.Add(this.txtOvertime3);
-            this.Controls.Add(this.txtOvertime2);
-            this.Controls.Add(this.txtOvertime1);
-            this.Controls.Add(this.txtBonus7);
-            this.Controls.Add(this.txtBonus6);
-            this.Controls.Add(this.txtBonus5);
-            this.Controls.Add(this.txtBonus4);
-            this.Controls.Add(this.txtBonus3);
-            this.Controls.Add(this.txtBonus2);
-            this.Controls.Add(this.txtBonus1);
-            this.Controls.Add(this.txtWorked7);
-            this.Controls.Add(this.txtWorked6);
-            this.Controls.Add(this.txtWorked5);
-            this.Controls.Add(this.txtWorked4);
-            this.Controls.Add(this.txtWorked3);
-            this.Controls.Add(this.txtWorked2);
-            this.Controls.Add(this.txtWorked1);
-            this.Controls.Add(this.txtOut7);
-            this.Controls.Add(this.txtOut6);
-            this.Controls.Add(this.txtOut5);
-            this.Controls.Add(this.txtOut4);
-            this.Controls.Add(this.txtOut3);
-            this.Controls.Add(this.txtOut2);
-            this.Controls.Add(this.txtOut1);
-            this.Controls.Add(this.txtIn7);
-            this.Controls.Add(this.txtIn6);
-            this.Controls.Add(this.txtIn5);
-            this.Controls.Add(this.txtIn4);
-            this.Controls.Add(this.txtIn3);
-            this.Controls.Add(this.txtIn2);
-            this.Controls.Add(this.txtIn1);
-            this.Controls.Add(this.txtNumber);
-            this.Controls.Add(this.txtCrew);
-            this.Controls.Add(this.txtDept);
-            this.Controls.Add(this.txtTo);
-            this.Controls.Add(this.txtFrom);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.menuStrip);
-            this.Controls.Add(this.grpBox);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip;
-            this.Name = "frmPrintTimeCard";
-            this.Text = "Time Card";
-            this.Load += new System.EventHandler(this.frmPrintTimeCard_Load);
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numHor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numVert)).EndInit();
-            this.grpBox.ResumeLayout(false);
-            this.grpBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numCopies)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            AutoSize = true;
+            AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            BackgroundImage = (System.Drawing.Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            ClientSize = new System.Drawing.Size(866, 549);
+            Controls.Add(label15);
+            Controls.Add(txtProduction);
+            Controls.Add(label14);
+            Controls.Add(label13);
+            Controls.Add(txtClockOut);
+            Controls.Add(txtClockIn);
+            Controls.Add(label12);
+            Controls.Add(numCopies);
+            Controls.Add(label11);
+            Controls.Add(label4);
+            Controls.Add(numVert);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(numHor);
+            Controls.Add(btnNextWeek);
+            Controls.Add(btnPrevWeek);
+            Controls.Add(txtCode7);
+            Controls.Add(txtCode6);
+            Controls.Add(txtCode5);
+            Controls.Add(txtCode4);
+            Controls.Add(txtCode3);
+            Controls.Add(txtCode2);
+            Controls.Add(txtCode1);
+            Controls.Add(cb24hr);
+            Controls.Add(txtTotalOth);
+            Controls.Add(txtTotalO);
+            Controls.Add(txtTotalB);
+            Controls.Add(txtTotalW);
+            Controls.Add(txtOther7);
+            Controls.Add(txtOther6);
+            Controls.Add(txtOther5);
+            Controls.Add(txtOther4);
+            Controls.Add(txtOther3);
+            Controls.Add(txtOther2);
+            Controls.Add(txtOther1);
+            Controls.Add(txtOvertime7);
+            Controls.Add(txtOvertime6);
+            Controls.Add(txtOvertime5);
+            Controls.Add(txtOvertime4);
+            Controls.Add(txtOvertime3);
+            Controls.Add(txtOvertime2);
+            Controls.Add(txtOvertime1);
+            Controls.Add(txtBonus7);
+            Controls.Add(txtBonus6);
+            Controls.Add(txtBonus5);
+            Controls.Add(txtBonus4);
+            Controls.Add(txtBonus3);
+            Controls.Add(txtBonus2);
+            Controls.Add(txtBonus1);
+            Controls.Add(txtWorked7);
+            Controls.Add(txtWorked6);
+            Controls.Add(txtWorked5);
+            Controls.Add(txtWorked4);
+            Controls.Add(txtWorked3);
+            Controls.Add(txtWorked2);
+            Controls.Add(txtWorked1);
+            Controls.Add(txtOut7);
+            Controls.Add(txtOut6);
+            Controls.Add(txtOut5);
+            Controls.Add(txtOut4);
+            Controls.Add(txtOut3);
+            Controls.Add(txtOut2);
+            Controls.Add(txtOut1);
+            Controls.Add(txtIn7);
+            Controls.Add(txtIn6);
+            Controls.Add(txtIn5);
+            Controls.Add(txtIn4);
+            Controls.Add(txtIn3);
+            Controls.Add(txtIn2);
+            Controls.Add(txtIn1);
+            Controls.Add(txtNumber);
+            Controls.Add(txtCrew);
+            Controls.Add(txtDept);
+            Controls.Add(txtTo);
+            Controls.Add(txtFrom);
+            Controls.Add(txtName);
+            Controls.Add(menuStrip);
+            Controls.Add(grpBox);
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            MainMenuStrip = menuStrip;
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "frmPrintTimeCard";
+            Text = "Time Card";
+            Load += frmPrintTimeCard_Load;
+            menuStrip.ResumeLayout(false);
+            menuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numHor).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numVert).EndInit();
+            grpBox.ResumeLayout(false);
+            grpBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numCopies).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
