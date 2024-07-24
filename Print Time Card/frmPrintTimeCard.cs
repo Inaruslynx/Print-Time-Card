@@ -205,7 +205,7 @@ namespace Print_Time_Card
             // Pen aPen = new Pen(Brushes.Black, 1);
             for (int i = 0; i < this.Controls.Count; i++)
             {
-                if (Controls[i].GetType() == this.Controls["txtIn1"].GetType() && !Controls[i].Name.ToUpper().Contains("CLOCK"))
+                if (Controls[i].GetType() == this.Controls["txtIn1"].GetType() && !Controls[i].Name.ToUpper().Contains("CLOCK") && !Controls[i].Name.ToUpper().Contains("PRODUCTION"))
                 {
                     TextBox theText = (TextBox)Controls[i];
                     graphics.DrawString(theText.Text, printFont, Brushes.Black, (theText.Bounds.Left * scalex) - 15 + (int)numHor.Value, (theText.Bounds.Top * scaley) - 15 + (int)numVert.Value, new StringFormat());
@@ -213,7 +213,7 @@ namespace Print_Time_Card
             }
         }
 
-        // This checks what slection the user makes when they change a combobox
+        // This checks what selection the user makes when they change a combobox
         // 0 - SDO
         // 1 - Days
         // 2 - Nights
